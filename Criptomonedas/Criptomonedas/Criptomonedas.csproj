@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A65BD7E2-6685-4139-AD9A-C3EA343B0708}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Criptomonedas</RootNamespace>
+    <AssemblyName>Criptomonedas</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\Criptomonedas\Cotizacion.cs" />
+    <Compile Include="Entidades\Criptomonedas\Criptomoneda.cs" />
+    <Compile Include="Entidades\Criptomonedas\Monedero.cs" />
+    <Compile Include="Entidades\Datos Cliente\AreaTelefono.cs" />
+    <Compile Include="Entidades\Datos Cliente\Barrio.cs" />
+    <Compile Include="Entidades\Datos Cliente\Ciudad.cs" />
+    <Compile Include="Entidades\Datos Cliente\Cliente.cs" />
+    <Compile Include="Entidades\Datos Cliente\Pais.cs" />
+    <Compile Include="Entidades\Datos Cliente\Provincias.cs" />
+    <Compile Include="Entidades\Datos Cliente\TipoOperacion.cs" />
+    <Compile Include="Entidades\Ejecutivo de Cuentas\Empresa.cs" />
+    <Compile Include="Entidades\Usuario\Usuario.cs" />
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Criptomoneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Criptomoneda.Designer.cs">
+      <DependentUpon>ABM_Criptomoneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Mondero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Mondero.Designer.cs">
+      <DependentUpon>ABM_Mondero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Cotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Cotizaciones.Designer.cs">
+      <DependentUpon>ABM_Cotizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_AreaTelefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_AreaTelefono.Designer.cs">
+      <DependentUpon>ABM_AreaTelefono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Barrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Barrio.Designer.cs">
+      <DependentUpon>ABM_Barrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Ciudad.designer.cs">
+      <DependentUpon>ABM_Ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Pais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Pais.Designer.cs">
+      <DependentUpon>ABM_Pais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Provincias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Provincias.designer.cs">
+      <DependentUpon>ABM_Provincias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_TipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_TipoDocumento.Designer.cs">
+      <DependentUpon>ABM_TipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_TipoOperacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_TipoOperacion.designer.cs">
+      <DependentUpon>ABM_TipoOperacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Cliente.Designer.cs">
+      <DependentUpon>ABM_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EjecutivoDeCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EjecutivoDeCuentas.Designer.cs">
+      <DependentUpon>ABM_EjecutivoDeCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
+      <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.Designer.cs">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BD3K7G05_2022DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD3K7G05_2022DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Datos Cliente\TipoDocumento.cs" />
+    <Compile Include="Formularios%28Ventanas%29\Principal\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Principal\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Login y Registro\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Login y Registro\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Mondero.resx">
+      <DependentUpon>ABM_Mondero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Cotizaciones.resx">
+      <DependentUpon>ABM_Cotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_AreaTelefono.resx">
+      <DependentUpon>ABM_AreaTelefono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Barrio.resx">
+      <DependentUpon>ABM_Barrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Ciudad.resx">
+      <DependentUpon>ABM_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Pais.resx">
+      <DependentUpon>ABM_Pais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Provincias.resx">
+      <DependentUpon>ABM_Provincias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_TipoDocumento.resx">
+      <DependentUpon>ABM_TipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_TipoOperacion.resx">
+      <DependentUpon>ABM_TipoOperacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Cliente.resx">
+      <DependentUpon>ABM_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EjecutivoDeCuentas.resx">
+      <DependentUpon>ABM_EjecutivoDeCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.resx">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Principal\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
+    <None Include="BD3K7G05_2022DataSet.xsc">
+      <DependentUpon>BD3K7G05_2022DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G05_2022DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD3K7G05_2022DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD3K7G05_2022DataSet.xss">
+      <DependentUpon>BD3K7G05_2022DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3443415_bytecoin_coin_cryptocurrency_currency_digital currency_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descargar.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
