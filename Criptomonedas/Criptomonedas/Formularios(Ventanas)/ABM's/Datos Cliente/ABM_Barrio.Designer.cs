@@ -125,7 +125,7 @@
             this.txtNombreBarrio.Multiline = true;
             this.txtNombreBarrio.Name = "txtNombreBarrio";
             this.txtNombreBarrio.Size = new System.Drawing.Size(200, 30);
-            this.txtNombreBarrio.TabIndex = 26;
+            this.txtNombreBarrio.TabIndex = 1;
             // 
             // lblCiudadBarrio
             // 
@@ -151,7 +151,7 @@
             this.lblLimpiarCampos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLimpiarCampos.Name = "lblLimpiarCampos";
             this.lblLimpiarCampos.Size = new System.Drawing.Size(112, 15);
-            this.lblLimpiarCampos.TabIndex = 37;
+            this.lblLimpiarCampos.TabIndex = 3;
             this.lblLimpiarCampos.Text = "Limpiar Campos";
             this.lblLimpiarCampos.Click += new System.EventHandler(this.lblLimpiarCampos_Click);
             // 
@@ -181,7 +181,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(91, 29);
-            this.btnEliminar.TabIndex = 35;
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(91, 27);
-            this.btnGuardar.TabIndex = 34;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "CARGAR";
             this.btnGuardar.TextColor = System.Drawing.Color.White;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -222,7 +222,7 @@
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(91, 29);
-            this.btnModificar.TabIndex = 27;
+            this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "ACTUALIZAR";
             this.btnModificar.TextColor = System.Drawing.Color.White;
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -244,7 +244,7 @@
             this.gdrBarrio.RowHeadersWidth = 51;
             this.gdrBarrio.RowTemplate.Height = 24;
             this.gdrBarrio.Size = new System.Drawing.Size(503, 267);
-            this.gdrBarrio.TabIndex = 39;
+            this.gdrBarrio.TabIndex = 7;
             this.gdrBarrio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrBarrio_CellClick);
             // 
             // Codigo_Barrio
@@ -273,12 +273,13 @@
             // 
             // cmbCiudadBarrio
             // 
+            this.cmbCiudadBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCiudadBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCiudadBarrio.FormattingEnabled = true;
             this.cmbCiudadBarrio.Location = new System.Drawing.Point(24, 167);
             this.cmbCiudadBarrio.Name = "cmbCiudadBarrio";
             this.cmbCiudadBarrio.Size = new System.Drawing.Size(200, 26);
-            this.cmbCiudadBarrio.TabIndex = 40;
+            this.cmbCiudadBarrio.TabIndex = 2;
             // 
             // ABM_Barrio
             // 
