@@ -316,7 +316,7 @@ namespace Criptomonedas
             this.SM_ABM_DatosCliente.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_ABM_DatosCliente.Name = "subMenu1";
             this.SM_ABM_DatosCliente.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_ABM_DatosCliente.Size = new System.Drawing.Size(211, 224);
+            this.SM_ABM_DatosCliente.Size = new System.Drawing.Size(211, 202);
             // 
             // btnAltaPais
             // 

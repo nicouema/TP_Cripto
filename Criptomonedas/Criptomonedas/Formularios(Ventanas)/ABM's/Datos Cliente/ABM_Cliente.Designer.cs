@@ -1,4 +1,4 @@
-﻿namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_CuentasCleite
+﻿namespace Criptomonedas.Formularios_Ventanas_.ABM_s.ABM_Cliente
 {
     partial class ABM_Cliente
     {
@@ -515,7 +515,7 @@
             this.grillaClientes.ReadOnly = true;
             this.grillaClientes.Size = new System.Drawing.Size(855, 462);
             this.grillaClientes.TabIndex = 67;
-            this.grillaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaClientes_CellContentClick);
+            this.grillaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaClientes_CellClick);
             // 
             // nro_cliente
             // 

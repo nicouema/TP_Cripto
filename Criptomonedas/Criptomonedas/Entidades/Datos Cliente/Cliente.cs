@@ -16,7 +16,7 @@ namespace Criptomonedas.Entidades.Datos_Cliente
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string email { get; set; }
-        public string fechaAlta { get; set; } = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
+        public DateTime fechaAlta { get; set; } = DateTime.Now;
         public int cod_barrio { get; set; }
         public int cod_usuario { get; set; }
 

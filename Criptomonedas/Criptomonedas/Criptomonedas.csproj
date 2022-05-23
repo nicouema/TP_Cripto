@@ -67,6 +67,7 @@
     <Compile Include="Entidades\Datos Cliente\Pais.cs" />
     <Compile Include="Entidades\Datos Cliente\Provincias.cs" />
     <Compile Include="Entidades\Datos Cliente\TipoOperacion.cs" />
+    <Compile Include="Entidades\Ejecutivo de Cuentas\EjecutivoDeCuentas.cs" />
     <Compile Include="Entidades\Ejecutivo de Cuentas\Empresa.cs" />
     <Compile Include="Entidades\Usuario\Usuario.cs" />
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Criptomoneda.cs">
