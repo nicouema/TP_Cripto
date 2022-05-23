@@ -86,16 +86,14 @@ namespace Criptomonedas
 
                 if (tabla.Rows.Count > 0)
                 {
-                    int i = 0;
                     foreach (DataRow row in tabla.Rows)
                     {
-                        if (tabla.Rows[i]["NombreDeUsuario"].Equals(nombreDeUsuario) && tabla.Rows[i]["Password"].Equals(password))
+                        if (row["NombreDeUsuario"].Equals(nombreDeUsuario) && row["Password"].Equals(password))
                         {
 
                             resultado = true;
                             return resultado;
                         }
-                        i += 1;
                     }
                     return resultado;
                 }
@@ -165,6 +163,7 @@ namespace Criptomonedas
         private void btnRegistrarUsuario_Click(object sender, EventArgs e)
         {
             AltaCliente altaUsuario= new AltaCliente();
+            this.Hide();
             altaUsuario.Show();
 
         }
