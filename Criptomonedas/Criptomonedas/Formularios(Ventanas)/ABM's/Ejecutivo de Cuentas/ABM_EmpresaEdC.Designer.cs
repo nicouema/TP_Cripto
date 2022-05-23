@@ -31,6 +31,8 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
         {
             this.lblABM_EmpresaEdC = new System.Windows.Forms.Label();
             this.panelCriptos = new System.Windows.Forms.Panel();
+            this.mbCodBarrio = new System.Windows.Forms.MaskedTextBox();
+            this.mbNroCalle = new System.Windows.Forms.MaskedTextBox();
             this.btnCargar = new RJCodeAdvance.RJControls.RJButton();
             this.lblLimpiarCampos = new System.Windows.Forms.Label();
             this.btnActualizar = new RJCodeAdvance.RJControls.RJButton();
@@ -43,15 +45,14 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.lblCalle = new System.Windows.Forms.Label();
             this.lblNombreEmpresa = new System.Windows.Forms.Label();
             this.grdEmpresasEdC = new System.Windows.Forms.DataGridView();
-            this.btnMinimizarPantallaReg = new FontAwesome.Sharp.IconButton();
-            this.btnCerrarPantallaReg = new FontAwesome.Sharp.IconButton();
-            this.mbNroCalle = new System.Windows.Forms.MaskedTextBox();
-            this.mbCodBarrio = new System.Windows.Forms.MaskedTextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NdeCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMinimizarPantallaReg = new FontAwesome.Sharp.IconButton();
+            this.btnCerrarPantallaReg = new FontAwesome.Sharp.IconButton();
+            this.btnBorrar = new RJCodeAdvance.RJControls.RJButton();
             this.panelCriptos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmpresasEdC)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +73,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             // panelCriptos
             // 
             this.panelCriptos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCriptos.Controls.Add(this.btnBorrar);
             this.panelCriptos.Controls.Add(this.mbCodBarrio);
             this.panelCriptos.Controls.Add(this.mbNroCalle);
             this.panelCriptos.Controls.Add(this.btnCargar);
@@ -88,8 +90,26 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.panelCriptos.Location = new System.Drawing.Point(17, 61);
             this.panelCriptos.Margin = new System.Windows.Forms.Padding(2);
             this.panelCriptos.Name = "panelCriptos";
-            this.panelCriptos.Size = new System.Drawing.Size(221, 311);
+            this.panelCriptos.Size = new System.Drawing.Size(221, 347);
             this.panelCriptos.TabIndex = 46;
+            // 
+            // mbCodBarrio
+            // 
+            this.mbCodBarrio.Location = new System.Drawing.Point(17, 194);
+            this.mbCodBarrio.Mask = "999";
+            this.mbCodBarrio.Name = "mbCodBarrio";
+            this.mbCodBarrio.Size = new System.Drawing.Size(185, 20);
+            this.mbCodBarrio.TabIndex = 51;
+            this.mbCodBarrio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mbNroCalle
+            // 
+            this.mbNroCalle.Location = new System.Drawing.Point(17, 143);
+            this.mbNroCalle.Mask = "9999";
+            this.mbNroCalle.Name = "mbNroCalle";
+            this.mbNroCalle.Size = new System.Drawing.Size(185, 20);
+            this.mbNroCalle.TabIndex = 50;
+            this.mbNroCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCargar
             // 
@@ -101,7 +121,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.ForeColor = System.Drawing.Color.White;
-            this.btnCargar.Location = new System.Drawing.Point(112, 268);
+            this.btnCargar.Location = new System.Drawing.Point(113, 305);
             this.btnCargar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(91, 27);
@@ -135,7 +155,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(17, 268);
+            this.btnActualizar.Location = new System.Drawing.Point(18, 305);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(91, 27);
@@ -258,67 +278,9 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.grdEmpresasEdC.Location = new System.Drawing.Point(244, 61);
             this.grdEmpresasEdC.Name = "grdEmpresasEdC";
             this.grdEmpresasEdC.ReadOnly = true;
-            this.grdEmpresasEdC.Size = new System.Drawing.Size(573, 311);
+            this.grdEmpresasEdC.Size = new System.Drawing.Size(573, 346);
             this.grdEmpresasEdC.TabIndex = 47;
             this.grdEmpresasEdC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEmpresasEdC_CellClick);
-            // 
-            // btnMinimizarPantallaReg
-            // 
-            this.btnMinimizarPantallaReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizarPantallaReg.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimizarPantallaReg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMinimizarPantallaReg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizarPantallaReg.FlatAppearance.BorderSize = 0;
-            this.btnMinimizarPantallaReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizarPantallaReg.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimizarPantallaReg.IconColor = System.Drawing.SystemColors.Control;
-            this.btnMinimizarPantallaReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimizarPantallaReg.IconSize = 20;
-            this.btnMinimizarPantallaReg.Location = new System.Drawing.Point(763, 0);
-            this.btnMinimizarPantallaReg.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMinimizarPantallaReg.Name = "btnMinimizarPantallaReg";
-            this.btnMinimizarPantallaReg.Size = new System.Drawing.Size(34, 20);
-            this.btnMinimizarPantallaReg.TabIndex = 26;
-            this.btnMinimizarPantallaReg.UseVisualStyleBackColor = false;
-            this.btnMinimizarPantallaReg.Click += new System.EventHandler(this.btnMinimizarPantallaReg_Click);
-            // 
-            // btnCerrarPantallaReg
-            // 
-            this.btnCerrarPantallaReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarPantallaReg.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCerrarPantallaReg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCerrarPantallaReg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarPantallaReg.FlatAppearance.BorderSize = 0;
-            this.btnCerrarPantallaReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPantallaReg.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnCerrarPantallaReg.IconColor = System.Drawing.SystemColors.Control;
-            this.btnCerrarPantallaReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrarPantallaReg.IconSize = 30;
-            this.btnCerrarPantallaReg.Location = new System.Drawing.Point(797, 0);
-            this.btnCerrarPantallaReg.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCerrarPantallaReg.Name = "btnCerrarPantallaReg";
-            this.btnCerrarPantallaReg.Size = new System.Drawing.Size(34, 20);
-            this.btnCerrarPantallaReg.TabIndex = 25;
-            this.btnCerrarPantallaReg.UseVisualStyleBackColor = false;
-            this.btnCerrarPantallaReg.Click += new System.EventHandler(this.btnCerrarPantallaReg_Click);
-            // 
-            // mbNroCalle
-            // 
-            this.mbNroCalle.Location = new System.Drawing.Point(17, 143);
-            this.mbNroCalle.Mask = "9999";
-            this.mbNroCalle.Name = "mbNroCalle";
-            this.mbNroCalle.Size = new System.Drawing.Size(185, 20);
-            this.mbNroCalle.TabIndex = 50;
-            this.mbNroCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // mbCodBarrio
-            // 
-            this.mbCodBarrio.Location = new System.Drawing.Point(17, 194);
-            this.mbCodBarrio.Mask = "999";
-            this.mbCodBarrio.Name = "mbCodBarrio";
-            this.mbCodBarrio.Size = new System.Drawing.Size(185, 20);
-            this.mbCodBarrio.TabIndex = 51;
-            this.mbCodBarrio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ID
             // 
@@ -360,11 +322,71 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.CodBarrio.ReadOnly = true;
             this.CodBarrio.Width = 50;
             // 
+            // btnMinimizarPantallaReg
+            // 
+            this.btnMinimizarPantallaReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizarPantallaReg.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimizarPantallaReg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMinimizarPantallaReg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizarPantallaReg.FlatAppearance.BorderSize = 0;
+            this.btnMinimizarPantallaReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizarPantallaReg.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizarPantallaReg.IconColor = System.Drawing.SystemColors.Control;
+            this.btnMinimizarPantallaReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizarPantallaReg.IconSize = 20;
+            this.btnMinimizarPantallaReg.Location = new System.Drawing.Point(763, 0);
+            this.btnMinimizarPantallaReg.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMinimizarPantallaReg.Name = "btnMinimizarPantallaReg";
+            this.btnMinimizarPantallaReg.Size = new System.Drawing.Size(34, 20);
+            this.btnMinimizarPantallaReg.TabIndex = 26;
+            this.btnMinimizarPantallaReg.UseVisualStyleBackColor = false;
+            this.btnMinimizarPantallaReg.Click += new System.EventHandler(this.btnMinimizarPantallaReg_Click);
+            // 
+            // btnCerrarPantallaReg
+            // 
+            this.btnCerrarPantallaReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarPantallaReg.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCerrarPantallaReg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCerrarPantallaReg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarPantallaReg.FlatAppearance.BorderSize = 0;
+            this.btnCerrarPantallaReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarPantallaReg.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrarPantallaReg.IconColor = System.Drawing.SystemColors.Control;
+            this.btnCerrarPantallaReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarPantallaReg.IconSize = 30;
+            this.btnCerrarPantallaReg.Location = new System.Drawing.Point(797, 0);
+            this.btnCerrarPantallaReg.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCerrarPantallaReg.Name = "btnCerrarPantallaReg";
+            this.btnCerrarPantallaReg.Size = new System.Drawing.Size(34, 20);
+            this.btnCerrarPantallaReg.TabIndex = 25;
+            this.btnCerrarPantallaReg.UseVisualStyleBackColor = false;
+            this.btnCerrarPantallaReg.Click += new System.EventHandler(this.btnCerrarPantallaReg_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnBorrar.BackgroundColor = System.Drawing.Color.MediumVioletRed;
+            this.btnBorrar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBorrar.BorderRadius = 0;
+            this.btnBorrar.BorderSize = 0;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Location = new System.Drawing.Point(18, 274);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(91, 27);
+            this.btnBorrar.TabIndex = 52;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.TextColor = System.Drawing.Color.White;
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
             // ABM_EmpresasEdC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 385);
+            this.ClientSize = new System.Drawing.Size(831, 419);
             this.Controls.Add(this.grdEmpresasEdC);
             this.Controls.Add(this.panelCriptos);
             this.Controls.Add(this.lblABM_EmpresaEdC);
@@ -409,5 +431,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
         private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
         private System.Windows.Forms.DataGridViewTextBoxColumn NdeCalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodBarrio;
+        private RJCodeAdvance.RJControls.RJButton btnBorrar;
     }
 }

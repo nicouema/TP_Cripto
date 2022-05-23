@@ -14,6 +14,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
 {
     public partial class ABM_EmpresasEdC : Form
     {
+        private string idSeleccionado;
         public ABM_EmpresasEdC()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
         private void ABM_EmpresasEdC_Load(object sender, EventArgs e)
         {
             btnActualizar.Enabled = false;
+            btnBorrar.Enabled = false;
             try
             {
                 cargarGrillaEmpresas();
@@ -80,12 +82,13 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = grdEmpresasEdC.Rows[indice];
-            string id = filaSeleccionada.Cells["ID"].Value.ToString();
-            Entidades.Ejecutivo_de_Cuentas.Empresa emp = ObtenerDatosEmpresaBD(id);
+            idSeleccionado = filaSeleccionada.Cells["ID"].Value.ToString();
+            Entidades.Ejecutivo_de_Cuentas.Empresa emp = ObtenerDatosEmpresaBD(idSeleccionado);
             LimpiarCampos();
             cargarCampos(emp);
 
             btnActualizar.Enabled = true;
+            btnBorrar.Enabled = true;
         }
 
         //Cargar y limpiar campos
@@ -134,7 +137,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
                 LimpiarCampos();
                 cargarGrillaEmpresas();
                 btnActualizar.Enabled = false;
-
+                btnBorrar.Enabled = false;
             }
             else
             {
@@ -145,16 +148,44 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             Entidades.Ejecutivo_de_Cuentas.Empresa emp = ObtenerDatosEmpresaDelABM();
-            bool resultado = ActualizarEmpresa(emp);
-            if (resultado)
+            if (validarCampos())
             {
-                MessageBox.Show("Empresa actualizada con exito");
-                LimpiarCampos();
-                cargarGrillaEmpresas();
+                try
+                {
+                    ActualizarEmpresa(emp);
+                    MessageBox.Show("Empresa actualizada con exito");
+                    LimpiarCampos();
+                    cargarGrillaEmpresas();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar empresa", "ALERTA");
+                }
             }
             else
             {
-                MessageBox.Show("Error al actualizar empresa", "ALERTA");
+                MessageBox.Show("Completar campos", "Alerta");
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (validarCampos())
+            {
+                try
+                {
+                    eliminarEmpresa(int.Parse(idSeleccionado));
+                    cargarGrillaEmpresas();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar Empresa!", "Alerta");
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Ingrese todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -191,7 +222,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -209,11 +240,11 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             emp.Calle = txtCalle.Text.Trim();
             emp.NumCalle = int.Parse(mbNroCalle.Text);
             emp.CodBarrio = int.Parse(mbCodBarrio.Text);
-
+            emp.ID = int.Parse(idSeleccionado.ToString());
             return emp;
         }
 
-        //Metodos para cargar datos a BD
+        //Metodos para BD
 
         private bool AgregarEmpresa(Entidades.Ejecutivo_de_Cuentas.Empresa emp)
         {
@@ -290,5 +321,54 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             return resultado;
         }
 
+        private bool eliminarEmpresa(int id)
+        {
+            bool resultado = false;
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string delete = "eliminarEmpresa";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_empresa", id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = delete;
+
+                connection.Open();
+                cmd.Connection = connection;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+
+                MessageBox.Show("Empresa eliminada con exito", "Eliminado", MessageBoxButtons.OK);
+                cargarGrillaEmpresas();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return resultado;
+        }
+
+        //Validaciones
+
+        private bool validarCampos()
+        {
+            if (txtNombreEmpresa.Text.Equals("") || txtCalle.Text.Equals("") || mbCodBarrio.Text.Equals("") || mbNroCalle.Text.Equals(""))
+            {
+                MessageBox.Show("Rellenar campos", "Alerta");
+                return false;
+            }
+            return true;
+        }
     }
 }
