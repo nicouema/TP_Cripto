@@ -22,6 +22,8 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
         private void ABM_TipoOperacion_Load(object sender, EventArgs e)
         {
             CargarGrilla();
+            CargarcmbCodigoOperacion();
+            Limpiar();
         }
 
         private void CargarGrilla()
@@ -66,6 +68,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
         {
             txtDescripcion.Text = "";
             txtTipoOperacion.Text = "";
+            cmbCodigoOperacion.SelectedIndex = -1;
         }
 
         private bool validar_TipoOperacion(String tipoOperacion, String descripcion)
@@ -112,16 +115,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
 
         }
 
-        private void btnMinimizarPantallaReg_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnCerrarPantallaReg_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void lblLimpiarCampos_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -131,7 +124,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
         {
             if (txtTipoOperacion.Text.Equals("") || txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("Ingrese Pais !!!");
+                MessageBox.Show("Ingrese Datos !!!");
             }
             else
             {
@@ -161,10 +154,11 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
 
         private TipoOperacion ObtenerDatosT()
         {
+            int cod = cmbCodigoOperacion.SelectedIndex + 1;
             TipoOperacion t = new TipoOperacion();
             t.tipo_operacion = txtTipoOperacion.Text.Trim();
             t.descripcion = txtDescripcion.Text.Trim();
-            t.codigo_operacion = Convert.ToInt32(txtCodigoOperacion.Text);
+            t.codigo_operacion = cod.ToString();
             return t;
         }
 
@@ -176,7 +170,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Tipo_Transaccion (tipo_operacion, descripcion) VALUE (@TipoOperacion, @Descripcion";
+                string consulta = "INSERT INTO Tipo_Transaccion (tipo_operacion, descripcion) VALUES (@TipoOperacion, @Descripcion)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@TipoOperacion", t.tipo_operacion);
                 cmd.Parameters.AddWithValue("@Descripcion", t.descripcion);
@@ -199,13 +193,21 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            TipoOperacion t = ObtenerDatosT();
-            bool result = AgregarTipoOperacionBD(t);
-
-            if (result)
+            if (txtTipoOperacion.Text.Equals("") || txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("Tipo de Operacion agregada con exito.");
-                CargarGrilla();
+                MessageBox.Show("Ingrese Datos !!!");
+            }
+            else
+            {
+                TipoOperacion t = ObtenerDatosT();
+                bool result = AgregarTipoOperacionBD(t);
+
+                if (result)
+                {
+                    MessageBox.Show("Tipo de Operacion agregada con exito.");
+                    CargarGrilla();
+                    CargarcmbCodigoOperacion();
+                }
             }
         }
 
@@ -242,13 +244,21 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            TipoOperacion t = ObtenerDatosT();
-            bool result = ActualizarTipoOperacion(t);
-
-            if (result)
+            if (txtTipoOperacion.Text.Equals("") || txtDescripcion.Text.Equals(""))
             {
-                MessageBox.Show("Tipo de Operacion agregada con exito.");
-                CargarGrilla();
+                MessageBox.Show("Ingrese Datos !!!");
+            }
+            else
+            {
+                TipoOperacion t = ObtenerDatosT();
+                bool result = ActualizarTipoOperacion(t);
+
+                if (result)
+                {
+                    MessageBox.Show("Tipo de Operacion agregada con exito.");
+                    CargarGrilla();
+                    CargarcmbCodigoOperacion();
+                }
             }
         }
 
@@ -260,6 +270,42 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
         private void btnMinimizarPantallaReg_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        private void CargarcmbCodigoOperacion()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+
+
+                String consulta = "SELECT * FROM Tipo_Transaccion";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                cmbCodigoOperacion.DataSource = tabla;
+                cmbCodigoOperacion.DisplayMember = "codigo_operacion";
+                cmbCodigoOperacion.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al cargar la Codigo Operacion ...");
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 

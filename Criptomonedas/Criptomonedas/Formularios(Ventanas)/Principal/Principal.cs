@@ -392,6 +392,12 @@ namespace Criptomonedas
             ventana.Show();
         }
 
+        private void aBMToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            ABM_TipoOperacion ventana = new ABM_TipoOperacion();
+            ventana.Show();
+        }
+
 
         // Funciones Submenu ABM Criptomonedas
 
