@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Criptomonedas.Entidades.Datos_Cliente;
 
 namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 {
     public partial class ABM_TipoDocumento : Form
     {
+        public int codigoTipoDocumento;
         public ABM_TipoDocumento()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
         private void ABM_TipoDocumento_Load(object sender, EventArgs e)
         {
             LimpiarCampos();
-            btnModificarTipoDoc.Enabled = false;
+
             try
             {
                 Cargar_Grilla();
@@ -79,7 +81,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             catch (Exception ex)
             {
 
-                throw;
             }
             finally
             {
@@ -88,7 +89,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
         }
         // -- Método de Cargar a BD
-        private bool AgregarTipoDocBD(Entidades.Datos_Cliente.Tipo_Documento tdoc)
+        private bool AgregarTipoDocBD(Tipo_Documento tdoc)
 
 
         {
@@ -99,11 +100,11 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Tipo_documento VALUES(@tipo_doc, @descripcion)";
+                string consulta = "agregarTipoDoc";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@tipo_doc", tdoc.TipoDocumento);
                 cmd.Parameters.AddWithValue("@descripcion", tdoc.DescDocumento);
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = consulta;
 
                 cn.Open();
@@ -128,7 +129,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
         }
 
         // -- Método de Cargar Campos
-        private void Cargar_Campos(Entidades.Datos_Cliente.Tipo_Documento tdoc)
+        private void Cargar_Campos(Tipo_Documento tdoc)
         {
             txtNombreDoc.Text = tdoc.TipoDocumento;
 
@@ -137,9 +138,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
         }
 
         // -- Método de Obtener Datos
-        public Entidades.Datos_Cliente.Tipo_Documento ObtenerDatosTipoDocumento()
+        public Tipo_Documento ObtenerDatosTipoDocumento()
         {
-            Entidades.Datos_Cliente.Tipo_Documento tdoc = new Entidades.Datos_Cliente.Tipo_Documento();
+            Tipo_Documento tdoc = new Tipo_Documento();
+
             tdoc.TipoDocumento = txtNombreDoc.Text.Trim();
             tdoc.DescDocumento = txtDescDoc.Text.Trim();
  
@@ -154,28 +156,33 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
             int indice = e.RowIndex;
             btnModificarTipoDoc.Enabled = true;
+            btnModificarTipoDoc.Cursor = Cursors.Hand;
+            btnEliminarTipoDoc.Enabled = true;
+            btnEliminarTipoDoc.Cursor = Cursors.Hand;
             DataGridViewRow filaSeleccionada = grdTipoDoc.Rows[indice];
-            string documento = filaSeleccionada.Cells["TipoDocumento"].Value.ToString();
-            Entidades.Datos_Cliente.Tipo_Documento tdoc = ObtenerDocumentoBD(documento);
+            int codTipoDoc = int.Parse(filaSeleccionada.Cells["Codigo_Documento"].Value.ToString());
+
+            Tipo_Documento tdoc = ObtenerDocumentoBD(codTipoDoc);
             LimpiarCampos();
             Cargar_Campos(tdoc);
+            codigoTipoDocumento = codTipoDoc;
 
         }
 
         // Método Obtener Datos TipoDocumento desde Base de Datos
-        private Entidades.Datos_Cliente.Tipo_Documento ObtenerDocumentoBD(string documento)
+        private Tipo_Documento ObtenerDocumentoBD(int codTipoDoc)
         {
 
+            Tipo_Documento tdoc = new Tipo_Documento();
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            Entidades.Datos_Cliente.Tipo_Documento tdoc = new Entidades.Datos_Cliente.Tipo_Documento();
 
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Tipo_documento where cod_tipo_doc like @documento";
+                string consulta = "SELECT * FROM Tipo_documento WHERE cod_tipo_doc like @documento";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@documento", documento);
+                cmd.Parameters.AddWithValue("@documento", codTipoDoc);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -186,7 +193,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
                 if (dr != null && dr.Read())
                 {
-                    tdoc.CodigoDocumento = (int)dr["cod_tipo_doc"];
+ 
                     tdoc.TipoDocumento = dr["tipo_doc"].ToString();
                     tdoc.DescDocumento = dr["descripcion"].ToString();
                 }
@@ -208,7 +215,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
         // Actualizar Tipo Documento
 
-        private bool ActualizarTipoDoc(Entidades.Datos_Cliente.Tipo_Documento tdoc)
+        private bool ActualizarTipoDoc(Tipo_Documento tdoc)
         {
             bool resultado = false;
 
@@ -217,10 +224,11 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Tipo_documento SET tipo_doc = @documento, descripcion = @descripcion";
+                string consulta = "UPDATE Tipo_documento SET tipo_doc = @documento, descripcion = @descripcion WHERE cod_tipo_doc like @codTipoDoc";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@documento", tdoc.TipoDocumento);
                 cmd.Parameters.AddWithValue("@descripcion", tdoc.DescDocumento);
+                cmd.Parameters.AddWithValue("@codTipoDoc", codigoTipoDocumento);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -232,7 +240,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Error al Actualizar Persona");
             }
 
             finally
@@ -244,6 +252,36 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
             return resultado;
         }
+
+        // -- Metodo para eliminar un TipoDocumento de la BD
+        private bool EliminarTipoBD()
+        {
+            bool result = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "DELETE FROM Tipo_documento WHERE cod_tipo_doc like @codTipoDoc";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codTipoDoc", codigoTipoDocumento);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar");
+            }
+            finally { cn.Close(); }
+
+            return result;
+        }
+ 
         // ---------------------------- BOTONES ----------------------------
 
 
@@ -256,7 +294,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
         // -- Botón Guardar Datos
         private void btnGuardarTipoDoc_Click(object sender, EventArgs e)
         {
-            Entidades.Datos_Cliente.Tipo_Documento tdoc = ObtenerDatosTipoDocumento();
+            Tipo_Documento tdoc = ObtenerDatosTipoDocumento();
 
             bool resultado = AgregarTipoDocBD(tdoc);
             if (resultado)
@@ -288,13 +326,15 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
         // Botón Modificar Datos
         private void btnModificarTipoDoc_Click(object sender, EventArgs e)
         {
-            Entidades.Datos_Cliente.Tipo_Documento tdoc = ObtenerDatosTipoDocumento();
+            Tipo_Documento tdoc = ObtenerDatosTipoDocumento();
             bool resultado = ActualizarTipoDoc(tdoc);
             if (resultado == true)
             {
                 MessageBox.Show("Persona actualizada con éxito");
                 LimpiarCampos();
                 Cargar_Grilla();
+                btnModificarTipoDoc.Enabled = false;
+                btnEliminarTipoDoc.Enabled = false;
             }
             else
             {
@@ -303,5 +343,22 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             }
         }
 
-    }
+        // Botón Eliminar Datos
+  
+            private void btnEliminar_Click(object sender, EventArgs e)
+            {
+                bool result = EliminarTipoBD();
+
+                if (result)
+                {
+                    MessageBox.Show("Tipo Documento eliminado con éxito!");
+                    Cargar_Grilla();
+                    LimpiarCampos();
+
+                    btnEliminarTipoDoc.Enabled = false;
+                    btnModificarTipoDoc.Enabled = false;
+                }
+
+            }
+        }
 }
