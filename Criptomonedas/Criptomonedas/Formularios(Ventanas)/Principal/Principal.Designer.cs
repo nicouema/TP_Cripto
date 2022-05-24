@@ -279,7 +279,7 @@ namespace Criptomonedas
             this.btnMaximizarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.btnMaximizarPantalla.IconColor = System.Drawing.SystemColors.Control;
             this.btnMaximizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMaximizarPantalla.IconSize = 20;
+            this.btnMaximizarPantalla.IconSize = 20
             this.btnMaximizarPantalla.Location = new System.Drawing.Point(1278, 0);
             this.btnMaximizarPantalla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnMaximizarPantalla.Name = "btnMaximizarPantalla";
@@ -413,6 +413,7 @@ namespace Criptomonedas
             this.aBMMonederosToolStripMenuItem.Name = "aBMMonederosToolStripMenuItem";
             this.aBMMonederosToolStripMenuItem.Size = new System.Drawing.Size(420, 36);
             this.aBMMonederosToolStripMenuItem.Text = "ABM Monederos";
+            this.aBMMonederosToolStripMenuItem.Click += new System.EventHandler(this.aBMMonederosToolStripMenuItem_Click);
             // 
             // aBMToolStripMenuItem
             // 
