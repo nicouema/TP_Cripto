@@ -185,8 +185,7 @@
 
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Criptomoneda.resx">
       <DependentUpon>ABM_Criptomoneda.cs</DependentUpon>
-    </EmbebbedResource>
-    </EmbeddedResource>     
+    
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Cotizaciones.resx">
       <DependentUpon>ABM_Cotizaciones.cs</DependentUpon>
     </EmbeddedResource>
