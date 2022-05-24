@@ -31,17 +31,19 @@
             this.lblABM_Criptomoneda = new System.Windows.Forms.Label();
             this.panelCriptos = new System.Windows.Forms.Panel();
             this.btnCargar = new RJCodeAdvance.RJControls.RJButton();
-            this.btnActualizar = new RJCodeAdvance.RJControls.RJButton();
             this.lblLimpiarCampos = new System.Windows.Forms.Label();
+            this.btnActualizar = new RJCodeAdvance.RJControls.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNombreCripto = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtSigla = new System.Windows.Forms.TextBox();
             this.lblSiglaCripto = new System.Windows.Forms.Label();
             this.lblNombreCripto = new System.Windows.Forms.Label();
-            this.txtNombreCripto = new System.Windows.Forms.TextBox();
-            this.txtSigla = new System.Windows.Forms.TextBox();
             this.grdCriptos = new System.Windows.Forms.DataGridView();
+            this.btnBorrar = new RJCodeAdvance.RJControls.RJButton();
             this.btnMinimizarPantallaReg = new FontAwesome.Sharp.IconButton();
             this.btnCerrarPantallaReg = new FontAwesome.Sharp.IconButton();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCriptos.SuspendLayout();
@@ -64,6 +66,7 @@
             // panelCriptos
             // 
             this.panelCriptos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCriptos.Controls.Add(this.btnBorrar);
             this.panelCriptos.Controls.Add(this.btnCargar);
             this.panelCriptos.Controls.Add(this.lblLimpiarCampos);
             this.panelCriptos.Controls.Add(this.btnActualizar);
@@ -99,6 +102,20 @@
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
+            // lblLimpiarCampos
+            // 
+            this.lblLimpiarCampos.AutoSize = true;
+            this.lblLimpiarCampos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLimpiarCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLimpiarCampos.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.lblLimpiarCampos.Location = new System.Drawing.Point(91, 123);
+            this.lblLimpiarCampos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLimpiarCampos.Name = "lblLimpiarCampos";
+            this.lblLimpiarCampos.Size = new System.Drawing.Size(112, 15);
+            this.lblLimpiarCampos.TabIndex = 44;
+            this.lblLimpiarCampos.Text = "Limpiar Campos";
+            this.lblLimpiarCampos.Click += new System.EventHandler(this.lblLimpiarCampos_Click);
+            // 
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.MediumVioletRed;
@@ -119,20 +136,6 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // lblLimpiarCampos
-            // 
-            this.lblLimpiarCampos.AutoSize = true;
-            this.lblLimpiarCampos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLimpiarCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLimpiarCampos.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.lblLimpiarCampos.Location = new System.Drawing.Point(91, 123);
-            this.lblLimpiarCampos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblLimpiarCampos.Name = "lblLimpiarCampos";
-            this.lblLimpiarCampos.Size = new System.Drawing.Size(112, 15);
-            this.lblLimpiarCampos.TabIndex = 44;
-            this.lblLimpiarCampos.Text = "Limpiar Campos";
-            this.lblLimpiarCampos.Click += new System.EventHandler(this.lblLimpiarCampos_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -142,6 +145,18 @@
             this.panel1.Size = new System.Drawing.Size(185, 1);
             this.panel1.TabIndex = 43;
             // 
+            // txtNombreCripto
+            // 
+            this.txtNombreCripto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreCripto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCripto.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtNombreCripto.Location = new System.Drawing.Point(17, 35);
+            this.txtNombreCripto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreCripto.Multiline = true;
+            this.txtNombreCripto.Name = "txtNombreCripto";
+            this.txtNombreCripto.Size = new System.Drawing.Size(186, 20);
+            this.txtNombreCripto.TabIndex = 38;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -150,6 +165,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(185, 1);
             this.panel3.TabIndex = 42;
+            // 
+            // txtSigla
+            // 
+            this.txtSigla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSigla.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSigla.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSigla.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtSigla.Location = new System.Drawing.Point(18, 87);
+            this.txtSigla.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSigla.MaxLength = 4;
+            this.txtSigla.Multiline = true;
+            this.txtSigla.Name = "txtSigla";
+            this.txtSigla.Size = new System.Drawing.Size(185, 20);
+            this.txtSigla.TabIndex = 39;
             // 
             // lblSiglaCripto
             // 
@@ -179,46 +208,41 @@
             this.lblNombreCripto.TabIndex = 40;
             this.lblNombreCripto.Text = "Nombre Criptomoneda";
             // 
-            // txtNombreCripto
-            // 
-            this.txtNombreCripto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombreCripto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCripto.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtNombreCripto.Location = new System.Drawing.Point(17, 35);
-            this.txtNombreCripto.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombreCripto.Multiline = true;
-            this.txtNombreCripto.Name = "txtNombreCripto";
-            this.txtNombreCripto.Size = new System.Drawing.Size(186, 20);
-            this.txtNombreCripto.TabIndex = 38;
-            // 
-            // txtSigla
-            // 
-            this.txtSigla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSigla.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSigla.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSigla.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtSigla.Location = new System.Drawing.Point(18, 87);
-            this.txtSigla.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSigla.MaxLength = 3;
-            this.txtSigla.Multiline = true;
-            this.txtSigla.Name = "txtSigla";
-            this.txtSigla.Size = new System.Drawing.Size(185, 20);
-            this.txtSigla.TabIndex = 39;
-            // 
             // grdCriptos
             // 
             this.grdCriptos.AllowUserToAddRows = false;
             this.grdCriptos.AllowUserToDeleteRows = false;
             this.grdCriptos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCriptos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.Sigla,
             this.Nombre});
             this.grdCriptos.Location = new System.Drawing.Point(243, 64);
             this.grdCriptos.Name = "grdCriptos";
             this.grdCriptos.ReadOnly = true;
-            this.grdCriptos.Size = new System.Drawing.Size(394, 262);
+            this.grdCriptos.Size = new System.Drawing.Size(383, 262);
             this.grdCriptos.TabIndex = 46;
             this.grdCriptos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCriptos_CellClick);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnBorrar.BackgroundColor = System.Drawing.Color.MediumVioletRed;
+            this.btnBorrar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBorrar.BorderRadius = 0;
+            this.btnBorrar.BorderSize = 0;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Location = new System.Drawing.Point(18, 189);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(91, 27);
+            this.btnBorrar.TabIndex = 45;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.TextColor = System.Drawing.Color.White;
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnMinimizarPantallaReg
             // 
@@ -232,7 +256,7 @@
             this.btnMinimizarPantallaReg.IconColor = System.Drawing.SystemColors.Control;
             this.btnMinimizarPantallaReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizarPantallaReg.IconSize = 20;
-            this.btnMinimizarPantallaReg.Location = new System.Drawing.Point(581, 0);
+            this.btnMinimizarPantallaReg.Location = new System.Drawing.Point(571, 0);
             this.btnMinimizarPantallaReg.Margin = new System.Windows.Forms.Padding(0);
             this.btnMinimizarPantallaReg.Name = "btnMinimizarPantallaReg";
             this.btnMinimizarPantallaReg.Size = new System.Drawing.Size(34, 20);
@@ -252,13 +276,21 @@
             this.btnCerrarPantallaReg.IconColor = System.Drawing.SystemColors.Control;
             this.btnCerrarPantallaReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarPantallaReg.IconSize = 30;
-            this.btnCerrarPantallaReg.Location = new System.Drawing.Point(615, 0);
+            this.btnCerrarPantallaReg.Location = new System.Drawing.Point(605, 0);
             this.btnCerrarPantallaReg.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrarPantallaReg.Name = "btnCerrarPantallaReg";
             this.btnCerrarPantallaReg.Size = new System.Drawing.Size(34, 20);
             this.btnCerrarPantallaReg.TabIndex = 23;
             this.btnCerrarPantallaReg.UseVisualStyleBackColor = false;
             this.btnCerrarPantallaReg.Click += new System.EventHandler(this.btnCerrarPantallaReg_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "codigo_cripto";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 30;
             // 
             // Sigla
             // 
@@ -274,13 +306,13 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 290;
+            this.Nombre.Width = 250;
             // 
             // ABM_Criptomoneda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 340);
+            this.ClientSize = new System.Drawing.Size(639, 340);
             this.Controls.Add(this.grdCriptos);
             this.Controls.Add(this.panelCriptos);
             this.Controls.Add(this.lblABM_Criptomoneda);
@@ -316,6 +348,8 @@
         private System.Windows.Forms.Label lblSiglaCripto;
         private System.Windows.Forms.Label lblNombreCripto;
         private System.Windows.Forms.DataGridView grdCriptos;
+        private RJCodeAdvance.RJControls.RJButton btnBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sigla;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }

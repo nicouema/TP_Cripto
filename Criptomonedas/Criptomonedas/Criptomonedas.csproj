@@ -67,6 +67,7 @@
     <Compile Include="Entidades\Datos Cliente\Pais.cs" />
     <Compile Include="Entidades\Datos Cliente\Provincias.cs" />
     <Compile Include="Entidades\Datos Cliente\TipoOperacion.cs" />
+    <Compile Include="Entidades\Ejecutivo de Cuentas\EjecutivoDeCuentas.cs" />
     <Compile Include="Entidades\Ejecutivo de Cuentas\Empresa.cs" />
     <Compile Include="Entidades\Usuario\Usuario.cs" />
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Criptomoneda.cs">
@@ -178,8 +179,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Monedero.resx">
       <DependentUpon>ABM_Monedero.cs</DependentUpon>
+
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Criptomoneda.resx">
+      <DependentUpon>ABM_Criptomoneda.cs</DependentUpon>
+  
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Criptomonedas\ABM_Cotizaciones.resx">
       <DependentUpon>ABM_Cotizaciones.cs</DependentUpon>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EjecutivoDeCuentas.resx">
       <DependentUpon>ABM_EjecutivoDeCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
+      <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>

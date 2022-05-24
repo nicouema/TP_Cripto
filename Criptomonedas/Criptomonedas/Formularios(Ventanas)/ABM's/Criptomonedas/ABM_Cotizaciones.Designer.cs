@@ -119,12 +119,13 @@
             // 
             // cmbCriptomoneda
             // 
+            this.cmbCriptomoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCriptomoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCriptomoneda.FormattingEnabled = true;
             this.cmbCriptomoneda.Location = new System.Drawing.Point(27, 105);
             this.cmbCriptomoneda.Name = "cmbCriptomoneda";
             this.cmbCriptomoneda.Size = new System.Drawing.Size(200, 26);
-            this.cmbCriptomoneda.TabIndex = 41;
+            this.cmbCriptomoneda.TabIndex = 1;
             // 
             // lblValor
             // 
@@ -150,7 +151,7 @@
             this.txtValor.Multiline = true;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(200, 30);
-            this.txtValor.TabIndex = 42;
+            this.txtValor.TabIndex = 2;
             // 
             // lblLimpiarCampos
             // 
@@ -162,7 +163,7 @@
             this.lblLimpiarCampos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLimpiarCampos.Name = "lblLimpiarCampos";
             this.lblLimpiarCampos.Size = new System.Drawing.Size(112, 15);
-            this.lblLimpiarCampos.TabIndex = 44;
+            this.lblLimpiarCampos.TabIndex = 3;
             this.lblLimpiarCampos.Text = "Limpiar Campos";
             this.lblLimpiarCampos.Click += new System.EventHandler(this.lblLimpiarCampos_Click);
             // 
@@ -181,7 +182,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(91, 29);
-            this.btnEliminar.TabIndex = 35;
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -201,7 +202,7 @@
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(91, 27);
-            this.btnGuardar.TabIndex = 34;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "CARGAR";
             this.btnGuardar.TextColor = System.Drawing.Color.White;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -222,7 +223,7 @@
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(91, 29);
-            this.btnModificar.TabIndex = 27;
+            this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "ACTUALIZAR";
             this.btnModificar.TextColor = System.Drawing.Color.White;
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -257,7 +258,7 @@
             this.gdrCotizaciones.RowHeadersWidth = 51;
             this.gdrCotizaciones.RowTemplate.Height = 24;
             this.gdrCotizaciones.Size = new System.Drawing.Size(507, 267);
-            this.gdrCotizaciones.TabIndex = 46;
+            this.gdrCotizaciones.TabIndex = 7;
             this.gdrCotizaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrBarrio_CellClick);
             // 
             // id_cotizacion

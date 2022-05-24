@@ -53,7 +53,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
                 cmbCodPvcia.DataSource = tabla;
                 cmbCodPvcia.DisplayMember = "nombre_provincia";
-                cmbCodPvcia.ValueMember = "cod_provincia";
+                cmbCodPvcia.ValueMember = "cod_provincia";  
                 cmbCodPvcia.SelectedIndex = -1;
             }
             catch (Exception)
