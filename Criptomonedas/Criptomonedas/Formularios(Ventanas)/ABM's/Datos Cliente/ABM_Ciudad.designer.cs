@@ -37,9 +37,9 @@
             this.lblNombreBarrio = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnGuardarTipoDoc = new RJCodeAdvance.RJControls.RJButton();
+            this.btnGuardar = new RJCodeAdvance.RJControls.RJButton();
             this.txtNombreCiudad = new System.Windows.Forms.TextBox();
-            this.btnModificarTipoDoc = new RJCodeAdvance.RJControls.RJButton();
+            this.btnModificar = new RJCodeAdvance.RJControls.RJButton();
             this.lblLimpiarCampos = new System.Windows.Forms.Label();
             this.lblCiudadBarrio = new System.Windows.Forms.Label();
             this.cmbCodPvcia = new System.Windows.Forms.ComboBox();
@@ -80,6 +80,8 @@
             this.grdCiudad.RowTemplate.Height = 24;
             this.grdCiudad.Size = new System.Drawing.Size(465, 300);
             this.grdCiudad.TabIndex = 52;
+            this.grdCiudad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrCiudad_CellClick);
+            this.grdCiudad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCiudad_CellContentClick);
             // 
             // btnMinimizarPantallaReg
             // 
@@ -128,9 +130,9 @@
             this.panel5.Controls.Add(this.lblNombreBarrio);
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Controls.Add(this.panel1);
-            this.panel5.Controls.Add(this.btnGuardarTipoDoc);
+            this.panel5.Controls.Add(this.btnGuardar);
             this.panel5.Controls.Add(this.txtNombreCiudad);
-            this.panel5.Controls.Add(this.btnModificarTipoDoc);
+            this.panel5.Controls.Add(this.btnModificar);
             this.panel5.Controls.Add(this.lblLimpiarCampos);
             this.panel5.Controls.Add(this.lblCiudadBarrio);
             this.panel5.Controls.Add(this.cmbCodPvcia);
@@ -192,25 +194,25 @@
             this.panel1.Size = new System.Drawing.Size(200, 1);
             this.panel1.TabIndex = 63;
             // 
-            // btnGuardarTipoDoc
+            // btnGuardar
             // 
-            this.btnGuardarTipoDoc.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnGuardarTipoDoc.BackgroundColor = System.Drawing.Color.MediumVioletRed;
-            this.btnGuardarTipoDoc.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnGuardarTipoDoc.BorderRadius = 0;
-            this.btnGuardarTipoDoc.BorderSize = 0;
-            this.btnGuardarTipoDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarTipoDoc.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarTipoDoc.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarTipoDoc.Location = new System.Drawing.Point(12, 197);
-            this.btnGuardarTipoDoc.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuardarTipoDoc.Name = "btnGuardarTipoDoc";
-            this.btnGuardarTipoDoc.Size = new System.Drawing.Size(91, 27);
-            this.btnGuardarTipoDoc.TabIndex = 34;
-            this.btnGuardarTipoDoc.Text = "CARGAR";
-            this.btnGuardarTipoDoc.TextColor = System.Drawing.Color.White;
-            this.btnGuardarTipoDoc.UseVisualStyleBackColor = false;
-            this.btnGuardarTipoDoc.Click += new System.EventHandler(this.btnGuardarTipoDoc_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnGuardar.BackgroundColor = System.Drawing.Color.MediumVioletRed;
+            this.btnGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnGuardar.BorderRadius = 0;
+            this.btnGuardar.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(12, 197);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(91, 27);
+            this.btnGuardar.TabIndex = 34;
+            this.btnGuardar.Text = "CARGAR";
+            this.btnGuardar.TextColor = System.Drawing.Color.White;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardarTipoDoc_Click);
             // 
             // txtNombreCiudad
             // 
@@ -224,24 +226,25 @@
             this.txtNombreCiudad.Size = new System.Drawing.Size(200, 30);
             this.txtNombreCiudad.TabIndex = 57;
             // 
-            // btnModificarTipoDoc
+            // btnModificar
             // 
-            this.btnModificarTipoDoc.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnModificarTipoDoc.BackgroundColor = System.Drawing.Color.MediumVioletRed;
-            this.btnModificarTipoDoc.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnModificarTipoDoc.BorderRadius = 0;
-            this.btnModificarTipoDoc.BorderSize = 0;
-            this.btnModificarTipoDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarTipoDoc.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarTipoDoc.ForeColor = System.Drawing.Color.White;
-            this.btnModificarTipoDoc.Location = new System.Drawing.Point(12, 227);
-            this.btnModificarTipoDoc.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificarTipoDoc.Name = "btnModificarTipoDoc";
-            this.btnModificarTipoDoc.Size = new System.Drawing.Size(91, 29);
-            this.btnModificarTipoDoc.TabIndex = 27;
-            this.btnModificarTipoDoc.Text = "ACTUALIZAR";
-            this.btnModificarTipoDoc.TextColor = System.Drawing.Color.White;
-            this.btnModificarTipoDoc.UseVisualStyleBackColor = false;
+            this.btnModificar.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnModificar.BackgroundColor = System.Drawing.Color.MediumVioletRed;
+            this.btnModificar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnModificar.BorderRadius = 0;
+            this.btnModificar.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(12, 227);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(91, 29);
+            this.btnModificar.TabIndex = 27;
+            this.btnModificar.Text = "ACTUALIZAR";
+            this.btnModificar.TextColor = System.Drawing.Color.White;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // lblLimpiarCampos
             // 
@@ -284,7 +287,7 @@
             // id
             // 
             this.id.DataPropertyName = "cod_ciudad";
-            this.id.HeaderText = "id";
+            this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
@@ -332,8 +335,8 @@
         private FontAwesome.Sharp.IconButton btnMinimizarPantallaReg;
         private FontAwesome.Sharp.IconButton btnCerrarPantallaReg;
         private System.Windows.Forms.Panel panel5;
-        private RJCodeAdvance.RJControls.RJButton btnGuardarTipoDoc;
-        private RJCodeAdvance.RJControls.RJButton btnModificarTipoDoc;
+        private RJCodeAdvance.RJControls.RJButton btnGuardar;
+        private RJCodeAdvance.RJControls.RJButton btnModificar;
         private System.Windows.Forms.Label lblLimpiarCampos;
         private System.Windows.Forms.Label lblNombreBarrio;
         private System.Windows.Forms.TextBox txtNombreCiudad;

@@ -317,6 +317,7 @@ namespace Criptomonedas
             this.SM_ABM_DatosCliente.Name = "subMenu1";
             this.SM_ABM_DatosCliente.PrimaryColor = System.Drawing.Color.DarkViolet;
             this.SM_ABM_DatosCliente.Size = new System.Drawing.Size(211, 224);
+            this.SM_ABM_DatosCliente.Opening += new System.ComponentModel.CancelEventHandler(this.SM_ABM_DatosCliente_Opening);
             // 
             // btnAltaPais
             // 
@@ -371,6 +372,7 @@ namespace Criptomonedas
             this.altaTeléfonoToolStripMenuItem.Name = "altaTeléfonoToolStripMenuItem";
             this.altaTeléfonoToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.altaTeléfonoToolStripMenuItem.Text = "Alta Teléfono";
+            this.altaTeléfonoToolStripMenuItem.Click += new System.EventHandler(this.altaTeléfonoToolStripMenuItem_Click);
             // 
             // modificarClienteToolStripMenuItem
             // 

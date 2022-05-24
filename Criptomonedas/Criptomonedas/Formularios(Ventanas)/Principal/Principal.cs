@@ -392,6 +392,18 @@ namespace Criptomonedas
             ventana.Show();
         }
 
+        private void altaTeléfonoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Telefono ventana = new ABM_Telefono();
+
+            ventana.Show();
+        }
+
+        private void SM_ABM_DatosCliente_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
 
         // Funciones Submenu ABM Criptomonedas
 

@@ -66,6 +66,7 @@
     <Compile Include="Entidades\Datos Cliente\Cliente.cs" />
     <Compile Include="Entidades\Datos Cliente\Pais.cs" />
     <Compile Include="Entidades\Datos Cliente\Provincias.cs" />
+    <Compile Include="Entidades\Datos Cliente\Telefono.cs" />
     <Compile Include="Entidades\Datos Cliente\TipoOperacion.cs" />
     <Compile Include="Entidades\Ejecutivo de Cuentas\Empresa.cs" />
     <Compile Include="Entidades\Usuario\Usuario.cs" />
@@ -134,6 +135,12 @@
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Cliente.Designer.cs">
       <DependentUpon>ABM_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Telefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Telefono.Designer.cs">
+      <DependentUpon>ABM_Telefono.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EjecutivoDeCuentas.cs">
       <SubType>Form</SubType>
@@ -207,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Cliente.resx">
       <DependentUpon>ABM_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Datos Cliente\ABM_Telefono.resx">
+      <DependentUpon>ABM_Telefono.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EjecutivoDeCuentas.resx">
       <DependentUpon>ABM_EjecutivoDeCuentas.cs</DependentUpon>

@@ -14,11 +14,11 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 {
     public partial class ABM_Ciudad : Form
     {
+        public int codigoCiudad;// Se usa para obtener el codigo del barrio que el usuario selecciona en la grilla
         public ABM_Ciudad()
         {
             InitializeComponent();
         }
-
 
         private void ABM_Ciudades_Load(object sender, EventArgs e)
         {
@@ -65,35 +65,56 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
                 cn.Close();
             }
         }
-
-        private bool DeleteProvinciasDB(Ciudad ciudad)
+        // -- Metodo cargar datos de la BD a la grilla
+        public void getTableGrillaCiudad()
         {
-            bool result = false;
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "DELETE FROM Ciudad WHERE cod_ciudad = @codCiudad";
+                string consulta = "SELECT * from Ciudad";
+
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@codCiudad", ciudad.NombreCiudad);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                result = true;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter Da = new SqlDataAdapter(cmd);
+                Da.Fill(tabla);
+
+                grdCiudad.DataSource = tabla;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
-            finally { cn.Close(); }
-
-            return result;
+            finally
+            {
+                cn.Close();
+            }
         }
-
+        private void cargarGrilla()
+        {
+            try
+            {
+                getTableGrillaCiudad();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("[ERROR - Ciudad Form]: No se pudo traer el listado de ciudades");
+            }
+        }
+        // Metodo cargar campos del form
+        private void CargarCampos(Ciudad c)
+        {
+            txtNombreCiudad.Text = c.NombreCiudad;
+            cmbCodPvcia.SelectedValue = c.CodProvincia;
+        }
 
         // -- Metodo Obtener Datos del Barrio
         private Ciudad ObtenerDatosCiudad()
@@ -105,6 +126,41 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             return c;
         }
 
+        // -- Metodo de obtener datos del barrio de la BD
+        private Ciudad ObtenerDatosCiudadBD(int codCiudad)
+        {
+            Ciudad c = new Ciudad();
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * FROM Ciudad WHERE cod_ciudad like @codCiudad";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codCiudad", codCiudad);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr != null && dr.Read())
+                {
+                    c.NombreCiudad = dr["nombre_ciudad"].ToString();
+                    c.CodProvincia = int.Parse(dr["cod_provincia"].ToString());
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { cn.Close(); }
+
+            return c;
+        }
+        // -- Metodo agregar ciudad a la BD
         private bool AgregarCiudadCD(Ciudad c)
         {
             bool result = false;
@@ -133,8 +189,64 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
             return result;
         }
+        // -- Metodo actualizar barrio de la BD
+        private bool ActualizarCiudadBD(Ciudad c)
+        {
+            bool result = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "UPDATE Ciudad SET nombre_ciudad=@nombreCiudad, cod_provincia=@codProvincia WHERE cod_ciudad like @codCiudad";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombreCiudad", c.NombreCiudad);
+                cmd.Parameters.AddWithValue("@codProvincia", c.CodProvincia);
+                cmd.Parameters.AddWithValue("@codCiudad", codigoCiudad);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
 
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                result = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { cn.Close(); }
 
+            return result;
+        }
+        // -- Metodo para eliminar un barrio de la BD
+        private bool EliminarCiudadBD()
+        {
+            bool result = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "DELETE FROM Ciudad WHERE cod_ciudad like @codCiudad";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codCiudad", codigoCiudad);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                result = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { cn.Close(); }
+
+            return result;
+        }
         // -- Método Limpiar Campos
         private void LimpiarCampos()
         {
@@ -171,6 +283,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
                 MessageBox.Show("Ciudad agregada con exito.");
                 LimpiarCampos();
                 CargarComboProvincia();
+                cargarGrilla();
             }
             else
             {
@@ -183,89 +296,64 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
         }
 
-        public void getTableGrillaCiudad()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-
-                SqlCommand cmd = new SqlCommand();
-
-                string consulta = "SELECT * from Ciudad";
-
-                cmd.Parameters.Clear();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter Da = new SqlDataAdapter(cmd);
-                Da.Fill(tabla);
-
-                grdCiudad.DataSource = tabla;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-
-        private void cargarGrilla()
-        {
-            try
-            {
-                getTableGrillaCiudad();
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show("[ERROR - Provincias Form]: No se pudo traer el listado de provincias");
-            }
-        }
-        private void CargarCampos(int txtCiudad, string txtProvincia)
-        {
-            txtNombreCiudad.Text = txtCiudad.ToString();
-            cmbCodPvcia.SelectedIndex = int.Parse(txtProvincia);
-        }
         // Click cell
-        private void grillaProvincias_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void gdrCiudad_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            if (indice > -1)
             {
+                int indice = e.RowIndex;
+                btnModificar.Enabled = true;
+                btnModificar.Cursor = Cursors.Hand;
+                btnEliminar.Enabled = true;
+                btnEliminar.Cursor = Cursors.Hand;
                 DataGridViewRow filaSeleccionada = grdCiudad.Rows[indice];
-                int txtCiudad = (int)filaSeleccionada.Cells["nombre_ciudad"].Value;
+                int codCiudad = int.Parse(filaSeleccionada.Cells["id"].Value.ToString());
 
-                string txtProvincia = (string)filaSeleccionada.Cells["cod_provincia"].Value;
+                Ciudad c = ObtenerDatosCiudadBD(codCiudad);
 
-                CargarCampos(txtCiudad, txtProvincia);
+                LimpiarCampos();
+                CargarCampos(c);
+                codigoCiudad = codCiudad;
             }
         }
-
-        private void btnEliminar_Click_1(object sender, EventArgs e)
+        // -- Boton de actualizar datos cargados del barrio
+        private void btnModificar_Click_1(object sender, EventArgs e)
         {
-            Ciudad provincias = ObtenerDatosCiudad();
-            bool result = DeleteProvinciasDB(provincias);
+            Ciudad c = ObtenerDatosCiudad();
+            bool result = ActualizarCiudadBD(c);
 
             if (result)
             {
-                MessageBox.Show("Provincia eliminada con exito.");
-                LimpiarCampos();
-                CargarComboProvincia();
+                MessageBox.Show("Ciudad actualizada con exito.");
                 cargarGrilla();
-            }
-            else
-            {
-                MessageBox.Show("Error al eliminar provincia.");
+                CargarComboProvincia();
+                LimpiarCampos();
+
+                btnEliminar.Enabled = false;
+                btnModificar.Enabled = false;
             }
         }
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            bool result = EliminarCiudadBD();
+
+            if (result)
+            {
+                MessageBox.Show("Ciudad eliminada con exito.");
+                cargarGrilla();
+                CargarComboProvincia();
+                LimpiarCampos();
+
+                btnEliminar.Enabled = false;
+                btnModificar.Enabled = false;
+            }
+        }
+
+        private void grdCiudad_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        
     }
 }

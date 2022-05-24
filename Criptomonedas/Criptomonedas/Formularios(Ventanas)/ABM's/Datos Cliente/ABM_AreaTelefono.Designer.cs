@@ -234,6 +234,7 @@
             this.idUpdate.TabIndex = 46;
             this.idUpdate.Text = "label1";
             this.idUpdate.Visible = false;
+            this.idUpdate.Click += new System.EventHandler(this.idUpdate_Click);
             // 
             // gridAreaTelefonica
             // 
@@ -251,6 +252,7 @@
             this.gridAreaTelefonica.Size = new System.Drawing.Size(454, 325);
             this.gridAreaTelefonica.TabIndex = 47;
             this.gridAreaTelefonica.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaAreaTelefonica_CellClick);
+            this.gridAreaTelefonica.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAreaTelefonica_CellContentClick);
             // 
             // cod_país
             // 

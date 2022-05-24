@@ -246,6 +246,7 @@
             this.gdrBarrio.Size = new System.Drawing.Size(503, 267);
             this.gdrBarrio.TabIndex = 7;
             this.gdrBarrio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrBarrio_CellClick);
+            this.gdrBarrio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdrBarrio_CellContentClick);
             // 
             // Codigo_Barrio
             // 

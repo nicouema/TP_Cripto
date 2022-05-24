@@ -11,8 +11,6 @@ namespace Criptomonedas.Entidades.Datos_Cliente
         public string NombreCiudad { get; set; }
         public int CodProvincia { get; set; }
 
-
-
         public Ciudad(string nomCiudad, int codProvincia)
         {
             NombreCiudad = nomCiudad;
