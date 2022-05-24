@@ -325,5 +325,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
                 btnModificar.Enabled = false;
             }
         }
+
+        private void gdrBarrio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

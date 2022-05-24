@@ -342,5 +342,15 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
                 MessageBox.Show("Error al eliminar área telefónica.");
             }
         }
+
+        private void gridAreaTelefonica_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void idUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
