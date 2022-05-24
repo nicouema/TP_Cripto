@@ -16,7 +16,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas;
-using Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_CuentasCleite;
+using Criptomonedas.Formularios_Ventanas_.ABM_s.ABM_Cliente;
 
 namespace Criptomonedas
 {
@@ -404,6 +404,12 @@ namespace Criptomonedas
 
         }
 
+        private void aBMMonederosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Monedero ventana = new ABM_Monedero();
+
+            ventana.Show();
+        }
 
         // Funciones Submenu ABM Criptomonedas
 

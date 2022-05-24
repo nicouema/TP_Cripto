@@ -30,7 +30,11 @@
         {
             this.lblABM_TipoDocumento = new System.Windows.Forms.Label();
             this.grdTipoDoc = new System.Windows.Forms.DataGridView();
+            this.Codigo_Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarTipoDoc = new RJCodeAdvance.RJControls.RJButton();
             this.btnGuardarTipoDoc = new RJCodeAdvance.RJControls.RJButton();
             this.btnModificarTipoDoc = new RJCodeAdvance.RJControls.RJButton();
             this.lblLimpiarCampos = new System.Windows.Forms.Label();
@@ -42,9 +46,6 @@
             this.txtDescDoc = new System.Windows.Forms.TextBox();
             this.btnMinimizarPantallaReg = new FontAwesome.Sharp.IconButton();
             this.btnCerrarPantallaReg = new FontAwesome.Sharp.IconButton();
-            this.CodigoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdTipoDoc)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +68,7 @@
             this.grdTipoDoc.AllowUserToDeleteRows = false;
             this.grdTipoDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTipoDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodigoDocumento,
+            this.Codigo_Documento,
             this.TipoDocumento,
             this.Descripción});
             this.grdTipoDoc.Location = new System.Drawing.Point(291, 94);
@@ -76,12 +77,40 @@
             this.grdTipoDoc.ReadOnly = true;
             this.grdTipoDoc.RowHeadersWidth = 51;
             this.grdTipoDoc.RowTemplate.Height = 24;
-            this.grdTipoDoc.Size = new System.Drawing.Size(819, 324);
+            this.grdTipoDoc.Size = new System.Drawing.Size(809, 324);
             this.grdTipoDoc.TabIndex = 30;
-            this.grdTipoDoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTipoDoc_CellClick);
+            this.grdTipoDoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdTipoDoc_CellClick);
+            // 
+            // Codigo_Documento
+            // 
+            this.Codigo_Documento.DataPropertyName = "cod_tipo_doc";
+            this.Codigo_Documento.HeaderText = "Cod. Documento";
+            this.Codigo_Documento.MinimumWidth = 6;
+            this.Codigo_Documento.Name = "Codigo_Documento";
+            this.Codigo_Documento.ReadOnly = true;
+            this.Codigo_Documento.Width = 125;
+            // 
+            // TipoDocumento
+            // 
+            this.TipoDocumento.DataPropertyName = "tipo_doc";
+            this.TipoDocumento.HeaderText = "Tipo Documento";
+            this.TipoDocumento.MinimumWidth = 6;
+            this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
+            this.TipoDocumento.Width = 300;
+            // 
+            // Descripción
+            // 
+            this.Descripción.DataPropertyName = "descripcion";
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.MinimumWidth = 6;
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            this.Descripción.Width = 1000;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnEliminarTipoDoc);
             this.panel1.Controls.Add(this.btnGuardarTipoDoc);
             this.panel1.Controls.Add(this.btnModificarTipoDoc);
             this.panel1.Controls.Add(this.lblLimpiarCampos);
@@ -96,6 +125,26 @@
             this.panel1.Size = new System.Drawing.Size(273, 311);
             this.panel1.TabIndex = 38;
             // 
+            // btnEliminarTipoDoc
+            // 
+            this.btnEliminarTipoDoc.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnEliminarTipoDoc.BackgroundColor = System.Drawing.Color.MediumVioletRed;
+            this.btnEliminarTipoDoc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEliminarTipoDoc.BorderRadius = 0;
+            this.btnEliminarTipoDoc.BorderSize = 0;
+            this.btnEliminarTipoDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarTipoDoc.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarTipoDoc.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarTipoDoc.Location = new System.Drawing.Point(135, 268);
+            this.btnEliminarTipoDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarTipoDoc.Name = "btnEliminarTipoDoc";
+            this.btnEliminarTipoDoc.Size = new System.Drawing.Size(121, 34);
+            this.btnEliminarTipoDoc.TabIndex = 46;
+            this.btnEliminarTipoDoc.Text = "ELIMINAR";
+            this.btnEliminarTipoDoc.TextColor = System.Drawing.Color.White;
+            this.btnEliminarTipoDoc.UseVisualStyleBackColor = false;
+            this.btnEliminarTipoDoc.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // btnGuardarTipoDoc
             // 
             this.btnGuardarTipoDoc.BackColor = System.Drawing.Color.MediumVioletRed;
@@ -106,7 +155,7 @@
             this.btnGuardarTipoDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarTipoDoc.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarTipoDoc.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarTipoDoc.Location = new System.Drawing.Point(8, 276);
+            this.btnGuardarTipoDoc.Location = new System.Drawing.Point(8, 233);
             this.btnGuardarTipoDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarTipoDoc.Name = "btnGuardarTipoDoc";
             this.btnGuardarTipoDoc.Size = new System.Drawing.Size(121, 33);
@@ -126,7 +175,7 @@
             this.btnModificarTipoDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarTipoDoc.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarTipoDoc.ForeColor = System.Drawing.Color.White;
-            this.btnModificarTipoDoc.Location = new System.Drawing.Point(135, 275);
+            this.btnModificarTipoDoc.Location = new System.Drawing.Point(135, 233);
             this.btnModificarTipoDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificarTipoDoc.Name = "btnModificarTipoDoc";
             this.btnModificarTipoDoc.Size = new System.Drawing.Size(121, 34);
@@ -147,6 +196,7 @@
             this.lblLimpiarCampos.Size = new System.Drawing.Size(131, 18);
             this.lblLimpiarCampos.TabIndex = 43;
             this.lblLimpiarCampos.Text = "Limpiar Campos";
+            this.lblLimpiarCampos.Click += new System.EventHandler(this.lblLimpiarCampos_Click);
             // 
             // panel3
             // 
@@ -256,32 +306,6 @@
             this.btnCerrarPantallaReg.UseVisualStyleBackColor = false;
             this.btnCerrarPantallaReg.Click += new System.EventHandler(this.btnCerrarPantallaReg_Click);
             // 
-            // CodigoDocumento
-            // 
-            this.CodigoDocumento.HeaderText = "Cod. Documento";
-            this.CodigoDocumento.MinimumWidth = 6;
-            this.CodigoDocumento.Name = "CodigoDocumento";
-            this.CodigoDocumento.ReadOnly = true;
-            this.CodigoDocumento.Width = 125;
-            // 
-            // TipoDocumento
-            // 
-            this.TipoDocumento.DataPropertyName = "tipo_doc";
-            this.TipoDocumento.HeaderText = "Tipo Documento";
-            this.TipoDocumento.MinimumWidth = 6;
-            this.TipoDocumento.Name = "TipoDocumento";
-            this.TipoDocumento.ReadOnly = true;
-            this.TipoDocumento.Width = 300;
-            // 
-            // Descripción
-            // 
-            this.Descripción.DataPropertyName = "descripcion";
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.MinimumWidth = 6;
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
-            this.Descripción.Width = 1000;
-            // 
             // ABM_TipoDocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -323,7 +347,8 @@
         private System.Windows.Forms.TextBox txtDescDoc;
         private RJCodeAdvance.RJControls.RJButton btnGuardarTipoDoc;
         private RJCodeAdvance.RJControls.RJButton btnModificarTipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoDocumento;
+        private RJCodeAdvance.RJControls.RJButton btnEliminarTipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
     }

@@ -12,9 +12,9 @@ namespace Criptomonedas.Entidades.Datos_Cliente
             public string tipo_operacion { get; set; }
             public string  descripcion  { get; set; }
 
-            public int codigo_operacion { get; set; }
+            public string codigo_operacion { get; set; }
 
-        public TipoOperacion(string Tipo_Operacion, string Descripcion, int codigoOperacion)
+        public TipoOperacion(string Tipo_Operacion, string Descripcion, string codigoOperacion)
             {
                 tipo_operacion = Tipo_Operacion;
                 descripcion = Descripcion;
