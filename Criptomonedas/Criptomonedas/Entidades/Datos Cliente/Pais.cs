@@ -10,10 +10,10 @@ namespace Criptomonedas.Entidades.Datos_Cliente
     {
         public string NombrePais { get; set; }
         
-        public int codigoPais { get; set; }
+        public string codigoPais { get; set; }
 
 
-        public Pais(string nomPais, int codigo)
+        public Pais(string nomPais, string codigo)
         {
             NombrePais = nomPais;
             codigoPais = codigo;

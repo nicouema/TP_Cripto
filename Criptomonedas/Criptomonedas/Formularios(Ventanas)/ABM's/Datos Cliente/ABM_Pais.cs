@@ -21,7 +21,9 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             CargarGrilla();
+            Limpiar();
         }
         private void grdPais_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -31,6 +33,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
         private void Limpiar()
         {
             txtPais.Text = "";
+            cmbCodigoPais.SelectedIndex = -1;
         }
       
         private void lblLimpiarCampos_Click(object sender, EventArgs e)
@@ -40,9 +43,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
         private Pais ObtenerDatosPais()
         {
+            int cod = cmbCodigoPais.SelectedIndex + 1;
             Pais p = new Pais();
             p.NombrePais = txtPais.Text.Trim();
-            p.codigoPais = Convert.ToInt32(txtCodigopais.Text);
+            p.codigoPais = cod.ToString();
             return p;
         }
 
@@ -54,8 +58,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             {
 
                 SqlCommand cmd = new SqlCommand();
-
-
                 String consulta = "SELECT * FROM País";
                 cmd.Parameters.Clear();
 
@@ -74,7 +76,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error al cargar la grilla ...");
+                MessageBox.Show("Error al cargar la tabla");
             }
             finally
             {
@@ -134,7 +136,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             }
             else
             {
-                string pais = txtPais.Text;
+                string pais = txtPais.Text.Trim();
                 bool resultado = false;
                 try
                 {
@@ -165,7 +167,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO País nombre_país VALUE @nombrePais";
+                string consulta = "INSERT INTO País (nombre_país) VALUES (@nombrePais)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombrePais", p.NombrePais);
                 
@@ -189,15 +191,22 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Pais p = ObtenerDatosPais();
-            bool result = AgregarPaisBD(p);
-
-            if (result)
+            if (txtPais.Text.Equals(""))
             {
-                MessageBox.Show("Pais agregado con exito.");
-                CargarGrilla();
+                MessageBox.Show("Ingrese Pais !!!");
             }
-            
+            else
+            {
+                Pais p = ObtenerDatosPais();
+                bool result = AgregarPaisBD(p);
+
+                if (result)
+                {
+                    MessageBox.Show("Pais agregado con exito.");
+                    CargarGrilla();
+                    CargarComboCodigo();
+                }
+            }
         }
 
         private bool ModificarPais(Pais p)
@@ -222,7 +231,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al Agregar dato");
+                MessageBox.Show("Error al Modificar dato");
             }
             finally { cn.Close(); }
 
@@ -242,22 +251,68 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
 
         private void ABM_Pais_Load(object sender, EventArgs e)
         {
-
+            CargarGrilla();
+            Limpiar();
+            CargarComboCodigo();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Pais p = ObtenerDatosPais();
-            bool result = ModificarPais(p);
-
-            if (result)
+            if (txtPais.Text.Equals(""))
             {
-                MessageBox.Show("Pais modificado con exito.");
-                CargarGrilla();
+                MessageBox.Show("Ingrese Pais !!!");
+            }
+            else
+            {
+                Pais p = ObtenerDatosPais();
+                bool result = ModificarPais(p);
+
+                if (result)
+                {
+                    MessageBox.Show("Pais modificado con exito.");
+                    CargarGrilla();
+                }
+            }
+        }
+        private void CargarComboCodigo()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                String consulta = "SELECT * FROM País";
+                cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                cmbCodigoPais.DataSource = tabla;
+                cmbCodigoPais.DisplayMember = "cod_país";
+                cmbCodigoPais.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al cargar codigo pais");
+            }
+            finally
+            {
+                cn.Close();
             }
 
         }
+
     }
+
 }
 
     
