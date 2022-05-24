@@ -48,6 +48,8 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.btnMinimizarPantallaReg = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.cmbCodigoOperacion = new System.Windows.Forms.ComboBox();
+            this.btnMinimizarPantallaABMCLiente = new FontAwesome.Sharp.IconButton();
+            this.btnCerrarPantallaABMCliente = new FontAwesome.Sharp.IconButton();
             this.panelBotonesBarrio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdPais)).BeginInit();
             this.SuspendLayout();
@@ -62,10 +64,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.ButtonConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonConsulta.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonConsulta.ForeColor = System.Drawing.Color.White;
-            this.ButtonConsulta.Location = new System.Drawing.Point(476, 444);
-            this.ButtonConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonConsulta.Location = new System.Drawing.Point(238, 231);
+            this.ButtonConsulta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonConsulta.Name = "ButtonConsulta";
-            this.ButtonConsulta.Size = new System.Drawing.Size(182, 56);
+            this.ButtonConsulta.Size = new System.Drawing.Size(91, 29);
             this.ButtonConsulta.TabIndex = 50;
             this.ButtonConsulta.Text = "CONSULTA";
             this.ButtonConsulta.TextColor = System.Drawing.Color.White;
@@ -77,11 +79,11 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.txtTipoOperacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTipoOperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoOperacion.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtTipoOperacion.Location = new System.Drawing.Point(58, 317);
-            this.txtTipoOperacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTipoOperacion.Location = new System.Drawing.Point(29, 165);
+            this.txtTipoOperacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTipoOperacion.Multiline = true;
             this.txtTipoOperacion.Name = "txtTipoOperacion";
-            this.txtTipoOperacion.Size = new System.Drawing.Size(400, 58);
+            this.txtTipoOperacion.Size = new System.Drawing.Size(200, 30);
             this.txtTipoOperacion.TabIndex = 49;
             // 
             // lblTipoOperacion
@@ -91,10 +93,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.lblTipoOperacion.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblTipoOperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoOperacion.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTipoOperacion.Location = new System.Drawing.Point(52, 275);
-            this.lblTipoOperacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoOperacion.Location = new System.Drawing.Point(26, 143);
+            this.lblTipoOperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoOperacion.Name = "lblTipoOperacion";
-            this.lblTipoOperacion.Size = new System.Drawing.Size(233, 29);
+            this.lblTipoOperacion.Size = new System.Drawing.Size(125, 15);
             this.lblTipoOperacion.TabIndex = 48;
             this.lblTipoOperacion.Text = "Tipo de Operacion";
             // 
@@ -102,10 +104,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             // 
             this.panelBotonesBarrio.Controls.Add(this.btnGuardar);
             this.panelBotonesBarrio.Controls.Add(this.btnModificar);
-            this.panelBotonesBarrio.Location = new System.Drawing.Point(26, 567);
-            this.panelBotonesBarrio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBotonesBarrio.Location = new System.Drawing.Point(13, 295);
+            this.panelBotonesBarrio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelBotonesBarrio.Name = "panelBotonesBarrio";
-            this.panelBotonesBarrio.Size = new System.Drawing.Size(432, 62);
+            this.panelBotonesBarrio.Size = new System.Drawing.Size(216, 32);
             this.panelBotonesBarrio.TabIndex = 47;
             // 
             // btnGuardar
@@ -118,10 +120,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(18, 4);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(9, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(182, 52);
+            this.btnGuardar.Size = new System.Drawing.Size(91, 27);
             this.btnGuardar.TabIndex = 34;
             this.btnGuardar.Text = "CARGAR";
             this.btnGuardar.TextColor = System.Drawing.Color.White;
@@ -138,10 +140,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(236, 2);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Location = new System.Drawing.Point(118, 1);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(182, 56);
+            this.btnModificar.Size = new System.Drawing.Size(91, 29);
             this.btnModificar.TabIndex = 27;
             this.btnModificar.Text = "ACTUALIZAR";
             this.btnModificar.TextColor = System.Drawing.Color.White;
@@ -156,10 +158,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.lblLimpiarCampos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLimpiarCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLimpiarCampos.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.lblLimpiarCampos.Location = new System.Drawing.Point(144, 656);
-            this.lblLimpiarCampos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLimpiarCampos.Location = new System.Drawing.Point(72, 341);
+            this.lblLimpiarCampos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLimpiarCampos.Name = "lblLimpiarCampos";
-            this.lblLimpiarCampos.Size = new System.Drawing.Size(205, 31);
+            this.lblLimpiarCampos.Size = new System.Drawing.Size(114, 17);
             this.lblLimpiarCampos.TabIndex = 46;
             this.lblLimpiarCampos.Text = "Limpiar Campos";
             this.lblLimpiarCampos.Click += new System.EventHandler(this.lblLimpiarCampos_Click);
@@ -170,10 +172,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.lblABM_TOP.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblABM_TOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblABM_TOP.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.lblABM_TOP.Location = new System.Drawing.Point(12, 10);
-            this.lblABM_TOP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblABM_TOP.Location = new System.Drawing.Point(6, 5);
+            this.lblABM_TOP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblABM_TOP.Name = "lblABM_TOP";
-            this.lblABM_TOP.Size = new System.Drawing.Size(645, 73);
+            this.lblABM_TOP.Size = new System.Drawing.Size(333, 37);
             this.lblABM_TOP.TabIndex = 45;
             this.lblABM_TOP.Text = "ABM Tipo Operacion";
             // 
@@ -189,10 +191,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.btnCerrarPantallaReg.IconColor = System.Drawing.SystemColors.Control;
             this.btnCerrarPantallaReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarPantallaReg.IconSize = 30;
-            this.btnCerrarPantallaReg.Location = new System.Drawing.Point(1770, -2);
+            this.btnCerrarPantallaReg.Location = new System.Drawing.Point(967, -1);
             this.btnCerrarPantallaReg.Margin = new System.Windows.Forms.Padding(0);
             this.btnCerrarPantallaReg.Name = "btnCerrarPantallaReg";
-            this.btnCerrarPantallaReg.Size = new System.Drawing.Size(68, 38);
+            this.btnCerrarPantallaReg.Size = new System.Drawing.Size(34, 20);
             this.btnCerrarPantallaReg.TabIndex = 52;
             this.btnCerrarPantallaReg.UseVisualStyleBackColor = false;
             // 
@@ -205,13 +207,13 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.cod_Operacion,
             this.Tipo_operacion,
             this.descripcion});
-            this.grdPais.Location = new System.Drawing.Point(696, 71);
-            this.grdPais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grdPais.Location = new System.Drawing.Point(348, 37);
+            this.grdPais.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grdPais.Name = "grdPais";
             this.grdPais.ReadOnly = true;
             this.grdPais.RowHeadersWidth = 51;
             this.grdPais.RowTemplate.Height = 24;
-            this.grdPais.Size = new System.Drawing.Size(887, 558);
+            this.grdPais.Size = new System.Drawing.Size(444, 290);
             this.grdPais.TabIndex = 53;
             // 
             // cod_Operacion
@@ -248,10 +250,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label1.Location = new System.Drawing.Point(52, 398);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(26, 207);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 29);
+            this.label1.Size = new System.Drawing.Size(83, 15);
             this.label1.TabIndex = 54;
             this.label1.Text = "Descripcion";
             // 
@@ -260,11 +262,11 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDescripcion.Location = new System.Drawing.Point(58, 442);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Location = new System.Drawing.Point(29, 230);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(400, 58);
+            this.txtDescripcion.Size = new System.Drawing.Size(200, 30);
             this.txtDescripcion.TabIndex = 55;
             // 
             // label2
@@ -274,10 +276,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.label2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label2.Location = new System.Drawing.Point(52, 135);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(26, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 29);
+            this.label2.Size = new System.Drawing.Size(122, 15);
             this.label2.TabIndex = 56;
             this.label2.Text = "Codigo Operacion";
             // 
@@ -293,10 +295,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.btnMinimizarPantallaReg.IconColor = System.Drawing.SystemColors.Control;
             this.btnMinimizarPantallaReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizarPantallaReg.IconSize = 20;
-            this.btnMinimizarPantallaReg.Location = new System.Drawing.Point(1606, 10);
+            this.btnMinimizarPantallaReg.Location = new System.Drawing.Point(885, 5);
             this.btnMinimizarPantallaReg.Margin = new System.Windows.Forms.Padding(0);
             this.btnMinimizarPantallaReg.Name = "btnMinimizarPantallaReg";
-            this.btnMinimizarPantallaReg.Size = new System.Drawing.Size(68, 38);
+            this.btnMinimizarPantallaReg.Size = new System.Drawing.Size(34, 20);
             this.btnMinimizarPantallaReg.TabIndex = 59;
             this.btnMinimizarPantallaReg.UseVisualStyleBackColor = false;
             this.btnMinimizarPantallaReg.Click += new System.EventHandler(this.btnMinimizarPantallaReg_Click_1);
@@ -313,10 +315,10 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.iconButton1.IconColor = System.Drawing.SystemColors.Control;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(1674, 10);
+            this.iconButton1.Location = new System.Drawing.Point(919, 5);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(68, 38);
+            this.iconButton1.Size = new System.Drawing.Size(34, 20);
             this.iconButton1.TabIndex = 58;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -325,16 +327,59 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             // 
             this.cmbCodigoOperacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigoOperacion.FormattingEnabled = true;
-            this.cmbCodigoOperacion.Location = new System.Drawing.Point(58, 180);
+            this.cmbCodigoOperacion.Location = new System.Drawing.Point(29, 94);
+            this.cmbCodigoOperacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCodigoOperacion.Name = "cmbCodigoOperacion";
-            this.cmbCodigoOperacion.Size = new System.Drawing.Size(151, 33);
+            this.cmbCodigoOperacion.Size = new System.Drawing.Size(78, 21);
             this.cmbCodigoOperacion.TabIndex = 64;
+            // 
+            // btnMinimizarPantallaABMCLiente
+            // 
+            this.btnMinimizarPantallaABMCLiente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizarPantallaABMCLiente.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimizarPantallaABMCLiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMinimizarPantallaABMCLiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizarPantallaABMCLiente.FlatAppearance.BorderSize = 0;
+            this.btnMinimizarPantallaABMCLiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizarPantallaABMCLiente.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizarPantallaABMCLiente.IconColor = System.Drawing.SystemColors.Control;
+            this.btnMinimizarPantallaABMCLiente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizarPantallaABMCLiente.IconSize = 20;
+            this.btnMinimizarPantallaABMCLiente.Location = new System.Drawing.Point(707, 0);
+            this.btnMinimizarPantallaABMCLiente.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMinimizarPantallaABMCLiente.Name = "btnMinimizarPantallaABMCLiente";
+            this.btnMinimizarPantallaABMCLiente.Size = new System.Drawing.Size(34, 20);
+            this.btnMinimizarPantallaABMCLiente.TabIndex = 71;
+            this.btnMinimizarPantallaABMCLiente.UseVisualStyleBackColor = false;
+            this.btnMinimizarPantallaABMCLiente.Click += new System.EventHandler(this.btnMinimizarPantallaABMCLiente_Click);
+            // 
+            // btnCerrarPantallaABMCliente
+            // 
+            this.btnCerrarPantallaABMCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarPantallaABMCliente.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCerrarPantallaABMCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCerrarPantallaABMCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarPantallaABMCliente.FlatAppearance.BorderSize = 0;
+            this.btnCerrarPantallaABMCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarPantallaABMCliente.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrarPantallaABMCliente.IconColor = System.Drawing.SystemColors.Control;
+            this.btnCerrarPantallaABMCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarPantallaABMCliente.IconSize = 30;
+            this.btnCerrarPantallaABMCliente.Location = new System.Drawing.Point(741, 0);
+            this.btnCerrarPantallaABMCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCerrarPantallaABMCliente.Name = "btnCerrarPantallaABMCliente";
+            this.btnCerrarPantallaABMCliente.Size = new System.Drawing.Size(34, 20);
+            this.btnCerrarPantallaABMCliente.TabIndex = 70;
+            this.btnCerrarPantallaABMCliente.UseVisualStyleBackColor = false;
+            this.btnCerrarPantallaABMCliente.Click += new System.EventHandler(this.btnCerrarPantallaABMCliente_Click);
             // 
             // ABM_TipoOperacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1744, 742);
+            this.ClientSize = new System.Drawing.Size(775, 403);
+            this.Controls.Add(this.btnMinimizarPantallaABMCLiente);
+            this.Controls.Add(this.btnCerrarPantallaABMCliente);
             this.Controls.Add(this.cmbCodigoOperacion);
             this.Controls.Add(this.btnMinimizarPantallaReg);
             this.Controls.Add(this.iconButton1);
@@ -350,7 +395,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
             this.Controls.Add(this.lblLimpiarCampos);
             this.Controls.Add(this.lblABM_TOP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ABM_TipoOperacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM_TipoOperacion";
@@ -383,5 +428,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
         private FontAwesome.Sharp.IconButton btnMinimizarPantallaReg;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.ComboBox cmbCodigoOperacion;
+        private FontAwesome.Sharp.IconButton btnMinimizarPantallaABMCLiente;
+        private FontAwesome.Sharp.IconButton btnCerrarPantallaABMCliente;
     }
 }

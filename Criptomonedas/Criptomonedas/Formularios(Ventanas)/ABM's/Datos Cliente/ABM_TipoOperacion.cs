@@ -307,6 +307,16 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s
                 cn.Close();
             }
         }
+
+        private void btnCerrarPantallaABMCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimizarPantallaABMCLiente_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 
 }
