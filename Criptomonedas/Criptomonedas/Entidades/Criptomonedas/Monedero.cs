@@ -9,12 +9,12 @@ namespace Criptomonedas.Entidades.Criptomonedas
     public class Monedero
     {
         public int CodigoCripto { get; set; }
-        public int CantidadCripto { get; set; }
+        public decimal CantidadCripto { get; set; }
         public int NroCliente { get; set; }
 
 
 
-        public Monedero(int codigo_cripto, int cantidad_cripto, int nro_cliente)
+        public Monedero(int codigo_cripto, decimal cantidad_cripto, int nro_cliente)
         {
             
             CodigoCripto = codigo_cripto;
@@ -22,6 +22,8 @@ namespace Criptomonedas.Entidades.Criptomonedas
             NroCliente = nro_cliente;
         }
 
-
+        public Monedero()
+        {
+        }
     }
 }
