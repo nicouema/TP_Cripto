@@ -135,9 +135,8 @@
             this.txtUsuario.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtUsuario.Location = new System.Drawing.Point(46, 181);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(153, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(153, 17);
             this.txtUsuario.TabIndex = 1;
             // 
             // txtContraseña
@@ -147,10 +146,9 @@
             this.txtContraseña.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.txtContraseña.Location = new System.Drawing.Point(46, 232);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
-            this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(153, 20);
+            this.txtContraseña.Size = new System.Drawing.Size(153, 17);
             this.txtContraseña.TabIndex = 2;
             // 
             // btnRegistrarUsuario

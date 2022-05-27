@@ -249,7 +249,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Telefonos SET nro_telefono=@nroTelefono, cod_pais=@codPais, cod_area=@codArea, nro_cliente=@nroCliente WHERE cod_telefono like codTelefono";
+                string consulta = "UPDATE Telefonos SET nro_telefono=@nroTelefono, cod_pais=@codPais, cod_area=@codArea, nro_cliente=@nroCliente WHERE cod_telefono like @codTelefono";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroTelefono", b.NroTelefono);
                 cmd.Parameters.AddWithValue("@codPais", b.CodPais);
@@ -342,13 +342,12 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
                 btnEliminar.Enabled = true;
                 btnEliminar.Cursor = Cursors.Hand;
                 DataGridViewRow filaSeleccionada = grdTelefono.Rows[indice];
-                int codTelefono = int.Parse(filaSeleccionada.Cells["cod_telefono"].Value.ToString());
+                codigoTelefono = int.Parse(filaSeleccionada.Cells["cod_telefono"].Value.ToString());
 
-                Telefono t = ObtenerDatosTelefonoBD(codTelefono);
+                    Telefono t = ObtenerDatosTelefonoBD(codigoTelefono);
 
                 LimpiarCampos();
                 CargarCampos(t);
-                codigoTelefono = codTelefono;
             }
         }
 

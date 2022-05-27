@@ -47,6 +47,11 @@
             this.grdTelefono = new System.Windows.Forms.DataGridView();
             this.btnMinimizarPantallaReg = new FontAwesome.Sharp.IconButton();
             this.btnCerrarPantallaReg = new FontAwesome.Sharp.IconButton();
+            this.cod_pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTelefono)).BeginInit();
             this.SuspendLayout();
@@ -283,6 +288,12 @@
             this.grdTelefono.AllowUserToAddRows = false;
             this.grdTelefono.AllowUserToDeleteRows = false;
             this.grdTelefono.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdTelefono.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cod_pais,
+            this.cod_area,
+            this.nro_telefono,
+            this.nro_cliente,
+            this.cod_telefono});
             this.grdTelefono.Location = new System.Drawing.Point(330, 58);
             this.grdTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.grdTelefono.Name = "grdTelefono";
@@ -333,6 +344,41 @@
             this.btnCerrarPantallaReg.UseVisualStyleBackColor = false;
             this.btnCerrarPantallaReg.Click += new System.EventHandler(this.btnCerrarPantallaReg_Click);
             // 
+            // cod_pais
+            // 
+            this.cod_pais.DataPropertyName = "cod_pais";
+            this.cod_pais.HeaderText = "Codigo de Pais";
+            this.cod_pais.Name = "cod_pais";
+            this.cod_pais.ReadOnly = true;
+            // 
+            // cod_area
+            // 
+            this.cod_area.DataPropertyName = "cod_area";
+            this.cod_area.HeaderText = "Codigo de Area";
+            this.cod_area.Name = "cod_area";
+            this.cod_area.ReadOnly = true;
+            // 
+            // nro_telefono
+            // 
+            this.nro_telefono.DataPropertyName = "nro_telefono";
+            this.nro_telefono.HeaderText = "Numero de Telefono";
+            this.nro_telefono.Name = "nro_telefono";
+            this.nro_telefono.ReadOnly = true;
+            // 
+            // nro_cliente
+            // 
+            this.nro_cliente.DataPropertyName = "nro_cliente";
+            this.nro_cliente.HeaderText = "Numero de Cliente";
+            this.nro_cliente.Name = "nro_cliente";
+            this.nro_cliente.ReadOnly = true;
+            // 
+            // cod_telefono
+            // 
+            this.cod_telefono.DataPropertyName = "cod_telefono";
+            this.cod_telefono.HeaderText = "Codigo Telefono";
+            this.cod_telefono.Name = "cod_telefono";
+            this.cod_telefono.ReadOnly = true;
+            // 
             // ABM_Telefono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,5 +423,10 @@
         private FontAwesome.Sharp.IconButton btnMinimizarPantallaReg;
         private FontAwesome.Sharp.IconButton btnCerrarPantallaReg;
         private System.Windows.Forms.DataGridView grdTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_pais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nro_telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nro_cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_telefono;
     }
 }
