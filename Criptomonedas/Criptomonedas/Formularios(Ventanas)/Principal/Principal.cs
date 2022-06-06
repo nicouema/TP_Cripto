@@ -17,6 +17,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas;
 using Criptomonedas.Formularios_Ventanas_.ABM_s.ABM_Cliente;
+using Criptomonedas.Transacciones.Ventanas;
+using Criptomonedas.Entidades.Datos_Cliente;
+using Criptomonedas.DAO;
 
 namespace Criptomonedas
 {
@@ -27,6 +30,7 @@ namespace Criptomonedas
         private int tamañoBorde = 2;
         private Size formSize;
         private static Usuario usuarioEnSesion;
+        private static Cliente clienteEnSesion;
 
         public Principal(Usuario usu)
         {
@@ -36,7 +40,10 @@ namespace Criptomonedas
             ColapsarMenu();
             txtLabelUsuario.Text = "Bienvenido: "+ usu.User.ToString();
             usuarioEnSesion = usu;
+            clienteEnSesion = CriptoMonedasDataAccess.BuscarClientePorUsuario(usu);
+            CriptoMonedasDataAccess.cargarGrillaCriptomonedas(grillaCripto);
         }
+
 
         public Principal()
         {
@@ -409,6 +416,18 @@ namespace Criptomonedas
             ABM_Monedero ventana = new ABM_Monedero();
 
             ventana.Show();
+        }
+
+        private void btnCompra_Click(object sender, EventArgs e)
+        {
+            ABM_Compra ventana = new ABM_Compra(clienteEnSesion);
+            ventana.ShowDialog();
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            ABM_Venta ventana = new ABM_Venta();
+            ventana.ShowDialog();
         }
 
         // Funciones Submenu ABM Criptomonedas
