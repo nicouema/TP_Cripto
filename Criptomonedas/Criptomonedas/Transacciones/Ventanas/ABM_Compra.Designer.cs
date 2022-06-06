@@ -38,13 +38,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblModificar = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboCriptomonedas = new RJCodeAdvance.RJControls.RJComboBox();
             this.labelNombreCripto = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboCriptomonedas = new System.Windows.Forms.ComboBox();
+            this.textBoxCantidad = new System.Windows.Forms.TextBox();
+            this.btnAgregarCompra = new RJCodeAdvance.RJControls.RJButton();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaCripto)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrarPantalla
@@ -157,32 +164,18 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.iconPictureBox1);
+            this.panel3.Controls.Add(this.iconPictureBox4);
+            this.panel3.Controls.Add(this.btnAgregarCompra);
+            this.panel3.Controls.Add(this.textBoxCantidad);
             this.panel3.Controls.Add(this.comboCriptomonedas);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.labelNombreCripto);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(279, 21);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(521, 417);
             this.panel3.TabIndex = 7;
-            // 
-            // comboCriptomonedas
-            // 
-            this.comboCriptomonedas.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboCriptomonedas.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboCriptomonedas.BorderSize = 1;
-            this.comboCriptomonedas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.comboCriptomonedas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboCriptomonedas.ForeColor = System.Drawing.Color.DimGray;
-            this.comboCriptomonedas.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.comboCriptomonedas.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.comboCriptomonedas.ListTextColor = System.Drawing.Color.DimGray;
-            this.comboCriptomonedas.Location = new System.Drawing.Point(89, 48);
-            this.comboCriptomonedas.MinimumSize = new System.Drawing.Size(200, 20);
-            this.comboCriptomonedas.Name = "comboCriptomonedas";
-            this.comboCriptomonedas.Padding = new System.Windows.Forms.Padding(1);
-            this.comboCriptomonedas.Size = new System.Drawing.Size(200, 20);
-            this.comboCriptomonedas.TabIndex = 19;
-            this.comboCriptomonedas.Texts = "";
             // 
             // labelNombreCripto
             // 
@@ -208,6 +201,83 @@
             this.label1.Text = "Seleccione las Criptomonedas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Location = new System.Drawing.Point(172, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Cantidad";
+            // 
+            // comboCriptomonedas
+            // 
+            this.comboCriptomonedas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCriptomonedas.FormattingEnabled = true;
+            this.comboCriptomonedas.Location = new System.Drawing.Point(53, 68);
+            this.comboCriptomonedas.Name = "comboCriptomonedas";
+            this.comboCriptomonedas.Size = new System.Drawing.Size(117, 21);
+            this.comboCriptomonedas.TabIndex = 21;
+            // 
+            // textBoxCantidad
+            // 
+            this.textBoxCantidad.Location = new System.Drawing.Point(211, 69);
+            this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.Size = new System.Drawing.Size(110, 20);
+            this.textBoxCantidad.TabIndex = 22;
+            // 
+            // btnAgregarCompra
+            // 
+            this.btnAgregarCompra.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnAgregarCompra.BackgroundColor = System.Drawing.Color.MediumVioletRed;
+            this.btnAgregarCompra.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAgregarCompra.BorderRadius = 0;
+            this.btnAgregarCompra.BorderSize = 0;
+            this.btnAgregarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCompra.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCompra.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCompra.Location = new System.Drawing.Point(287, 94);
+            this.btnAgregarCompra.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarCompra.Name = "btnAgregarCompra";
+            this.btnAgregarCompra.Size = new System.Drawing.Size(132, 27);
+            this.btnAgregarCompra.TabIndex = 23;
+            this.btnAgregarCompra.Text = "AGREGAR";
+            this.btnAgregarCompra.TextColor = System.Drawing.Color.White;
+            this.btnAgregarCompra.UseVisualStyleBackColor = false;
+            this.btnAgregarCompra.Click += new System.EventHandler(this.btnAgregarCompra_Click);
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox4.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Coins;
+            this.iconPictureBox4.IconColor = System.Drawing.Color.MediumSpringGreen;
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 31;
+            this.iconPictureBox4.Location = new System.Drawing.Point(17, 63);
+            this.iconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(31, 32);
+            this.iconPictureBox4.TabIndex = 45;
+            this.iconPictureBox4.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.MediumSpringGreen;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 31;
+            this.iconPictureBox1.Location = new System.Drawing.Point(175, 63);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(31, 32);
+            this.iconPictureBox1.TabIndex = 46;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // ABM_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +297,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,8 +315,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblModificar;
-        private RJCodeAdvance.RJControls.RJComboBox comboCriptomonedas;
         private System.Windows.Forms.Label labelNombreCripto;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxCantidad;
+        private System.Windows.Forms.ComboBox comboCriptomonedas;
+        private System.Windows.Forms.Label label2;
+        private RJCodeAdvance.RJControls.RJButton btnAgregarCompra;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
     }
 }

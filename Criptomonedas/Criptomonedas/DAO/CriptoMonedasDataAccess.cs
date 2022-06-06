@@ -106,7 +106,7 @@ namespace Criptomonedas.DAO
             }
         }
 
-        public static void CargarComboCripto(RJComboBox combo)
+        public static void CargarComboCripto(ComboBox combo)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);

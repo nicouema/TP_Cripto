@@ -34,5 +34,9 @@ namespace Criptomonedas.Transacciones.Ventanas
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void btnAgregarCompra_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
