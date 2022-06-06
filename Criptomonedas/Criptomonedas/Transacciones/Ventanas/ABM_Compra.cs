@@ -21,6 +21,7 @@ namespace Criptomonedas.Transacciones.Ventanas
             InitializeComponent();
             lblHora.Text = DateTime.Now.ToString("dd/mm/yyyy");
             CriptoMonedasDataAccess.cargarGrillaCriptomonedas(grillaCripto);
+            CriptoMonedasDataAccess.CargarComboCripto(comboCriptomonedas);
         }
 
         private void btnCerrarPantalla_Click(object sender, EventArgs e)
@@ -32,5 +33,6 @@ namespace Criptomonedas.Transacciones.Ventanas
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
     }
 }

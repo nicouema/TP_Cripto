@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Criptomonedas.Entidades;
 using Criptomonedas.Entidades.Datos_Cliente;
+using RJCodeAdvance.RJControls;
 
 namespace Criptomonedas.DAO
 {
@@ -62,6 +63,7 @@ namespace Criptomonedas.DAO
                 cn.Close();
             }
         }
+
         public static void cargarGrillaCriptomonedas(DataGridView grilla)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
@@ -97,6 +99,43 @@ namespace Criptomonedas.DAO
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar las cotizaciones! " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void CargarComboCripto(RJComboBox combo)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Criptomonedas";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter data = new SqlDataAdapter(cmd);
+                data.Fill(tabla);
+
+                combo.DataSource = tabla;
+                combo.DisplayMember = "nombre";
+                combo.ValueMember = "codigo_cripto";
+                combo.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                throw;
             }
             finally
             {
