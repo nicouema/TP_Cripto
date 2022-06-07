@@ -8,11 +8,13 @@ namespace Criptomonedas.Entidades.Datos_Cliente
 {
     public class Cliente
     {
+        private int nroCliente;
         private string nombreCliente;
         private string apellidoCliente;
         private string emailCliente;
         private int barrioId;
 
+        public int NroCliente { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string email { get; set; }

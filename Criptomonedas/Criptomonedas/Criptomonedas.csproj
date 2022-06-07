@@ -61,6 +61,7 @@
     <Compile Include="Entidades\Criptomonedas\Cotizacion.cs" />
     <Compile Include="Entidades\Criptomonedas\Criptomoneda.cs" />
     <Compile Include="Entidades\Criptomonedas\Monedero.cs" />
+    <Compile Include="Entidades\Criptomonedas\TransaccionPorMoneda.cs" />
     <Compile Include="Entidades\Datos Cliente\AreaTelefono.cs" />
     <Compile Include="Entidades\Datos Cliente\Barrio.cs" />
     <Compile Include="Entidades\Datos Cliente\Ciudad.cs" />

@@ -8,6 +8,7 @@ namespace Criptomonedas.Entidades.Criptomonedas
 {
     public class Monedero
     {
+        public int Id { get; set; }
         public int CodigoCripto { get; set; }
         public decimal CantidadCripto { get; set; }
         public int NroCliente { get; set; }
