@@ -157,6 +157,123 @@ namespace Criptomonedas.DAO
             }
         }
 
+        public static void guardarTransaccion(TransaccionPorMoneda transaccionPorMoneda)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlTransaction transaction = null;
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                connection.Open();
+
+                if (transaccionPorMoneda.codMonedero == 0 && transaccionPorMoneda.codTipoTransaccion == 1)
+                {
+                    string insertMonedero = "INSERT INTO Monedero (codigo_cripto, cantidad, nro_cliente) VALUES (@codCripto, @cant, @nroCliente)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@codCripto", transaccionPorMoneda.codCripto);
+                    cmd.Parameters.AddWithValue("@cant", transaccionPorMoneda.cantidadCripto);
+                    cmd.Parameters.AddWithValue("@nroCliente", transaccionPorMoneda.nroCliente);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = insertMonedero;
+
+                    transaction = connection.BeginTransaction("AltaTransaccion");
+                    cmd.Transaction = transaction;
+
+                    cmd.Connection = connection;
+                    cmd.ExecuteNonQuery();
+
+                    string selectId = "SELECT MAX(cod_monedero) as Codigo FROM Monedero";
+                    cmd.Parameters.Clear();
+                    cmd.CommandText = selectId;
+                    SqlDataReader readerId = cmd.ExecuteReader();
+
+                    if (readerId.Read() && readerId != null)
+                    {
+                        transaccionPorMoneda.codMonedero = int.Parse(readerId["Codigo"].ToString());
+                    }
+
+                    readerId.Close();
+                }
+                else
+                {
+                    string consulta = "SELECT m.cantidad FROM Monedero m WHERE m.cod_monedero like @CodMonedero";
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@CodMonedero", transaccionPorMoneda.codMonedero);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
+
+                    transaction = connection.BeginTransaction("AltaTransaccion");
+                    cmd.Transaction = transaction;
+
+                    cmd.Connection = connection;
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    decimal cantidadActual = 0;
+
+
+                    if (reader.Read() && reader != null)
+                    {
+                        cantidadActual = decimal.Parse(reader["cantidad"].ToString());
+                    }
+
+                    reader.Close();
+
+                    decimal nuevaCantidad = 0;
+                    if (transaccionPorMoneda.codTipoTransaccion == 1)
+                    {
+                        nuevaCantidad = cantidadActual + transaccionPorMoneda.cantidadCripto;
+                    }
+                    if (transaccionPorMoneda.codTipoTransaccion == 2)
+                    {
+                        nuevaCantidad = cantidadActual - transaccionPorMoneda.cantidadCripto;
+                    }
+
+                    cmd.Connection = connection;
+                    cmd.ExecuteNonQuery();
+
+                    string actualizarMonedero = "UPDATE Monedero  " +
+                            "SET cantidad=@NuevaCantidad " +
+                            "WHERE cod_monedero=@CodMonedero";
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@NuevaCantidad", nuevaCantidad);
+                    cmd.Parameters.AddWithValue("CodMonedero", transaccionPorMoneda.codMonedero);
+
+                    cmd.CommandText = actualizarMonedero;
+                    cmd.ExecuteNonQuery();
+                }
+
+                string insert = "INSERT INTO Transacciones_por_monedas " +
+                    "(nro_cliente,cod_monedero, codigo_cripto, tipo_operacion, cantidad_moneda, valor)" +
+                    " values (@NroCliente, @CodMonedero, @CodCripto, @TipoOp, @Cantidad, @Valor)";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@NroCliente", transaccionPorMoneda.nroCliente);
+                cmd.Parameters.AddWithValue("@CodMonedero", transaccionPorMoneda.codMonedero);
+                cmd.Parameters.AddWithValue("@CodCripto", transaccionPorMoneda.codCripto);
+                cmd.Parameters.AddWithValue("@TipoOp", transaccionPorMoneda.codTipoTransaccion);
+                cmd.Parameters.AddWithValue("@Cantidad", transaccionPorMoneda.cantidadCripto);
+                cmd.Parameters.AddWithValue("@Valor", transaccionPorMoneda.valorCripto);
+                cmd.CommandText = insert;
+                cmd.ExecuteNonQuery();
+
+                transaction.Commit();
+                return;
+            }
+            catch (Exception)
+            {
+                transaction.Rollback();
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+        }
+
         public static Monedero obtenerMonederoDeCliente(Cliente clienteEnSesion, int cod_cripto)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

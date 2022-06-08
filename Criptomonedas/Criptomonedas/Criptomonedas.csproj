@@ -259,6 +259,9 @@
     <EmbeddedResource Include="Transacciones\Ventanas\ABM_Compra.resx">
       <DependentUpon>ABM_Compra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Ventanas\ABM_Venta.resx">
+      <DependentUpon>ABM_Venta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="BD3K7G05_2022DataSet.xsc">
       <DependentUpon>BD3K7G05_2022DataSet.xsd</DependentUpon>

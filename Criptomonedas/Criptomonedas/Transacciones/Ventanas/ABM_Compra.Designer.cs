@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCerrarPantalla = new FontAwesome.Sharp.IconButton();
-            this.btnMinimizarPantalla = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.grillaCripto = new System.Windows.Forms.DataGridView();
+            this.cripto_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblModificar = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.btnComprar = new RJCodeAdvance.RJControls.RJButton();
             this.lblCantidadEnMonedero = new System.Windows.Forms.Label();
             this.grillaCompras = new System.Windows.Forms.DataGridView();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.btnAgregarCompra = new RJCodeAdvance.RJControls.RJButton();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.comboCriptomonedas = new System.Windows.Forms.ComboBox();
@@ -48,62 +46,26 @@
             this.labelNombreCripto = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cripto_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnComprar = new RJCodeAdvance.RJControls.RJButton();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_monedero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            this.btnMinimizarPantalla = new FontAwesome.Sharp.IconButton();
+            this.btnCerrarPantalla = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaCripto)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCerrarPantalla
-            // 
-            this.btnCerrarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCerrarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCerrarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarPantalla.FlatAppearance.BorderSize = 0;
-            this.btnCerrarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnCerrarPantalla.IconColor = System.Drawing.SystemColors.Control;
-            this.btnCerrarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrarPantalla.IconSize = 30;
-            this.btnCerrarPantalla.Location = new System.Drawing.Point(780, 0);
-            this.btnCerrarPantalla.Name = "btnCerrarPantalla";
-            this.btnCerrarPantalla.Size = new System.Drawing.Size(34, 20);
-            this.btnCerrarPantalla.TabIndex = 3;
-            this.btnCerrarPantalla.UseVisualStyleBackColor = false;
-            this.btnCerrarPantalla.Click += new System.EventHandler(this.btnCerrarPantalla_Click);
-            // 
-            // btnMinimizarPantalla
-            // 
-            this.btnMinimizarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimizarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMinimizarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizarPantalla.FlatAppearance.BorderSize = 0;
-            this.btnMinimizarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimizarPantalla.IconColor = System.Drawing.SystemColors.Control;
-            this.btnMinimizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimizarPantalla.IconSize = 20;
-            this.btnMinimizarPantalla.Location = new System.Drawing.Point(746, 0);
-            this.btnMinimizarPantalla.Name = "btnMinimizarPantalla";
-            this.btnMinimizarPantalla.Size = new System.Drawing.Size(34, 20);
-            this.btnMinimizarPantalla.TabIndex = 4;
-            this.btnMinimizarPantalla.UseVisualStyleBackColor = false;
-            this.btnMinimizarPantalla.Click += new System.EventHandler(this.btnMinimizarPantalla_Click);
             // 
             // panel1
             // 
@@ -140,6 +102,20 @@
             this.grillaCripto.Size = new System.Drawing.Size(253, 328);
             this.grillaCripto.TabIndex = 4;
             // 
+            // cripto_nombre
+            // 
+            this.cripto_nombre.DataPropertyName = "nombre";
+            this.cripto_nombre.HeaderText = "Criptomoneda";
+            this.cripto_nombre.Name = "cripto_nombre";
+            this.cripto_nombre.ReadOnly = true;
+            // 
+            // valor_cripto
+            // 
+            this.valor_cripto.DataPropertyName = "valor";
+            this.valor_cripto.HeaderText = "Precio";
+            this.valor_cripto.Name = "valor_cripto";
+            this.valor_cripto.ReadOnly = true;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblModificar);
@@ -152,7 +128,7 @@
             // 
             this.lblModificar.AutoEllipsis = true;
             this.lblModificar.Font = new System.Drawing.Font("Bauhaus 93", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModificar.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.lblModificar.ForeColor = System.Drawing.Color.Lime;
             this.lblModificar.Location = new System.Drawing.Point(2, 2);
             this.lblModificar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModificar.Name = "lblModificar";
@@ -180,22 +156,25 @@
             this.panel3.Size = new System.Drawing.Size(532, 521);
             this.panel3.TabIndex = 7;
             // 
-            // iconPictureBox2
+            // btnComprar
             // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.MediumSpringGreen;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 42;
-            this.iconPictureBox2.ImageLocation = "";
-            this.iconPictureBox2.Location = new System.Drawing.Point(339, 63);
-            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(43, 42);
-            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox2.TabIndex = 49;
-            this.iconPictureBox2.TabStop = false;
+            this.btnComprar.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnComprar.BackgroundColor = System.Drawing.Color.MediumVioletRed;
+            this.btnComprar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnComprar.BorderRadius = 0;
+            this.btnComprar.BorderSize = 0;
+            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprar.ForeColor = System.Drawing.Color.White;
+            this.btnComprar.Location = new System.Drawing.Point(17, 286);
+            this.btnComprar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(132, 27);
+            this.btnComprar.TabIndex = 50;
+            this.btnComprar.Text = "COMPRAR";
+            this.btnComprar.TextColor = System.Drawing.Color.White;
+            this.btnComprar.UseVisualStyleBackColor = false;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // lblCantidadEnMonedero
             // 
@@ -224,38 +203,6 @@
             this.grillaCompras.ReadOnly = true;
             this.grillaCompras.Size = new System.Drawing.Size(314, 150);
             this.grillaCompras.TabIndex = 47;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.MediumSpringGreen;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 31;
-            this.iconPictureBox1.ImageLocation = "";
-            this.iconPictureBox1.Location = new System.Drawing.Point(175, 63);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(31, 31);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox1.TabIndex = 46;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox4
-            // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox4.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Coins;
-            this.iconPictureBox4.IconColor = System.Drawing.Color.MediumSpringGreen;
-            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox4.IconSize = 31;
-            this.iconPictureBox4.Location = new System.Drawing.Point(17, 63);
-            this.iconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(31, 32);
-            this.iconPictureBox4.TabIndex = 45;
-            this.iconPictureBox4.TabStop = false;
             // 
             // btnAgregarCompra
             // 
@@ -320,7 +267,7 @@
             // 
             this.label1.AutoEllipsis = true;
             this.label1.Font = new System.Drawing.Font("Bauhaus 93", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.label1.ForeColor = System.Drawing.Color.Lime;
             this.label1.Location = new System.Drawing.Point(2, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -339,40 +286,6 @@
             this.label3.Size = new System.Drawing.Size(184, 17);
             this.label3.TabIndex = 48;
             this.label3.Text = "Cantidad en Monedero";
-            // 
-            // cripto_nombre
-            // 
-            this.cripto_nombre.DataPropertyName = "nombre";
-            this.cripto_nombre.HeaderText = "Criptomoneda";
-            this.cripto_nombre.Name = "cripto_nombre";
-            this.cripto_nombre.ReadOnly = true;
-            // 
-            // valor_cripto
-            // 
-            this.valor_cripto.DataPropertyName = "valor";
-            this.valor_cripto.HeaderText = "Precio";
-            this.valor_cripto.Name = "valor_cripto";
-            this.valor_cripto.ReadOnly = true;
-            // 
-            // btnComprar
-            // 
-            this.btnComprar.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnComprar.BackgroundColor = System.Drawing.Color.MediumVioletRed;
-            this.btnComprar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnComprar.BorderRadius = 0;
-            this.btnComprar.BorderSize = 0;
-            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComprar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComprar.ForeColor = System.Drawing.Color.White;
-            this.btnComprar.Location = new System.Drawing.Point(17, 286);
-            this.btnComprar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(132, 27);
-            this.btnComprar.TabIndex = 50;
-            this.btnComprar.Text = "COMPRAR";
-            this.btnComprar.TextColor = System.Drawing.Color.White;
-            this.btnComprar.UseVisualStyleBackColor = false;
-            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // nombre
             // 
@@ -419,6 +332,93 @@
             this.total.ReadOnly = true;
             this.total.Width = 60;
             // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Lime;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Lime;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 42;
+            this.iconPictureBox2.ImageLocation = "";
+            this.iconPictureBox2.Location = new System.Drawing.Point(339, 63);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(43, 42);
+            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBox2.TabIndex = 49;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Lime;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Lime;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 31;
+            this.iconPictureBox1.ImageLocation = "";
+            this.iconPictureBox1.Location = new System.Drawing.Point(175, 63);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBox1.TabIndex = 46;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox4.ForeColor = System.Drawing.Color.Lime;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Coins;
+            this.iconPictureBox4.IconColor = System.Drawing.Color.Lime;
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 31;
+            this.iconPictureBox4.Location = new System.Drawing.Point(17, 63);
+            this.iconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(31, 32);
+            this.iconPictureBox4.TabIndex = 45;
+            this.iconPictureBox4.TabStop = false;
+            // 
+            // btnMinimizarPantalla
+            // 
+            this.btnMinimizarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimizarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMinimizarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizarPantalla.FlatAppearance.BorderSize = 0;
+            this.btnMinimizarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizarPantalla.IconColor = System.Drawing.SystemColors.Control;
+            this.btnMinimizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizarPantalla.IconSize = 20;
+            this.btnMinimizarPantalla.Location = new System.Drawing.Point(746, 0);
+            this.btnMinimizarPantalla.Name = "btnMinimizarPantalla";
+            this.btnMinimizarPantalla.Size = new System.Drawing.Size(34, 20);
+            this.btnMinimizarPantalla.TabIndex = 4;
+            this.btnMinimizarPantalla.UseVisualStyleBackColor = false;
+            this.btnMinimizarPantalla.Click += new System.EventHandler(this.btnMinimizarPantalla_Click);
+            // 
+            // btnCerrarPantalla
+            // 
+            this.btnCerrarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCerrarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCerrarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarPantalla.FlatAppearance.BorderSize = 0;
+            this.btnCerrarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrarPantalla.IconColor = System.Drawing.SystemColors.Control;
+            this.btnCerrarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarPantalla.IconSize = 30;
+            this.btnCerrarPantalla.Location = new System.Drawing.Point(780, 0);
+            this.btnCerrarPantalla.Name = "btnCerrarPantalla";
+            this.btnCerrarPantalla.Size = new System.Drawing.Size(34, 20);
+            this.btnCerrarPantalla.TabIndex = 3;
+            this.btnCerrarPantalla.UseVisualStyleBackColor = false;
+            this.btnCerrarPantalla.Click += new System.EventHandler(this.btnCerrarPantalla_Click);
+            // 
             // ABM_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,6 +432,7 @@
             this.Controls.Add(this.btnCerrarPantalla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ABM_Compra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM_Compra";
             this.Load += new System.EventHandler(this.ABM_Compra_Load);
             this.panel1.ResumeLayout(false);
@@ -440,8 +441,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.ResumeLayout(false);

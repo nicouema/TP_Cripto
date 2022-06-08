@@ -17,9 +17,7 @@ namespace Criptomonedas.Transacciones.Ventanas
         {
             clienteEnSesion = cliente;
             InitializeComponent();
-            
         }
-
 
         private void ABM_Compra_Load(object sender, EventArgs e)
         {
@@ -92,8 +90,6 @@ namespace Criptomonedas.Transacciones.Ventanas
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            List<TransaccionPorMoneda> list = new List<TransaccionPorMoneda>();
-
             for (int i = 0; i < grillaCompras.Rows.Count; i++)
             {
                 int codMonedero = int.Parse(grillaCompras.Rows[i].Cells["cod_monedero"].Value.ToString());
@@ -101,8 +97,25 @@ namespace Criptomonedas.Transacciones.Ventanas
                 int codTipoOp = 1;
                 decimal cantidadCripto = decimal.Parse(grillaCompras.Rows[i].Cells["cantidad"].Value.ToString());
                 decimal valorCripto = decimal.Parse(grillaCompras.Rows[i].Cells["valor"].Value.ToString());
-                list.Add(new TransaccionPorMoneda(clienteEnSesion.NroCliente, codMonedero, codCripto, codTipoOp, cantidadCripto, valorCripto));
+                TransaccionPorMoneda transaccionPorMoneda = new TransaccionPorMoneda(clienteEnSesion.NroCliente, codMonedero, codCripto, codTipoOp, cantidadCripto, valorCripto);
+
+                try
+                {
+                    CriptoMonedasDataAccess.guardarTransaccion(transaccionPorMoneda);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en la Transaccion " + grillaCompras.Rows[i].Cells["nombre"].Value.ToString(), "ERROR",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+                }
+
             }
+            grillaCompras.Rows.Clear();
+            textBoxCantidad.Text = "";
+            comboCriptomonedas.SelectedIndex = -1;
+            MessageBox.Show("Transacciones Exitosas!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
