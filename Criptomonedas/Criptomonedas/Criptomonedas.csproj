@@ -61,6 +61,7 @@
     <Compile Include="Entidades\Criptomonedas\Cotizacion.cs" />
     <Compile Include="Entidades\Criptomonedas\Criptomoneda.cs" />
     <Compile Include="Entidades\Criptomonedas\Monedero.cs" />
+    <Compile Include="Entidades\Criptomonedas\TransaccionPorMoneda.cs" />
     <Compile Include="Entidades\Datos Cliente\AreaTelefono.cs" />
     <Compile Include="Entidades\Datos Cliente\Barrio.cs" />
     <Compile Include="Entidades\Datos Cliente\Ciudad.cs" />
@@ -257,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\Ventanas\ABM_Compra.resx">
       <DependentUpon>ABM_Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Ventanas\ABM_Venta.resx">
+      <DependentUpon>ABM_Venta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="BD3K7G05_2022DataSet.xsc">

@@ -40,7 +40,8 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Criptomonedas
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT cod_monedero, codigo_cripto, cantidad, nro_cliente FROM Monedero";
+                string consulta = "SELECT m.cod_monedero, m.codigo_cripto, m.cantidad, c.nombre, c.apellido " +
+                    "FROM Monedero m JOIN Clientes c ON m.nro_cliente=c.nro_cliente";
 
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;
