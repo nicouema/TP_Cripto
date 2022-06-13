@@ -239,7 +239,7 @@ namespace Criptomonedas
             // Menu Colapsado
             if (this.panelMenu.Width > 171)
             {
-                panelCompraVenta.Location = new Point(105, 55);
+                panelCompraVenta.Location = new Point(0, 6);
                 panelMenu.Width = 100;
                 pictureBoxLogo.Visible = false;
                 btnLateralMenu.Dock = DockStyle.Top;
@@ -254,7 +254,7 @@ namespace Criptomonedas
             // Menu Expandido
             else
             {
-                panelCompraVenta.Location = new Point(235, 55);
+                panelCompraVenta.Location = new Point(6, 6);
                 panelMenu.Width = 230;
                 pictureBoxLogo.Visible = true;
                 btnLateralMenu.Dock = DockStyle.None;
@@ -430,6 +430,11 @@ namespace Criptomonedas
         {
             ABM_Venta ventana = new ABM_Venta(clienteEnSesion);
             ventana.ShowDialog();
+        }
+
+        private void panelCompraVenta_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         // Funciones Submenu ABM Criptomonedas

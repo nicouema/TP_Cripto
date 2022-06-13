@@ -66,7 +66,7 @@ namespace Criptomonedas.Transacciones.Ventanas
                 decimal cantidad = decimal.Parse(textBoxCantidad.Text);
                 decimal cantidadSumada = cantidad;
 
-                foreach(DataGridViewRow row in grillaCompras.Rows)
+                foreach (DataGridViewRow row in grillaCompras.Rows)
                 {
                     if (row.Cells[2].Value.Equals(codMonedero))
                     {
@@ -79,7 +79,7 @@ namespace Criptomonedas.Transacciones.Ventanas
                     MessageBox.Show("Fondos insuficientes!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                
+
                 decimal valor = CriptoMonedasDataAccess.getValorById(monederoDeCliente.CodigoCripto);
                 int codCripto = monederoDeCliente.CodigoCripto;
                 if (valor == 0)
@@ -111,6 +111,8 @@ namespace Criptomonedas.Transacciones.Ventanas
 
         private void btnVender_Click(object sender, EventArgs e)
         {
+            List<TransaccionPorMoneda> list = null;
+
             for (int i = 0; i < grillaCompras.Rows.Count; i++)
             {
                 int codMonedero = int.Parse(grillaCompras.Rows[i].Cells["cod_monedero"].Value.ToString());
@@ -120,17 +122,22 @@ namespace Criptomonedas.Transacciones.Ventanas
                 decimal valorCripto = decimal.Parse(grillaCompras.Rows[i].Cells["valor"].Value.ToString());
                 TransaccionPorMoneda transaccionPorMoneda = new TransaccionPorMoneda(clienteEnSesion.NroCliente, codMonedero, codCripto, codTipoOp, cantidadCripto, valorCripto);
 
-                try
-                {
-                    CriptoMonedasDataAccess.guardarTransaccion(transaccionPorMoneda);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error en la Transaccion " + grillaCompras.Rows[i].Cells["nombre"].Value.ToString(), "ERROR",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                list.Add(transaccionPorMoneda);
 
-                }
+            }
+
+            try
+            {
+                CriptoMonedasDataAccess.guardarTransaccion(list);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la Compra!" + ex.Message, "ERROR",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                grillaCompras.Rows.Clear();
+                textBoxCantidad.Text = "";
+                comboCriptomonedas.SelectedIndex = -1;
+                return;
 
             }
             grillaCompras.Rows.Clear();
