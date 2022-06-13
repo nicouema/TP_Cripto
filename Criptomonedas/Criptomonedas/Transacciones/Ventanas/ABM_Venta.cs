@@ -111,7 +111,7 @@ namespace Criptomonedas.Transacciones.Ventanas
 
         private void btnVender_Click(object sender, EventArgs e)
         {
-            List<TransaccionPorMoneda> list = null;
+            List<TransaccionPorMoneda> list = new List<TransaccionPorMoneda>();
 
             for (int i = 0; i < grillaCompras.Rows.Count; i++)
             {
