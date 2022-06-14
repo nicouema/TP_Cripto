@@ -281,7 +281,7 @@ namespace Criptomonedas
             if (this.WindowState == FormWindowState.Normal)
             {
                 formSize = this.ClientSize;
-                this.WindowState = FormWindowState.Maximized.;
+                this.WindowState = FormWindowState.Maximized;
             }
 
             else
