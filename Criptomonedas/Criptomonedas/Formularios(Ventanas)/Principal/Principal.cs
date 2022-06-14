@@ -316,9 +316,14 @@ namespace Criptomonedas
             Open_DropdownMenu(SM_ABM_EjecutivoCuentas, sender);
         }
 
+        private void btnInformes_Click(object sender, EventArgs e)
+        {
+            Open_DropdownMenu(SM_Informes, sender);
+        }
+
         // -- Funciones de Botones de SubMenu
 
-            // Funciones Submenu ABM Datos Cliente
+        // Funciones Submenu ABM Datos Cliente
         private void btnTipoDocumento_Click(object sender, EventArgs e)
         {
             ABM_TipoDocumento ventana = new ABM_TipoDocumento();
@@ -436,6 +441,8 @@ namespace Criptomonedas
         {
 
         }
+
+       
 
         // Funciones Submenu ABM Criptomonedas
 
