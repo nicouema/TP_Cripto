@@ -52,7 +52,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -180,6 +180,12 @@
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\InformeClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\InformeClientes.Designer.cs">
+      <DependentUpon>InformeClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\InformeClientes.resx">
+      <DependentUpon>InformeClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,9 +355,7 @@
   <ItemGroup>
     <None Include="Resources\descargar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios%28Ventanas%29\Listados\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
