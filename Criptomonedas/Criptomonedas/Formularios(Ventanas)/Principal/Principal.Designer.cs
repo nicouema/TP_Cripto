@@ -79,9 +79,11 @@ namespace Criptomonedas
             this.informeAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeMonederoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeCiudadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeTelefonosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeTipoDeTransaccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informeBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeEjecutivoDeCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -611,82 +613,98 @@ namespace Criptomonedas
             this.informeCiudadesToolStripMenuItem,
             this.informeBarriosToolStripMenuItem,
             this.informeTelefonosToolStripMenuItem,
-            this.informeTipoDeTransaccionToolStripMenuItem});
+            this.informeTipoDeTransaccionToolStripMenuItem,
+            this.informeEjecutivoDeCuentasToolStripMenuItem,
+            this.informeToolStripMenuItem});
             this.SM_Informes.MenuItemHeight = 25;
             this.SM_Informes.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_Informes.Name = "rjDropdownMenu1";
             this.SM_Informes.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_Informes.Size = new System.Drawing.Size(263, 246);
+            this.SM_Informes.Size = new System.Drawing.Size(270, 290);
             // 
             // informeCriptomonedasToolStripMenuItem
             // 
             this.informeCriptomonedasToolStripMenuItem.Name = "informeCriptomonedasToolStripMenuItem";
-            this.informeCriptomonedasToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.informeCriptomonedasToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.informeCriptomonedasToolStripMenuItem.Text = "Informe Criptomonedas";
             this.informeCriptomonedasToolStripMenuItem.Click += new System.EventHandler(this.informeCriptomonedasToolStripMenuItem_Click);
             // 
             // informeClientesItem
             // 
             this.informeClientesItem.Name = "informeClientesItem";
-            this.informeClientesItem.Size = new System.Drawing.Size(262, 22);
+            this.informeClientesItem.Size = new System.Drawing.Size(269, 22);
             this.informeClientesItem.Text = "Informe Clientes";
             this.informeClientesItem.Click += new System.EventHandler(this.informeClientesItem_Click);
             // 
             // informeEmpresasToolStripMenuItem
             // 
             this.informeEmpresasToolStripMenuItem.Name = "informeEmpresasToolStripMenuItem";
-            this.informeEmpresasToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.informeEmpresasToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.informeEmpresasToolStripMenuItem.Text = "Informe Empresas";
             this.informeEmpresasToolStripMenuItem.Click += new System.EventHandler(this.informeEmpresasToolStripMenuItem_Click);
             // 
             // informePaisesToolStripMenuItem
             // 
             this.informePaisesToolStripMenuItem.Name = "informePaisesToolStripMenuItem";
-            this.informePaisesToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.informePaisesToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.informePaisesToolStripMenuItem.Text = "Informe Paises";
             this.informePaisesToolStripMenuItem.Click += new System.EventHandler(this.informePaisesToolStripMenuItem_Click);
             // 
             // informeAreaToolStripMenuItem
             // 
             this.informeAreaToolStripMenuItem.Name = "informeAreaToolStripMenuItem";
-            this.informeAreaToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.informeAreaToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.informeAreaToolStripMenuItem.Text = "Informe Area Telefonica";
             this.informeAreaToolStripMenuItem.Click += new System.EventHandler(this.informeAreaToolStripMenuItem_Click);
             // 
             // informeMonederoToolStripMenuItem
             // 
             this.informeMonederoToolStripMenuItem.Name = "informeMonederoToolStripMenuItem";
-            this.informeMonederoToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.informeMonederoToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.informeMonederoToolStripMenuItem.Text = "Informe Monedero";
             this.informeMonederoToolStripMenuItem.Click += new System.EventHandler(this.informeMonederoToolStripMenuItem_Click);
             // 
             // informeCiudadesToolStripMenuItem
             // 
             this.informeCiudadesToolStripMenuItem.Name = "informeCiudadesToolStripMenuItem";
-            this.informeCiudadesToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.informeCiudadesToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.informeCiudadesToolStripMenuItem.Text = "Informe Ciudades";
             this.informeCiudadesToolStripMenuItem.Click += new System.EventHandler(this.informeCiudadesToolStripMenuItem_Click);
+            // 
+            // informeBarriosToolStripMenuItem
+            // 
+            this.informeBarriosToolStripMenuItem.Name = "informeBarriosToolStripMenuItem";
+            this.informeBarriosToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.informeBarriosToolStripMenuItem.Text = "Informe Barrios";
+            this.informeBarriosToolStripMenuItem.Click += new System.EventHandler(this.informeBarriosToolStripMenuItem_Click);
             // 
             // informeTelefonosToolStripMenuItem
             // 
             this.informeTelefonosToolStripMenuItem.Name = "informeTelefonosToolStripMenuItem";
-            this.informeTelefonosToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.informeTelefonosToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.informeTelefonosToolStripMenuItem.Text = "Informe Telefonos";
             this.informeTelefonosToolStripMenuItem.Click += new System.EventHandler(this.informeTelefonosToolStripMenuItem_Click);
             // 
             // informeTipoDeTransaccionToolStripMenuItem
             // 
             this.informeTipoDeTransaccionToolStripMenuItem.Name = "informeTipoDeTransaccionToolStripMenuItem";
-            this.informeTipoDeTransaccionToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
+            this.informeTipoDeTransaccionToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.informeTipoDeTransaccionToolStripMenuItem.Text = "Informe Tipo de Transaccion";
             this.informeTipoDeTransaccionToolStripMenuItem.Click += new System.EventHandler(this.informeTipoDeTransaccionToolStripMenuItem_Click);
             // 
-            // informeBarriosToolStripMenuItem
+            // informeEjecutivoDeCuentasToolStripMenuItem
             // 
-            this.informeBarriosToolStripMenuItem.Name = "informeBarriosToolStripMenuItem";
-            this.informeBarriosToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.informeBarriosToolStripMenuItem.Text = "Informe Barrios";
-            this.informeBarriosToolStripMenuItem.Click += new System.EventHandler(this.informeBarriosToolStripMenuItem_Click);
+            this.informeEjecutivoDeCuentasToolStripMenuItem.Name = "informeEjecutivoDeCuentasToolStripMenuItem";
+            this.informeEjecutivoDeCuentasToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.informeEjecutivoDeCuentasToolStripMenuItem.Text = "Informe Ejecutivo de Cuentas";
+            this.informeEjecutivoDeCuentasToolStripMenuItem.Click += new System.EventHandler(this.informeEjecutivoDeCuentasToolStripMenuItem_Click);
+            // 
+            // informeToolStripMenuItem
+            // 
+            this.informeToolStripMenuItem.Name = "informeToolStripMenuItem";
+            this.informeToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.informeToolStripMenuItem.Text = "Informe Tipo Documento";
+            this.informeToolStripMenuItem.Click += new System.EventHandler(this.informeToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -778,6 +796,8 @@ namespace Criptomonedas
         private System.Windows.Forms.ToolStripMenuItem informeTelefonosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeTipoDeTransaccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeBarriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeEjecutivoDeCuentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeToolStripMenuItem;
     }
 }
 
