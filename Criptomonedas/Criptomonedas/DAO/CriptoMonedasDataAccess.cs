@@ -456,7 +456,7 @@ namespace Criptomonedas.DAO
                 SqlCommand cmd = new SqlCommand();
                 string consulta = "SELECT C.*" +
                                   "FROM Ciudad C";
-                               
+
 
                 cmd.Parameters.Clear();
 
@@ -481,7 +481,7 @@ namespace Criptomonedas.DAO
             {
                 cn.Close();
             }
-
+        }
           
         public static DataTable ObtenerListadoCriptomonedasRestriccionCodigo(string inicio, string final)
         {

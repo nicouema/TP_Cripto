@@ -77,6 +77,8 @@ namespace Criptomonedas
             this.informeEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informePaisesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeMonederoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeCiudadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -601,38 +603,40 @@ namespace Criptomonedas
             this.informeClientesItem,
             this.informeEmpresasToolStripMenuItem,
             this.informePaisesToolStripMenuItem,
-            this.informeAreaToolStripMenuItem});
+            this.informeAreaToolStripMenuItem,
+            this.informeMonederoToolStripMenuItem,
+            this.informeCiudadesToolStripMenuItem});
             this.SM_Informes.MenuItemHeight = 25;
             this.SM_Informes.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_Informes.Name = "rjDropdownMenu1";
             this.SM_Informes.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_Informes.Size = new System.Drawing.Size(235, 136);
+            this.SM_Informes.Size = new System.Drawing.Size(235, 180);
             // 
             // informeCriptomonedasToolStripMenuItem
             // 
             this.informeCriptomonedasToolStripMenuItem.Name = "informeCriptomonedasToolStripMenuItem";
-            this.informeCriptomonedasToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.informeCriptomonedasToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.informeCriptomonedasToolStripMenuItem.Text = "Informe Criptomonedas";
             this.informeCriptomonedasToolStripMenuItem.Click += new System.EventHandler(this.informeCriptomonedasToolStripMenuItem_Click);
             // 
             // informeClientesItem
             // 
             this.informeClientesItem.Name = "informeClientesItem";
-            this.informeClientesItem.Size = new System.Drawing.Size(230, 22);
+            this.informeClientesItem.Size = new System.Drawing.Size(234, 22);
             this.informeClientesItem.Text = "Informe Clientes";
             this.informeClientesItem.Click += new System.EventHandler(this.informeClientesItem_Click);
             // 
             // informeEmpresasToolStripMenuItem
             // 
             this.informeEmpresasToolStripMenuItem.Name = "informeEmpresasToolStripMenuItem";
-            this.informeEmpresasToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.informeEmpresasToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.informeEmpresasToolStripMenuItem.Text = "Informe Empresas";
             this.informeEmpresasToolStripMenuItem.Click += new System.EventHandler(this.informeEmpresasToolStripMenuItem_Click);
             // 
             // informePaisesToolStripMenuItem
             // 
             this.informePaisesToolStripMenuItem.Name = "informePaisesToolStripMenuItem";
-            this.informePaisesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.informePaisesToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.informePaisesToolStripMenuItem.Text = "Informe Paises";
             this.informePaisesToolStripMenuItem.Click += new System.EventHandler(this.informePaisesToolStripMenuItem_Click);
             // 
@@ -642,6 +646,20 @@ namespace Criptomonedas
             this.informeAreaToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.informeAreaToolStripMenuItem.Text = "Informe Area Telefonica";
             this.informeAreaToolStripMenuItem.Click += new System.EventHandler(this.informeAreaToolStripMenuItem_Click);
+            // 
+            // informeMonederoToolStripMenuItem
+            // 
+            this.informeMonederoToolStripMenuItem.Name = "informeMonederoToolStripMenuItem";
+            this.informeMonederoToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.informeMonederoToolStripMenuItem.Text = "Informe Monedero";
+            this.informeMonederoToolStripMenuItem.Click += new System.EventHandler(this.informeMonederoToolStripMenuItem_Click);
+            // 
+            // informeCiudadesToolStripMenuItem
+            // 
+            this.informeCiudadesToolStripMenuItem.Name = "informeCiudadesToolStripMenuItem";
+            this.informeCiudadesToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.informeCiudadesToolStripMenuItem.Text = "Informe Ciudades";
+            this.informeCiudadesToolStripMenuItem.Click += new System.EventHandler(this.informeCiudadesToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -728,6 +746,8 @@ namespace Criptomonedas
         private System.Windows.Forms.ToolStripMenuItem informeEmpresasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informePaisesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeAreaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeMonederoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informeCiudadesToolStripMenuItem;
     }
 }
 

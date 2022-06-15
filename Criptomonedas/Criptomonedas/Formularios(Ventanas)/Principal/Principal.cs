@@ -476,6 +476,19 @@ namespace Criptomonedas
             reporte.ShowDialog();
         }
 
+        private void informeMonederoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoMonederos listado = new ListadoMonederos();
+            listado.ShowDialog();
+        }
+
+        private void informeCiudadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoRestriccionesCiudades lsitado = new ListadoRestriccionesCiudades();
+            lsitado.ShowDialog();
+        }
+
+
 
 
 

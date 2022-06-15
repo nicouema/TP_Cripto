@@ -181,16 +181,16 @@
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListadoMonederos.cs">
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Monedero\ListadoMonederos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListadoMonederos.Designer.cs">
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Monedero\ListadoMonederos.Designer.cs">
       <DependentUpon>ListadoMonederos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListadoRestricionesCiudades.cs">
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Ciudades\ListadoRestricionesCiudades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListadoRestricionesCiudades.Designer.cs">
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Ciudades\ListadoRestricionesCiudades.Designer.cs">
       <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.cs">
@@ -309,11 +309,11 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListadoMonederos.resx">
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Monedero\ListadoMonederos.resx">
       <DependentUpon>ListadoMonederos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoRestriccionesMonedero.rdlc" />
-    <EmbeddedResource Include="ListadoRestricionesCiudades.resx">
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Ciudades\ListadoRestricionesCiudades.resx">
       <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.resx">
@@ -416,9 +416,7 @@
   <ItemGroup>
     <None Include="Resources\descargar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios%28Ventanas%29\Listados\Ciudades\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
