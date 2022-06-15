@@ -17,6 +17,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas;
 using Criptomonedas.Formularios_Ventanas_.ABM_s.ABM_Cliente;
+using Criptomonedas.Formularios_Ventanas_.Listados.TipoDocumento;
+using Criptomonedas.Formularios_Ventanas_.Listados.EjecutivoDeCuenta;
 using Criptomonedas.Transacciones.Ventanas;
 using Criptomonedas.Entidades.Datos_Cliente;
 using Criptomonedas.DAO;
@@ -442,7 +444,19 @@ namespace Criptomonedas
 
         }
 
-       
+        private void listadoDeTiposDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoDocumento ventana = new TipoDocumento();
+            ventana.Show();
+        }
+
+        private void listadoDeEjecutivoDeCuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EjecutivoDeCuenta ventana = new EjecutivoDeCuenta();
+            ventana.Show();
+        }
+
+
 
         // Funciones Submenu ABM Criptomonedas
 
