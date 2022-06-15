@@ -39,7 +39,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             this.grdPais = new System.Windows.Forms.DataGridView();
             this.cod_pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ButtonConsulta = new RJCodeAdvance.RJControls.RJButton();
             this.btnCerrarPantallaReg = new FontAwesome.Sharp.IconButton();
             this.btnMinimizarPantallaReg = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -191,26 +190,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             this.pais.ReadOnly = true;
             this.pais.Width = 200;
             // 
-            // ButtonConsulta
-            // 
-            this.ButtonConsulta.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.ButtonConsulta.BackgroundColor = System.Drawing.Color.MediumVioletRed;
-            this.ButtonConsulta.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.ButtonConsulta.BorderRadius = 0;
-            this.ButtonConsulta.BorderSize = 0;
-            this.ButtonConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonConsulta.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonConsulta.ForeColor = System.Drawing.Color.White;
-            this.ButtonConsulta.Location = new System.Drawing.Point(44, 386);
-            this.ButtonConsulta.Margin = new System.Windows.Forms.Padding(4);
-            this.ButtonConsulta.Name = "ButtonConsulta";
-            this.ButtonConsulta.Size = new System.Drawing.Size(182, 56);
-            this.ButtonConsulta.TabIndex = 44;
-            this.ButtonConsulta.Text = "CONSULTA";
-            this.ButtonConsulta.TextColor = System.Drawing.Color.White;
-            this.ButtonConsulta.UseVisualStyleBackColor = false;
-            this.ButtonConsulta.Click += new System.EventHandler(this.ButtonConsulta_Click);
-            // 
             // btnCerrarPantallaReg
             // 
             this.btnCerrarPantallaReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -301,7 +280,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ButtonConsulta);
             this.Controls.Add(this.grdPais);
             this.Controls.Add(this.txtPais);
             this.Controls.Add(this.lblNombrePais);
@@ -337,7 +315,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente
         private System.Windows.Forms.DataGridView grdPais;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_pais;
         private System.Windows.Forms.DataGridViewTextBoxColumn pais;
-        private RJCodeAdvance.RJControls.RJButton ButtonConsulta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel1;
