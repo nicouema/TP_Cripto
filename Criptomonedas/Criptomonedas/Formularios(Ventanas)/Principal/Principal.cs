@@ -488,6 +488,18 @@ namespace Criptomonedas
             lsitado.ShowDialog();
         }
 
+        private void informeTelefonosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoTelefonos listado = new ListadoTelefonos();
+            listado.ShowDialog();
+        }
+
+        private void informeTipoDeTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoTransaccionSimple listado = new ListadoTransaccionSimple();
+            listado.ShowDialog();
+        }
+
 
 
 

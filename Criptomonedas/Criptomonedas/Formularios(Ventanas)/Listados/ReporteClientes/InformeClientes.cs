@@ -22,7 +22,6 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados
         private void InformeClientes_Load(object sender, EventArgs e)
         {
 
-
             this.reportViewerClientes.RefreshReport();
         }
 
@@ -79,7 +78,7 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados
             //reportViewerClientes.LocalReport.SetParameters(parametros);
             reportViewerClientes.LocalReport.DataSources.Clear();
             reportViewerClientes.LocalReport.DataSources.Add(reportDataSource);
-            reportViewerClientes.LocalReport.Refresh();
+            this.reportViewerClientes.RefreshReport();
 
         }
 

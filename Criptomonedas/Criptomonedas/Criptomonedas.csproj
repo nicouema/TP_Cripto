@@ -205,6 +205,12 @@
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Pais\Listado_Pais.Designer.cs">
       <DependentUpon>Listado_Pais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Reporte Telefono\ListadoTelefonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Reporte Telefono\ListadoTelefonos.Designer.cs">
+      <DependentUpon>ListadoTelefonos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,12 @@
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.Designer.cs">
       <DependentUpon>ReporteListadoCriptomonedas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.Designer.cs">
+      <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.cs">
       <SubType>Form</SubType>
@@ -312,6 +324,12 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Monedero\ListadoMonederos.resx">
       <DependentUpon>ListadoMonederos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Reporte Telefono\ListadoTelefonos.resx">
+      <DependentUpon>ListadoTelefonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.resx">
+      <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListadoRestriccionesMonedero.rdlc" />
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Ciudades\ListadoRestricionesCiudades.resx">
       <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
@@ -344,6 +362,8 @@
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoRestriccionesCiudades.rdlc" />
+    <EmbeddedResource Include="ListadoTelefonos.rdlc" />
+    <EmbeddedResource Include="ListadoTransacciones.rdlc" />
     <EmbeddedResource Include="Listado_Empresas.rdlc" />
     <EmbeddedResource Include="Listado_Pais.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
