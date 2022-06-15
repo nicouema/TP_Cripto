@@ -23,6 +23,7 @@ using Criptomonedas.DAO;
 using Criptomonedas.Formularios_Ventanas_.Listados;
 using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Empresa;
 using Criptomonedas.Formularios_Ventanas_.ReporteAreaTel;
+using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Barrio;
 
 namespace Criptomonedas
 {
@@ -497,6 +498,12 @@ namespace Criptomonedas
         private void informeTipoDeTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListadoTransaccionSimple listado = new ListadoTransaccionSimple();
+            listado.ShowDialog();
+        }
+
+        private void informeBarriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoBarrio listado = new ListadoBarrio();
             listado.ShowDialog();
         }
 

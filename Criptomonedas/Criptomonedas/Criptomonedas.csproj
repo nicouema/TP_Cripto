@@ -75,6 +75,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BarrioDAO.cs" />
     <Compile Include="DAO\ClientesDAO.cs" />
     <Compile Include="DAO\CriptoMonedasDataAccess.cs" />
     <Compile Include="DataSetProyecto.Designer.cs">
@@ -180,6 +181,12 @@
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Barrio\ListadoBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Barrio\ListadoBarrio.Designer.cs">
+      <DependentUpon>ListadoBarrio.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Monedero\ListadoMonederos.cs">
       <SubType>Form</SubType>
@@ -321,6 +328,9 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Barrio\ListadoBarrio.resx">
+      <DependentUpon>ListadoBarrio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Monedero\ListadoMonederos.resx">
       <DependentUpon>ListadoMonederos.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +381,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportBarrios.rdlc" />
     <EmbeddedResource Include="Transacciones\Ventanas\ABM_Compra.resx">
       <DependentUpon>ABM_Compra.cs</DependentUpon>
     </EmbeddedResource>
