@@ -20,6 +20,7 @@ using Criptomonedas.Formularios_Ventanas_.ABM_s.ABM_Cliente;
 using Criptomonedas.Transacciones.Ventanas;
 using Criptomonedas.Entidades.Datos_Cliente;
 using Criptomonedas.DAO;
+using Criptomonedas.Formularios_Ventanas_.Listados;
 
 namespace Criptomonedas
 {
@@ -442,7 +443,25 @@ namespace Criptomonedas
 
         }
 
-       
+        private void listadoDeTransaccionesPorMonedaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoTransaccionSimple ventana = new ListadoTransaccionSimple();
+            ventana.ShowDialog();
+        }
+
+        private void listadoDeTransaccionesPorMonedaConRestriccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoTransaccionRestriccion ventana = new ListadoTransaccionRestriccion();
+            ventana.ShowDialog();
+        }
+
+        private void listadoDeTelefonosSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoTelefonos ventana = new ListadoTelefonos();
+            ventana.ShowDialog();
+        }
+
+
 
         // Funciones Submenu ABM Criptomonedas
 

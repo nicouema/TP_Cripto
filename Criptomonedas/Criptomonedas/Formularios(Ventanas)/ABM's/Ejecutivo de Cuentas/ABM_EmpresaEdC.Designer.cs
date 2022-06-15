@@ -31,6 +31,7 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
         {
             this.lblABM_EmpresaEdC = new System.Windows.Forms.Label();
             this.panelCriptos = new System.Windows.Forms.Panel();
+            this.btnBorrar = new RJCodeAdvance.RJControls.RJButton();
             this.mbCodBarrio = new System.Windows.Forms.MaskedTextBox();
             this.mbNroCalle = new System.Windows.Forms.MaskedTextBox();
             this.btnCargar = new RJCodeAdvance.RJControls.RJButton();
@@ -52,7 +53,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.CodBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMinimizarPantallaReg = new FontAwesome.Sharp.IconButton();
             this.btnCerrarPantallaReg = new FontAwesome.Sharp.IconButton();
-            this.btnBorrar = new RJCodeAdvance.RJControls.RJButton();
             this.panelCriptos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmpresasEdC)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,26 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.panelCriptos.Name = "panelCriptos";
             this.panelCriptos.Size = new System.Drawing.Size(221, 347);
             this.panelCriptos.TabIndex = 46;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnBorrar.BackgroundColor = System.Drawing.Color.MediumVioletRed;
+            this.btnBorrar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBorrar.BorderRadius = 0;
+            this.btnBorrar.BorderSize = 0;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Location = new System.Drawing.Point(18, 274);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(91, 27);
+            this.btnBorrar.TabIndex = 52;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.TextColor = System.Drawing.Color.White;
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // mbCodBarrio
             // 
@@ -361,26 +381,6 @@ namespace Criptomonedas.Formularios_Ventanas_.ABM_s.Ejecutivo_de_Cuentas
             this.btnCerrarPantallaReg.TabIndex = 25;
             this.btnCerrarPantallaReg.UseVisualStyleBackColor = false;
             this.btnCerrarPantallaReg.Click += new System.EventHandler(this.btnCerrarPantallaReg_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnBorrar.BackgroundColor = System.Drawing.Color.MediumVioletRed;
-            this.btnBorrar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBorrar.BorderRadius = 0;
-            this.btnBorrar.BorderSize = 0;
-            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Location = new System.Drawing.Point(18, 274);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(91, 27);
-            this.btnBorrar.TabIndex = 52;
-            this.btnBorrar.Text = "BORRAR";
-            this.btnBorrar.TextColor = System.Drawing.Color.White;
-            this.btnBorrar.UseVisualStyleBackColor = false;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // ABM_EmpresasEdC
             // 

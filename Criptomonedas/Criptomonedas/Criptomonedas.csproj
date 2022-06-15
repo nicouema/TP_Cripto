@@ -180,6 +180,24 @@
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ListadoTelefonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ListadoTelefonos.Designer.cs">
+      <DependentUpon>ListadoTelefonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ListadoTransaccionRestriccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ListadoTransaccionRestriccion.Designer.cs">
+      <DependentUpon>ListadoTransaccionRestriccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ListadoTransaccionSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ListadoTransaccionSimple.Designer.cs">
+      <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +284,17 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ListadoTelefonos.resx">
+      <DependentUpon>ListadoTelefonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ListadoTransaccionRestriccion.resx">
+      <DependentUpon>ListadoTransaccionRestriccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoTelefonos.rdlc" />
+    <EmbeddedResource Include="ListadoTransacciones.rdlc" />
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ListadoTransaccionSimple.resx">
+      <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,9 +374,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\descargar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios%28Ventanas%29\Listados\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
