@@ -26,6 +26,8 @@ using Criptomonedas.Formularios_Ventanas_.ReporteAreaTel;
 using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Barrio;
 using Criptomonedas.Formularios_Ventanas_.Listados.EjecutivoDeCuenta;
 using Criptomonedas.Formularios_Ventanas_.Listados.TipoDocumento;
+using Criptomonedas.Formularios_Ventanas_.Listado_Cotizaciones;
+using Criptomonedas.Formularios_Ventanas_.Listado_Provincias;
 
 namespace Criptomonedas
 {
@@ -518,6 +520,18 @@ namespace Criptomonedas
         private void informeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TipoDocumento listado = new TipoDocumento();
+            listado.ShowDialog();
+        }
+
+        private void inforToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteListadosCotizaciones listado = new ReporteListadosCotizaciones();
+            listado.ShowDialog();
+        }
+
+        private void informeProvinciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteListadosProvincias listado = new ReporteListadosProvincias();
             listado.ShowDialog();
         }
 

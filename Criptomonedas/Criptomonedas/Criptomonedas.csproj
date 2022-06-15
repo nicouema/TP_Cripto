@@ -194,6 +194,12 @@
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Barrio\ListadoBarrio.Designer.cs">
       <DependentUpon>ListadoBarrio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Cotizaciones\ReporteListadosCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Cotizaciones\ReporteListadosCotizaciones.Designer.cs">
+      <DependentUpon>ReporteListadosCotizaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Monedero\ListadoMonederos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,12 @@
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Pais\Listado_Pais.Designer.cs">
       <DependentUpon>Listado_Pais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Provincias\ReporteListadosProvincias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Provincias\ReporteListadosProvincias.Designer.cs">
+      <DependentUpon>ReporteListadosProvincias.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Reporte Telefono\ListadoTelefonos.cs">
       <SubType>Form</SubType>
@@ -347,8 +359,14 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Barrio\ListadoBarrio.resx">
       <DependentUpon>ListadoBarrio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Cotizaciones\ReporteListadosCotizaciones.resx">
+      <DependentUpon>ReporteListadosCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Monedero\ListadoMonederos.resx">
       <DependentUpon>ListadoMonederos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Provincias\ReporteListadosProvincias.resx">
+      <DependentUpon>ReporteListadosProvincias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Reporte Telefono\ListadoTelefonos.resx">
       <DependentUpon>ListadoTelefonos.cs</DependentUpon>
@@ -359,6 +377,7 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\TipoDocumento\TipoDocumento.resx">
       <DependentUpon>TipoDocumento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListadoDeProvincias.rdlc" />
     <EmbeddedResource Include="ListadoRestriccionesMonedero.rdlc" />
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Ciudades\ListadoRestricionesCiudades.resx">
       <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
@@ -401,6 +420,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportBarrios.rdlc" />
+    <EmbeddedResource Include="ReporteListadoCotizaciones.rdlc" />
     <EmbeddedResource Include="tipoDocumento.rdlc" />
     <EmbeddedResource Include="Transacciones\Ventanas\ABM_Compra.resx">
       <DependentUpon>ABM_Compra.cs</DependentUpon>
