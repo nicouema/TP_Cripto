@@ -180,6 +180,18 @@
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListadoMonederos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoMonederos.Designer.cs">
+      <DependentUpon>ListadoMonederos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoRestricionesCiudades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoRestricionesCiudades.Designer.cs">
+      <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +278,13 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListadoMonederos.resx">
+      <DependentUpon>ListadoMonederos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoRestriccionesMonedero.rdlc" />
+    <EmbeddedResource Include="ListadoRestricionesCiudades.resx">
+      <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,12 +294,12 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListadoRestriccionesCiudades.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Transacciones\Ventanas\ABM_Compra.resx">
       <DependentUpon>ABM_Compra.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,7 +366,7 @@
     <None Include="Resources\descargar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Formularios%28Ventanas%29\Listados\" />
+    <Folder Include="Formularios%28Ventanas%29\Listados\Ciudades\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />

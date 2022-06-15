@@ -33,6 +33,7 @@ namespace Criptomonedas
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnInformes = new FontAwesome.Sharp.IconButton();
             this.btnEjecutivoCuenta = new FontAwesome.Sharp.IconButton();
             this.btnCriptomonedas = new FontAwesome.Sharp.IconButton();
             this.btnDatosCliente = new FontAwesome.Sharp.IconButton();
@@ -70,9 +71,10 @@ namespace Criptomonedas
             this.cripno_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCompra = new FontAwesome.Sharp.IconButton();
-            this.btnInformes = new FontAwesome.Sharp.IconButton();
             this.SM_Informes = new RJCodeAdvance.RJControls.RJDropdownMenu(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoConRestricionesDeCiudadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoMonederosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -96,10 +98,35 @@ namespace Criptomonedas
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(307, 886);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnInformes
+            // 
+            this.btnInformes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInformes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformes.FlatAppearance.BorderSize = 0;
+            this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformes.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformes.ForeColor = System.Drawing.Color.Black;
+            this.btnInformes.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.btnInformes.IconColor = System.Drawing.Color.Black;
+            this.btnInformes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInformes.IconSize = 40;
+            this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformes.Location = new System.Drawing.Point(0, 345);
+            this.btnInformes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInformes.Name = "btnInformes";
+            this.btnInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnInformes.Size = new System.Drawing.Size(307, 74);
+            this.btnInformes.TabIndex = 3;
+            this.btnInformes.Tag = "Informes";
+            this.btnInformes.Text = "         Informes";
+            this.btnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInformes.UseVisualStyleBackColor = true;
+            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
             // btnEjecutivoCuenta
             // 
@@ -115,7 +142,7 @@ namespace Criptomonedas
             this.btnEjecutivoCuenta.IconSize = 40;
             this.btnEjecutivoCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEjecutivoCuenta.Location = new System.Drawing.Point(0, 271);
-            this.btnEjecutivoCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEjecutivoCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnEjecutivoCuenta.Name = "btnEjecutivoCuenta";
             this.btnEjecutivoCuenta.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btnEjecutivoCuenta.Size = new System.Drawing.Size(307, 74);
@@ -140,7 +167,7 @@ namespace Criptomonedas
             this.btnCriptomonedas.IconSize = 40;
             this.btnCriptomonedas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCriptomonedas.Location = new System.Drawing.Point(0, 197);
-            this.btnCriptomonedas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCriptomonedas.Margin = new System.Windows.Forms.Padding(4);
             this.btnCriptomonedas.Name = "btnCriptomonedas";
             this.btnCriptomonedas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btnCriptomonedas.Size = new System.Drawing.Size(307, 74);
@@ -165,7 +192,7 @@ namespace Criptomonedas
             this.btnDatosCliente.IconSize = 40;
             this.btnDatosCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatosCliente.Location = new System.Drawing.Point(0, 123);
-            this.btnDatosCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDatosCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatosCliente.Name = "btnDatosCliente";
             this.btnDatosCliente.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btnDatosCliente.Size = new System.Drawing.Size(307, 74);
@@ -183,7 +210,7 @@ namespace Criptomonedas
             this.panel1.Controls.Add(this.pictureBoxLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(307, 123);
             this.panel1.TabIndex = 0;
@@ -191,7 +218,7 @@ namespace Criptomonedas
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(307, 63);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1515, 823);
             this.panel2.TabIndex = 3;
@@ -210,7 +237,7 @@ namespace Criptomonedas
             this.btnLateralMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLateralMenu.IconSize = 30;
             this.btnLateralMenu.Location = new System.Drawing.Point(243, 4);
-            this.btnLateralMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLateralMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLateralMenu.Name = "btnLateralMenu";
             this.btnLateralMenu.Size = new System.Drawing.Size(60, 60);
             this.btnLateralMenu.TabIndex = 1;
@@ -222,7 +249,7 @@ namespace Criptomonedas
             this.pictureBoxLogo.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.Location = new System.Drawing.Point(4, 4);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(157, 60);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -240,7 +267,7 @@ namespace Criptomonedas
             this.panelTitulo.Controls.Add(this.btnCerrarPantalla);
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(307, 0);
-            this.panelTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(1514, 60);
             this.panelTitulo.TabIndex = 1;
@@ -284,7 +311,7 @@ namespace Criptomonedas
             this.btnMinimizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizarPantalla.IconSize = 20;
             this.btnMinimizarPantalla.Location = new System.Drawing.Point(1383, 0);
-            this.btnMinimizarPantalla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizarPantalla.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizarPantalla.Name = "btnMinimizarPantalla";
             this.btnMinimizarPantalla.Size = new System.Drawing.Size(45, 25);
             this.btnMinimizarPantalla.TabIndex = 3;
@@ -304,7 +331,7 @@ namespace Criptomonedas
             this.btnMaximizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximizarPantalla.IconSize = 20;
             this.btnMaximizarPantalla.Location = new System.Drawing.Point(1427, 0);
-            this.btnMaximizarPantalla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMaximizarPantalla.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaximizarPantalla.Name = "btnMaximizarPantalla";
             this.btnMaximizarPantalla.Size = new System.Drawing.Size(45, 25);
             this.btnMaximizarPantalla.TabIndex = 2;
@@ -324,7 +351,7 @@ namespace Criptomonedas
             this.btnCerrarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarPantalla.IconSize = 30;
             this.btnCerrarPantalla.Location = new System.Drawing.Point(1468, 0);
-            this.btnCerrarPantalla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarPantalla.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarPantalla.Name = "btnCerrarPantalla";
             this.btnCerrarPantalla.Size = new System.Drawing.Size(45, 25);
             this.btnCerrarPantalla.TabIndex = 1;
@@ -490,7 +517,7 @@ namespace Criptomonedas
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel3.Location = new System.Drawing.Point(307, 60);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1514, 826);
             this.panel3.TabIndex = 9;
@@ -501,7 +528,7 @@ namespace Criptomonedas
             this.panelCompraVenta.Controls.Add(this.grillaCripto);
             this.panelCompraVenta.Controls.Add(this.btnCompra);
             this.panelCompraVenta.Location = new System.Drawing.Point(8, 7);
-            this.panelCompraVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelCompraVenta.Margin = new System.Windows.Forms.Padding(4);
             this.panelCompraVenta.Name = "panelCompraVenta";
             this.panelCompraVenta.Size = new System.Drawing.Size(539, 661);
             this.panelCompraVenta.TabIndex = 9;
@@ -517,7 +544,7 @@ namespace Criptomonedas
             this.btnVender.IconColor = System.Drawing.Color.Black;
             this.btnVender.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVender.Location = new System.Drawing.Point(193, 4);
-            this.btnVender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVender.Margin = new System.Windows.Forms.Padding(4);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(176, 70);
             this.btnVender.TabIndex = 5;
@@ -536,7 +563,7 @@ namespace Criptomonedas
             this.cripno_nombre,
             this.precio});
             this.grillaCripto.Location = new System.Drawing.Point(9, 81);
-            this.grillaCripto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grillaCripto.Margin = new System.Windows.Forms.Padding(4);
             this.grillaCripto.Name = "grillaCripto";
             this.grillaCripto.ReadOnly = true;
             this.grillaCripto.RowHeadersWidth = 51;
@@ -571,38 +598,13 @@ namespace Criptomonedas
             this.btnCompra.IconColor = System.Drawing.Color.Black;
             this.btnCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCompra.Location = new System.Drawing.Point(9, 4);
-            this.btnCompra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCompra.Margin = new System.Windows.Forms.Padding(4);
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Size = new System.Drawing.Size(176, 70);
             this.btnCompra.TabIndex = 4;
             this.btnCompra.Text = "Comprar";
             this.btnCompra.UseVisualStyleBackColor = false;
             this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
-            // 
-            // btnInformes
-            // 
-            this.btnInformes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInformes.FlatAppearance.BorderSize = 0;
-            this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformes.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformes.ForeColor = System.Drawing.Color.Black;
-            this.btnInformes.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.btnInformes.IconColor = System.Drawing.Color.Black;
-            this.btnInformes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInformes.IconSize = 40;
-            this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(0, 345);
-            this.btnInformes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInformes.Name = "btnInformes";
-            this.btnInformes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnInformes.Size = new System.Drawing.Size(307, 74);
-            this.btnInformes.TabIndex = 3;
-            this.btnInformes.Tag = "Informes";
-            this.btnInformes.Text = "         Informes";
-            this.btnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInformes.UseVisualStyleBackColor = true;
-            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
             // SM_Informes
             // 
@@ -611,18 +613,34 @@ namespace Criptomonedas
             this.SM_Informes.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.SM_Informes.IsMainMenu = false;
             this.SM_Informes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.listadoConRestricionesDeCiudadesToolStripMenuItem,
+            this.listadoMonederosToolStripMenuItem});
             this.SM_Informes.MenuItemHeight = 25;
             this.SM_Informes.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_Informes.Name = "rjDropdownMenu1";
             this.SM_Informes.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_Informes.Size = new System.Drawing.Size(232, 26);
+            this.SM_Informes.Size = new System.Drawing.Size(379, 98);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(231, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(378, 22);
             this.toolStripMenuItem3.Text = "Listado de Clientes";
+            // 
+            // listadoConRestricionesDeCiudadesToolStripMenuItem
+            // 
+            this.listadoConRestricionesDeCiudadesToolStripMenuItem.Name = "listadoConRestricionesDeCiudadesToolStripMenuItem";
+            this.listadoConRestricionesDeCiudadesToolStripMenuItem.Size = new System.Drawing.Size(378, 22);
+            this.listadoConRestricionesDeCiudadesToolStripMenuItem.Text = "Listado con Restriciones de Ciudades";
+            this.listadoConRestricionesDeCiudadesToolStripMenuItem.Click += new System.EventHandler(this.listadoConRestricionesDeCiudadesToolStripMenuItem_Click);
+            // 
+            // listadoMonederosToolStripMenuItem
+            // 
+            this.listadoMonederosToolStripMenuItem.Name = "listadoMonederosToolStripMenuItem";
+            this.listadoMonederosToolStripMenuItem.Size = new System.Drawing.Size(378, 22);
+            this.listadoMonederosToolStripMenuItem.Text = "Listado Monederos";
+            this.listadoMonederosToolStripMenuItem.Click += new System.EventHandler(this.listadoMonederosToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -636,7 +654,7 @@ namespace Criptomonedas
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -706,6 +724,8 @@ namespace Criptomonedas
         private FontAwesome.Sharp.IconButton btnInformes;
         private RJCodeAdvance.RJControls.RJDropdownMenu SM_Informes;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem listadoConRestricionesDeCiudadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoMonederosToolStripMenuItem;
     }
 }
 

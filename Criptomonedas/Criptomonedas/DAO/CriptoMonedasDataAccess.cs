@@ -170,7 +170,7 @@ namespace Criptomonedas.DAO
                 transaction = connection.BeginTransaction("AltaTransaccion");
                 cmd.Transaction = transaction;
                 foreach (TransaccionPorMoneda transaccionPorMoneda in list)
-                { 
+                {
                     if (transaccionPorMoneda.codMonedero == 0 && transaccionPorMoneda.codTipoTransaccion == 1)
                     {
                         string insertMonedero = "INSERT INTO Monedero (codigo_cripto, cantidad, nro_cliente) VALUES (@codCripto, @cant, @nroCliente)";
@@ -445,5 +445,125 @@ namespace Criptomonedas.DAO
                 cn.Close();
             }
         }
+
+        public static DataTable ObtenerListadoCiudades()
+        {
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT C.*" +
+                                  "FROM Ciudad C";
+                               
+
+                cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static DataTable ObtenerListadoCiudades2()
+        {
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT *" +
+                                  "FROM Ciudad" +
+                                  "WHERE cod_ciudad = 23";
+
+                cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al cargar consulta");
+                throw;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+        public static DataTable ObtenerListadoMonedero()
+        {
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT *" +
+                                  "FROM Monedero";
+
+
+                cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+        }
+
     }
-}
+}   
