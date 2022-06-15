@@ -192,6 +192,7 @@
     </Compile>
     <Compile Include="ListadoRestricionesCiudades.Designer.cs">
       <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.cs">
       <SubType>Form</SubType>
     </Compile>
