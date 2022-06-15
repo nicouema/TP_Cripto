@@ -73,6 +73,7 @@ namespace Criptomonedas
             this.btnCompra = new FontAwesome.Sharp.IconButton();
             this.SM_Informes = new RJCodeAdvance.RJControls.RJDropdownMenu(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.informeCriptomonedasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -593,18 +594,27 @@ namespace Criptomonedas
             this.SM_Informes.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.SM_Informes.IsMainMenu = false;
             this.SM_Informes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.informeCriptomonedasToolStripMenuItem});
             this.SM_Informes.MenuItemHeight = 25;
             this.SM_Informes.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_Informes.Name = "rjDropdownMenu1";
             this.SM_Informes.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_Informes.Size = new System.Drawing.Size(200, 26);
+            this.SM_Informes.Size = new System.Drawing.Size(231, 70);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(199, 22);
-            this.toolStripMenuItem3.Text = "Listado de Clientes";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(230, 22);
+            this.toolStripMenuItem3.Text = "Informe Clientes";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // informeCriptomonedasToolStripMenuItem
+            // 
+            this.informeCriptomonedasToolStripMenuItem.Name = "informeCriptomonedasToolStripMenuItem";
+            this.informeCriptomonedasToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.informeCriptomonedasToolStripMenuItem.Text = "Informe Criptomonedas";
+            this.informeCriptomonedasToolStripMenuItem.Click += new System.EventHandler(this.informeCriptomonedasToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -687,6 +697,7 @@ namespace Criptomonedas
         private FontAwesome.Sharp.IconButton btnInformes;
         private RJCodeAdvance.RJControls.RJDropdownMenu SM_Informes;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem informeCriptomonedasToolStripMenuItem;
     }
 }
 

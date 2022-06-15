@@ -75,6 +75,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ClientesDAO.cs" />
     <Compile Include="DAO\CriptoMonedasDataAccess.cs" />
     <Compile Include="DataSetProyecto.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -180,11 +181,23 @@
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios%28Ventanas%29\Listados\InformeClientes.cs">
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios%28Ventanas%29\Listados\InformeClientes.Designer.cs">
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.Designer.cs">
+      <DependentUpon>ReporteListadoAreaTelefonica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\InformeClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\InformeClientes.Designer.cs">
       <DependentUpon>InformeClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.Designer.cs">
+      <DependentUpon>ReporteListadoCriptomonedas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.cs">
       <SubType>Form</SubType>
@@ -272,9 +285,18 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\InformeClientes.resx">
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.resx">
+      <DependentUpon>ReporteListadoAreaTelefonica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteClientes\InformeClientes.resx">
       <DependentUpon>InformeClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.resx">
+      <DependentUpon>ReporteListadoCriptomonedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoAreaTelefonica.rdlc" />
+    <EmbeddedResource Include="ListadoCriptomonedas.rdlc" />
+    <EmbeddedResource Include="ListadoClientes.rdlc" />
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,7 +311,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Transacciones\Ventanas\ABM_Compra.resx">
       <DependentUpon>ABM_Compra.cs</DependentUpon>
     </EmbeddedResource>
