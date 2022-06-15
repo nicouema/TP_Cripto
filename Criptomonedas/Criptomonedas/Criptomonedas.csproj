@@ -181,6 +181,18 @@
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.Designer.cs">
+      <DependentUpon>Listado_Empresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Pais\Listado_Pais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Pais\Listado_Pais.Designer.cs">
+      <DependentUpon>Listado_Pais.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +297,12 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.resx">
+      <DependentUpon>Listado_Empresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Pais\Listado_Pais.resx">
+      <DependentUpon>Listado_Pais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.resx">
       <DependentUpon>ReporteListadoAreaTelefonica.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +324,8 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listado_Empresas.rdlc" />
+    <EmbeddedResource Include="Listado_Pais.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
