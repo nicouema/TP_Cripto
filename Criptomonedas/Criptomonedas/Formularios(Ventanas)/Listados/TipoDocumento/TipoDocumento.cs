@@ -59,13 +59,17 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.TipoDocumento
 
 
             DataTable tabla = new DataTable();
+
             tabla = CriptoMonedasDataAccess.ObtenerDocumentoBDNombre(textBoxTipoDocumento.Text);
+
 
             ReportDataSource ds = new ReportDataSource("DatosTipoDocumento", tabla);
 
-            reporteTipoDocumento.LocalReport.DataSources.Clear();
-            reporteTipoDocumento.LocalReport.DataSources.Add(ds);
-            reporteTipoDocumento.LocalReport.Refresh();
+            reporteTipoDocumentoNombre.LocalReport.DataSources.Clear();
+            reporteTipoDocumentoNombre.LocalReport.DataSources.Add(ds);
+            this.reporteTipoDocumentoNombre.RefreshReport();
         }
+
+    
     }
 }

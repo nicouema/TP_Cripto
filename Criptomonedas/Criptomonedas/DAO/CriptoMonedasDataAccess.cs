@@ -536,9 +536,11 @@ namespace Criptomonedas.DAO
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Tipo_documento WHERE tipo_doc LIKE 'DNI' ";
+                string consulta = "SELECT * FROM Tipo_documento WHERE tipo_doc LIKE @nombre ";
+
 
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombre", nombre);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
