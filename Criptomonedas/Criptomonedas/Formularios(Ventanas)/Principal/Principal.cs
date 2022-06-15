@@ -1,4 +1,4 @@
-﻿using Criptomonedas.Entidades;
+using Criptomonedas.Entidades;
 using Criptomonedas.Formularios_Ventanas_.ABM_s;
 using Criptomonedas.Formularios_Ventanas_.ABM_s.Datos_Cliente;
 using Criptomonedas.Formularios_Ventanas_.ABM_s.Criptomonedas;

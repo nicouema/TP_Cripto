@@ -181,6 +181,17 @@
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListadoMonederos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoMonederos.Designer.cs">
+      <DependentUpon>ListadoMonederos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoRestricionesCiudades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoRestricionesCiudades.Designer.cs">
+      <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +308,13 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListadoMonederos.resx">
+      <DependentUpon>ListadoMonederos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoRestriccionesMonedero.rdlc" />
+    <EmbeddedResource Include="ListadoRestricionesCiudades.resx">
+      <DependentUpon>ListadoRestricionesCiudades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.resx">
       <DependentUpon>Listado_Empresas.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +342,7 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListadoRestriccionesCiudades.rdlc" />
     <EmbeddedResource Include="Listado_Empresas.rdlc" />
     <EmbeddedResource Include="Listado_Pais.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -395,6 +414,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\descargar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formularios%28Ventanas%29\Listados\Ciudades\" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
