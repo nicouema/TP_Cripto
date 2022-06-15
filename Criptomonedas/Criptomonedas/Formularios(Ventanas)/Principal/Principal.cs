@@ -20,6 +20,9 @@ using Criptomonedas.Formularios_Ventanas_.ABM_s.ABM_Cliente;
 using Criptomonedas.Transacciones.Ventanas;
 using Criptomonedas.Entidades.Datos_Cliente;
 using Criptomonedas.DAO;
+using Criptomonedas.Formularios_Ventanas_.Listados;
+using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Empresa;
+using Criptomonedas.Formularios_Ventanas_.ReporteAreaTel;
 
 namespace Criptomonedas
 {
@@ -442,7 +445,39 @@ namespace Criptomonedas
 
         }
 
-       
+
+        private void informeCriptomonedasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteListadoCriptomonedas reporte = new ReporteListadoCriptomonedas();
+            reporte.ShowDialog();
+        }
+
+        private void informeEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Listado_Empresas listado = new Listado_Empresas();
+            listado.ShowDialog();
+        }
+
+        private void informePaisesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Listado_Pais listado = new Listado_Pais();
+            listado.ShowDialog();
+        }
+
+        private void informeClientesItem_Click(object sender, EventArgs e)
+        {
+            InformeClientes informe = new InformeClientes();
+            informe.ShowDialog();
+        }
+
+        private void informeAreaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteListadoAreaTelefonica reporte = new ReporteListadoAreaTelefonica();
+            reporte.ShowDialog();
+        }
+
+
+
 
         // Funciones Submenu ABM Criptomonedas
 

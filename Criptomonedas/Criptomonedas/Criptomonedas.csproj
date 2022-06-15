@@ -52,7 +52,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -75,6 +75,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ClientesDAO.cs" />
     <Compile Include="DAO\CriptoMonedasDataAccess.cs" />
     <Compile Include="DataSetProyecto.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -180,6 +181,36 @@
     <Compile Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.Designer.cs">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.Designer.cs">
+      <DependentUpon>Listado_Empresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Pais\Listado_Pais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Listado Pais\Listado_Pais.Designer.cs">
+      <DependentUpon>Listado_Pais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.Designer.cs">
+      <DependentUpon>ReporteListadoAreaTelefonica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\InformeClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\InformeClientes.Designer.cs">
+      <DependentUpon>InformeClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.Designer.cs">
+      <DependentUpon>ReporteListadoCriptomonedas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +297,24 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\ABM%27s\Ejecutivo de Cuentas\ABM_EmpresaEdC.resx">
       <DependentUpon>ABM_EmpresaEdC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Empresa\Listado_Empresas.resx">
+      <DependentUpon>Listado_Empresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Pais\Listado_Pais.resx">
+      <DependentUpon>Listado_Pais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteAreaTel\ReporteListadoAreaTelefonica.resx">
+      <DependentUpon>ReporteListadoAreaTelefonica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteClientes\InformeClientes.resx">
+      <DependentUpon>InformeClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.resx">
+      <DependentUpon>ReporteListadoCriptomonedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoAreaTelefonica.rdlc" />
+    <EmbeddedResource Include="ListadoCriptomonedas.rdlc" />
+    <EmbeddedResource Include="ListadoClientes.rdlc" />
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,12 +324,13 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Login y Registro\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listado_Empresas.rdlc" />
+    <EmbeddedResource Include="Listado_Pais.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Transacciones\Ventanas\ABM_Compra.resx">
       <DependentUpon>ABM_Compra.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,9 +396,7 @@
   <ItemGroup>
     <None Include="Resources\descargar.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios%28Ventanas%29\Listados\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
