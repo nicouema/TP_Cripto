@@ -535,6 +535,12 @@ namespace Criptomonedas
             listado.ShowDialog();
         }
 
+        private void informeCriptomonedasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ReporteListadoCriptomonedas reporte = new ReporteListadoCriptomonedas();
+            reporte.ShowDialog();
+        }
+
 
 
 
