@@ -33,6 +33,7 @@ namespace Criptomonedas
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnEstadisticas = new FontAwesome.Sharp.IconButton();
             this.btnInformes = new FontAwesome.Sharp.IconButton();
             this.btnEjecutivoCuenta = new FontAwesome.Sharp.IconButton();
             this.btnCriptomonedas = new FontAwesome.Sharp.IconButton();
@@ -66,9 +67,11 @@ namespace Criptomonedas
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelCompraVenta = new System.Windows.Forms.Panel();
+            this.reportCotizaciones = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnVender = new FontAwesome.Sharp.IconButton();
             this.grillaCripto = new System.Windows.Forms.DataGridView();
             this.cripno_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCompra = new FontAwesome.Sharp.IconButton();
             this.SM_Informes = new RJCodeAdvance.RJControls.RJDropdownMenu(this.components);
@@ -86,6 +89,10 @@ namespace Criptomonedas
             this.inforToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeProvinciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeCriptomonedasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SM_Estadisticas = new RJCodeAdvance.RJControls.RJDropdownMenu(this.components);
+            this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.masAltasEnElUltimoMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menosCompradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -97,11 +104,13 @@ namespace Criptomonedas
             this.panelCompraVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaCripto)).BeginInit();
             this.SM_Informes.SuspendLayout();
+            this.SM_Estadisticas.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.panelMenu.Controls.Add(this.btnEstadisticas);
             this.panelMenu.Controls.Add(this.btnInformes);
             this.panelMenu.Controls.Add(this.btnEjecutivoCuenta);
             this.panelMenu.Controls.Add(this.btnCriptomonedas);
@@ -112,6 +121,30 @@ namespace Criptomonedas
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(230, 640);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstadisticas.FlatAppearance.BorderSize = 0;
+            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.ForeColor = System.Drawing.Color.Black;
+            this.btnEstadisticas.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.btnEstadisticas.IconColor = System.Drawing.Color.Black;
+            this.btnEstadisticas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEstadisticas.IconSize = 40;
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(0, 340);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnEstadisticas.Size = new System.Drawing.Size(230, 60);
+            this.btnEstadisticas.TabIndex = 4;
+            this.btnEstadisticas.Tag = "Estadisticas";
+            this.btnEstadisticas.Text = "        Estadisticas";
+            this.btnEstadisticas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // btnInformes
             // 
@@ -132,7 +165,8 @@ namespace Criptomonedas
             this.btnInformes.Size = new System.Drawing.Size(230, 60);
             this.btnInformes.TabIndex = 3;
             this.btnInformes.Tag = "Informes";
-            this.btnInformes.Text = "         Informes";
+            this.btnInformes.Text = "        Informes";
+            this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInformes.UseVisualStyleBackColor = true;
             this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
@@ -521,14 +555,25 @@ namespace Criptomonedas
             // 
             // panelCompraVenta
             // 
+            this.panelCompraVenta.Controls.Add(this.reportCotizaciones);
             this.panelCompraVenta.Controls.Add(this.btnVender);
             this.panelCompraVenta.Controls.Add(this.grillaCripto);
             this.panelCompraVenta.Controls.Add(this.btnCompra);
             this.panelCompraVenta.Location = new System.Drawing.Point(6, 6);
             this.panelCompraVenta.Name = "panelCompraVenta";
-            this.panelCompraVenta.Size = new System.Drawing.Size(404, 537);
+            this.panelCompraVenta.Size = new System.Drawing.Size(792, 537);
             this.panelCompraVenta.TabIndex = 9;
             this.panelCompraVenta.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCompraVenta_Paint);
+            // 
+            // reportCotizaciones
+            // 
+            this.reportCotizaciones.LocalReport.ReportEmbeddedResource = "Criptomonedas.CotizacionesXCripto.rdlc";
+            this.reportCotizaciones.Location = new System.Drawing.Point(280, 4);
+            this.reportCotizaciones.Name = "reportCotizaciones";
+            this.reportCotizaciones.ServerReport.BearerToken = null;
+            this.reportCotizaciones.Size = new System.Drawing.Size(509, 509);
+            this.reportCotizaciones.TabIndex = 7;
+            this.reportCotizaciones.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // btnVender
             // 
@@ -539,7 +584,7 @@ namespace Criptomonedas
             this.btnVender.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnVender.IconColor = System.Drawing.Color.Black;
             this.btnVender.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVender.Location = new System.Drawing.Point(145, 3);
+            this.btnVender.Location = new System.Drawing.Point(141, 3);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(132, 57);
             this.btnVender.TabIndex = 5;
@@ -556,13 +601,15 @@ namespace Criptomonedas
             this.grillaCripto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaCripto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cripno_nombre,
+            this.codigo_cripto,
             this.precio});
-            this.grillaCripto.Location = new System.Drawing.Point(7, 66);
+            this.grillaCripto.Location = new System.Drawing.Point(3, 66);
             this.grillaCripto.Name = "grillaCripto";
             this.grillaCripto.ReadOnly = true;
             this.grillaCripto.RowHeadersWidth = 51;
             this.grillaCripto.Size = new System.Drawing.Size(270, 447);
             this.grillaCripto.TabIndex = 6;
+            this.grillaCripto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaCripto_CellClick);
             // 
             // cripno_nombre
             // 
@@ -572,6 +619,14 @@ namespace Criptomonedas
             this.cripno_nombre.Name = "cripno_nombre";
             this.cripno_nombre.ReadOnly = true;
             this.cripno_nombre.Width = 125;
+            // 
+            // codigo_cripto
+            // 
+            this.codigo_cripto.DataPropertyName = "codigo_cripto";
+            this.codigo_cripto.HeaderText = "codigo_cripto";
+            this.codigo_cripto.Name = "codigo_cripto";
+            this.codigo_cripto.ReadOnly = true;
+            this.codigo_cripto.Visible = false;
             // 
             // precio
             // 
@@ -591,7 +646,7 @@ namespace Criptomonedas
             this.btnCompra.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCompra.IconColor = System.Drawing.Color.Black;
             this.btnCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCompra.Location = new System.Drawing.Point(7, 3);
+            this.btnCompra.Location = new System.Drawing.Point(3, 3);
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Size = new System.Drawing.Size(132, 57);
             this.btnCompra.TabIndex = 4;
@@ -624,7 +679,7 @@ namespace Criptomonedas
             this.SM_Informes.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_Informes.Name = "rjDropdownMenu1";
             this.SM_Informes.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_Informes.Size = new System.Drawing.Size(270, 334);
+            this.SM_Informes.Size = new System.Drawing.Size(270, 312);
             // 
             // informeClientesItem
             // 
@@ -724,6 +779,43 @@ namespace Criptomonedas
             this.informeCriptomonedasToolStripMenuItem.Text = "Informe Criptomonedas";
             this.informeCriptomonedasToolStripMenuItem.Click += new System.EventHandler(this.informeCriptomonedasToolStripMenuItem_Click_1);
             // 
+            // SM_Estadisticas
+            // 
+            this.SM_Estadisticas.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.SM_Estadisticas.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SM_Estadisticas.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.SM_Estadisticas.IsMainMenu = false;
+            this.SM_Estadisticas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem});
+            this.SM_Estadisticas.MenuItemHeight = 25;
+            this.SM_Estadisticas.MenuItemTextColor = System.Drawing.Color.Black;
+            this.SM_Estadisticas.Name = "rjDropdownMenu1";
+            this.SM_Estadisticas.PrimaryColor = System.Drawing.Color.DarkViolet;
+            this.SM_Estadisticas.Size = new System.Drawing.Size(174, 26);
+            // 
+            // cotizacionesMasAltasEnElUltimoMesToolStripMenuItem
+            // 
+            this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.masAltasEnElUltimoMesToolStripMenuItem,
+            this.menosCompradasToolStripMenuItem});
+            this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem.Name = "cotizacionesMasAltasEnElUltimoMesToolStripMenuItem";
+            this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem.Text = "Criptomonedas";
+            // 
+            // masAltasEnElUltimoMesToolStripMenuItem
+            // 
+            this.masAltasEnElUltimoMesToolStripMenuItem.Name = "masAltasEnElUltimoMesToolStripMenuItem";
+            this.masAltasEnElUltimoMesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.masAltasEnElUltimoMesToolStripMenuItem.Text = "5 mas compradas";
+            this.masAltasEnElUltimoMesToolStripMenuItem.Click += new System.EventHandler(this.masAltasEnElUltimoMesToolStripMenuItem_Click);
+            // 
+            // menosCompradasToolStripMenuItem
+            // 
+            this.menosCompradasToolStripMenuItem.Name = "menosCompradasToolStripMenuItem";
+            this.menosCompradasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.menosCompradasToolStripMenuItem.Text = "5 menos compradas";
+            this.menosCompradasToolStripMenuItem.Click += new System.EventHandler(this.menosCompradasToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -753,6 +845,7 @@ namespace Criptomonedas
             this.panelCompraVenta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grillaCripto)).EndInit();
             this.SM_Informes.ResumeLayout(false);
+            this.SM_Estadisticas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -799,8 +892,6 @@ namespace Criptomonedas
         private System.Windows.Forms.Panel panelCompraVenta;
         private FontAwesome.Sharp.IconButton btnVender;
         private System.Windows.Forms.DataGridView grillaCripto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cripno_nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private FontAwesome.Sharp.IconButton btnCompra;
         private FontAwesome.Sharp.IconButton btnInformes;
         private RJCodeAdvance.RJControls.RJDropdownMenu SM_Informes;
@@ -818,6 +909,15 @@ namespace Criptomonedas
         private System.Windows.Forms.ToolStripMenuItem inforToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeProvinciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informeCriptomonedasToolStripMenuItem;
+        private FontAwesome.Sharp.IconButton btnEstadisticas;
+        private RJCodeAdvance.RJControls.RJDropdownMenu SM_Estadisticas;
+        private System.Windows.Forms.ToolStripMenuItem cotizacionesMasAltasEnElUltimoMesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem masAltasEnElUltimoMesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menosCompradasToolStripMenuItem;
+        private Microsoft.Reporting.WinForms.ReportViewer reportCotizaciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cripno_nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_cripto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
     }
 }
 

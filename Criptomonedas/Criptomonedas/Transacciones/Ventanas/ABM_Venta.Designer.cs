@@ -53,10 +53,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.grillaCripto = new System.Windows.Forms.DataGridView();
-            this.cripto_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMinimizarPantalla = new FontAwesome.Sharp.IconButton();
             this.btnCerrarPantalla = new FontAwesome.Sharp.IconButton();
+            this.cripto_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaCompras)).BeginInit();
@@ -360,26 +361,13 @@
             this.grillaCripto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaCripto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cripto_nombre,
-            this.valor_cripto});
+            this.valor_cripto,
+            this.codigo_cripto});
             this.grillaCripto.Location = new System.Drawing.Point(5, 23);
             this.grillaCripto.Name = "grillaCripto";
             this.grillaCripto.ReadOnly = true;
             this.grillaCripto.Size = new System.Drawing.Size(253, 328);
             this.grillaCripto.TabIndex = 4;
-            // 
-            // cripto_nombre
-            // 
-            this.cripto_nombre.DataPropertyName = "nombre";
-            this.cripto_nombre.HeaderText = "Criptomoneda";
-            this.cripto_nombre.Name = "cripto_nombre";
-            this.cripto_nombre.ReadOnly = true;
-            // 
-            // valor_cripto
-            // 
-            this.valor_cripto.DataPropertyName = "valor";
-            this.valor_cripto.HeaderText = "Precio";
-            this.valor_cripto.Name = "valor_cripto";
-            this.valor_cripto.ReadOnly = true;
             // 
             // btnMinimizarPantalla
             // 
@@ -418,6 +406,28 @@
             this.btnCerrarPantalla.TabIndex = 49;
             this.btnCerrarPantalla.UseVisualStyleBackColor = false;
             this.btnCerrarPantalla.Click += new System.EventHandler(this.btnCerrarPantalla_Click);
+            // 
+            // cripto_nombre
+            // 
+            this.cripto_nombre.DataPropertyName = "nombre";
+            this.cripto_nombre.HeaderText = "Criptomoneda";
+            this.cripto_nombre.Name = "cripto_nombre";
+            this.cripto_nombre.ReadOnly = true;
+            // 
+            // valor_cripto
+            // 
+            this.valor_cripto.DataPropertyName = "valor";
+            this.valor_cripto.HeaderText = "Precio";
+            this.valor_cripto.Name = "valor_cripto";
+            this.valor_cripto.ReadOnly = true;
+            // 
+            // codigo_cripto
+            // 
+            this.codigo_cripto.DataPropertyName = "codigo_cripto";
+            this.codigo_cripto.HeaderText = "codigo_cripto";
+            this.codigo_cripto.Name = "codigo_cripto";
+            this.codigo_cripto.ReadOnly = true;
+            this.codigo_cripto.Visible = false;
             // 
             // ABM_Venta
             // 
@@ -477,9 +487,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.DataGridView grillaCripto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cripto_nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor_cripto;
         private FontAwesome.Sharp.IconButton btnMinimizarPantalla;
         private FontAwesome.Sharp.IconButton btnCerrarPantalla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cripto_nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor_cripto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_cripto;
     }
 }
