@@ -182,6 +182,41 @@ namespace Criptomonedas.DAO
                 cn.Close();
             }
         }
+
+        public static DataTable obtenerClientesXProvincia()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT P.nombre_provincia as Provincia, COUNT(C.nro_cliente) as Cantidad " +
+                                  "FROM Clientes C JOIN Barrio B ON (C.cod_barrio=B.cod_barrio) JOIN Ciudad Ci ON (B.cod_ciudad = Ci.cod_ciudad) JOIN Provincias P ON (Ci.cod_provincia = P.cod_provincia) " +
+                                  "GROUP BY P.nombre_provincia";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 
 }
