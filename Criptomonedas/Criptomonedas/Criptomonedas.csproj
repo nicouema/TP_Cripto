@@ -565,6 +565,7 @@
     </None>
     <None Include="Formularios%28Ventanas%29\Listados\Listado Monedero\DatosMonederosConMasTransacciones.xss">
       <DependentUpon>DatosMonederosConMasTransacciones.xsd</DependentUpon>
+    </None>
     <None Include="Formularios%28Ventanas%29\Listados\Listado Cotizaciones\EstadisticasCriptomonedas1.xsc">
       <DependentUpon>EstadisticasCriptomonedas1.xsd</DependentUpon>
     </None>
