@@ -30,6 +30,7 @@ using Criptomonedas.Formularios_Ventanas_.Listado_Cotizaciones;
 using Criptomonedas.Formularios_Ventanas_.Listado_Provincias;
 using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Cotizaciones;
 using Microsoft.Reporting.WinForms;
+using Criptomonedas.Formularios_Ventanas_.Listados.ReporteClientes;
 
 namespace Criptomonedas
 {
@@ -584,6 +585,18 @@ namespace Criptomonedas
             reportCotizaciones.LocalReport.DataSources.Clear();
             reportCotizaciones.LocalReport.DataSources.Add(ds);
             this.reportCotizaciones.RefreshReport();
+        }
+
+        private void cantidadPorCiudadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaCliente ventana = new EstadisticaCliente();
+            ventana.ShowDialog();
+        }
+
+        private void monederosPorClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaClienteMonedero ventana = new EstadisticaClienteMonedero();
+            ventana.ShowDialog();
         }
 
         // Funciones Submenu ABM Criptomonedas
