@@ -96,6 +96,7 @@ namespace Criptomonedas
             this.menosCompradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masVendidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menosVendidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conMasTransaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porProvinciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porCiudadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,9 +105,9 @@ namespace Criptomonedas
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejecutivoDeCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conMasClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.conMasTransaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noseQueEsEstoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarCotizacion = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -819,12 +820,13 @@ namespace Criptomonedas
             this.clientesToolStripMenuItem,
             this.monederosToolStripMenuItem,
             this.ejecutivoDeCuentasToolStripMenuItem,
-            this.transaccionesToolStripMenuItem});
+            this.transaccionesToolStripMenuItem,
+            this.agregarCotizacion});
             this.SM_Estadisticas.MenuItemHeight = 25;
             this.SM_Estadisticas.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_Estadisticas.Name = "rjDropdownMenu1";
             this.SM_Estadisticas.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_Estadisticas.Size = new System.Drawing.Size(213, 136);
+            this.SM_Estadisticas.Size = new System.Drawing.Size(213, 158);
             // 
             // cotizacionesMasAltasEnElUltimoMesToolStripMenuItem
             // 
@@ -841,30 +843,37 @@ namespace Criptomonedas
             // masAltasEnElUltimoMesToolStripMenuItem
             // 
             this.masAltasEnElUltimoMesToolStripMenuItem.Name = "masAltasEnElUltimoMesToolStripMenuItem";
-            this.masAltasEnElUltimoMesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.masAltasEnElUltimoMesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.masAltasEnElUltimoMesToolStripMenuItem.Text = "5 mas compradas";
             this.masAltasEnElUltimoMesToolStripMenuItem.Click += new System.EventHandler(this.masAltasEnElUltimoMesToolStripMenuItem_Click);
             // 
             // menosCompradasToolStripMenuItem
             // 
             this.menosCompradasToolStripMenuItem.Name = "menosCompradasToolStripMenuItem";
-            this.menosCompradasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.menosCompradasToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.menosCompradasToolStripMenuItem.Text = "5 menos compradas";
             this.menosCompradasToolStripMenuItem.Click += new System.EventHandler(this.menosCompradasToolStripMenuItem_Click);
             // 
             // masVendidasToolStripMenuItem
             // 
             this.masVendidasToolStripMenuItem.Name = "masVendidasToolStripMenuItem";
-            this.masVendidasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.masVendidasToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.masVendidasToolStripMenuItem.Text = "5 mas vendidas";
             this.masVendidasToolStripMenuItem.Click += new System.EventHandler(this.masVendidasToolStripMenuItem_Click);
             // 
             // menosVendidasToolStripMenuItem
             // 
             this.menosVendidasToolStripMenuItem.Name = "menosVendidasToolStripMenuItem";
-            this.menosVendidasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.menosVendidasToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.menosVendidasToolStripMenuItem.Text = "5 menos vendidas";
             this.menosVendidasToolStripMenuItem.Click += new System.EventHandler(this.menosVendidasToolStripMenuItem_Click);
+            // 
+            // conMasTransaccionesToolStripMenuItem
+            // 
+            this.conMasTransaccionesToolStripMenuItem.Name = "conMasTransaccionesToolStripMenuItem";
+            this.conMasTransaccionesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.conMasTransaccionesToolStripMenuItem.Text = "Con mas Transacciones";
+            this.conMasTransaccionesToolStripMenuItem.Click += new System.EventHandler(this.conMasTransaccionesToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -927,13 +936,6 @@ namespace Criptomonedas
             this.conMasClientesToolStripMenuItem.Text = "Con mas Clientes";
             this.conMasClientesToolStripMenuItem.Click += new System.EventHandler(this.conMasClientesToolStripMenuItem_Click);
             // 
-            // conMasTransaccionesToolStripMenuItem
-            // 
-            this.conMasTransaccionesToolStripMenuItem.Name = "conMasTransaccionesToolStripMenuItem";
-            this.conMasTransaccionesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.conMasTransaccionesToolStripMenuItem.Text = "Con mas Transacciones";
-            this.conMasTransaccionesToolStripMenuItem.Click += new System.EventHandler(this.conMasTransaccionesToolStripMenuItem_Click);
-            // 
             // transaccionesToolStripMenuItem
             // 
             this.transaccionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -945,9 +947,17 @@ namespace Criptomonedas
             // noseQueEsEstoToolStripMenuItem
             // 
             this.noseQueEsEstoToolStripMenuItem.Name = "noseQueEsEstoToolStripMenuItem";
-            this.noseQueEsEstoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noseQueEsEstoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.noseQueEsEstoToolStripMenuItem.Text = "Por Monedero";
             this.noseQueEsEstoToolStripMenuItem.Click += new System.EventHandler(this.noseQueEsEstoToolStripMenuItem_Click);
+            // 
+            // agregarCotizacion
+            // 
+            this.agregarCotizacion.Name = "agregarCotizacion";
+            this.agregarCotizacion.Size = new System.Drawing.Size(212, 22);
+            this.agregarCotizacion.Text = "AgregarCotizacion";
+            this.agregarCotizacion.Visible = false;
+            this.agregarCotizacion.Click += new System.EventHandler(this.agregarCotizacion_Click);
             // 
             // Principal
             // 
@@ -1065,6 +1075,7 @@ namespace Criptomonedas
         private System.Windows.Forms.ToolStripMenuItem conMasTransaccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transaccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noseQueEsEstoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarCotizacion;
     }
 }
 

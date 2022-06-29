@@ -75,6 +75,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoCotiz.cs" />
     <Compile Include="DAO\BarrioDAO.cs" />
     <Compile Include="DAO\ClientesDAO.cs" />
     <Compile Include="DAO\CotizacionesDAO.cs" />

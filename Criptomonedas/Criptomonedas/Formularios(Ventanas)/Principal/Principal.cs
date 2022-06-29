@@ -58,6 +58,11 @@ namespace Criptomonedas
             usuarioEnSesion = usu;
             clienteEnSesion = CriptoMonedasDataAccess.BuscarClientePorUsuario(usu);
             CriptoMonedasDataAccess.cargarGrillaCriptomonedas(grillaCripto);
+
+            if (usu.User == "nicouema")
+            {
+                agregarCotizacion.Visible = true;
+            }
         }
 
 
@@ -639,6 +644,12 @@ namespace Criptomonedas
         {
             TransaccionPorMonedero ventana = new TransaccionPorMonedero();
             ventana.ShowDialog();
+        }
+
+        private void agregarCotizacion_Click(object sender, EventArgs e)
+        {
+            AutoCotiz.agregarCotizaciones(100, 21, 1.34);
+            CriptoMonedasDataAccess.cargarGrillaCriptomonedas(grillaCripto);
         }
         // Funciones Submenu ABM Criptomonedas
 
