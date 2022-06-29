@@ -449,6 +449,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Monedero\EstadísticaMonederosConMasTrasacciones.resx">
       <DependentUpon>EstadísticaMonederosConMasTrasacciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteMenosCompras.resx">
       <DependentUpon>ReporteMenosCompras.cs</DependentUpon>
     </EmbeddedResource>
