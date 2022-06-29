@@ -32,6 +32,7 @@ using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Cotizaciones;
 using Microsoft.Reporting.WinForms;
 using Criptomonedas.Formularios_Ventanas_.Listados.ReporteClientes;
 using Criptomonedas.Formularios_Ventanas_.Listados.ReporteCriptomoneda;
+using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Monedero;
 
 namespace Criptomonedas
 {
@@ -43,7 +44,7 @@ namespace Criptomonedas
         private Size formSize;
         private static Usuario usuarioEnSesion;
         private static Cliente clienteEnSesion;
-        private static int codCriptoSelect;
+        private static int codCriptoSelect = 19;
 
         public Principal(Usuario usu)
         {
@@ -582,22 +583,24 @@ namespace Criptomonedas
             ventana.ShowDialog();
         }
 
+        private void cToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadísticaMonederosConMasTrasacciones ventana = new EstadísticaMonederosConMasTrasacciones();
+            ventana.ShowDialog();
+        }
 
         private void grillaCripto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = grillaCripto.Rows[indice];
             codCriptoSelect = (int)filaSeleccionada.Cells["codigo_cripto"].Value;
+            lblCriptoSelect.Text = (string)filaSeleccionada.Cells["nombre"].Value;
             reportViewer1_Load(sender, e);
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
-            if (codCriptoSelect == null)
-            {
-                return;
-            }
             dataTable = CotizacionesDAO.obtenerCotizacionesCripto(codCriptoSelect);
 
             ReportDataSource ds = new ReportDataSource("CotizacionesXCripto", dataTable);
@@ -606,7 +609,6 @@ namespace Criptomonedas
             reportCotizaciones.LocalReport.DataSources.Add(ds);
             this.reportCotizaciones.RefreshReport();
         }
-
         // Funciones Submenu ABM Criptomonedas
 
 
