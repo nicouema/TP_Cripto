@@ -482,7 +482,43 @@ namespace Criptomonedas.DAO
                 cn.Close();
             }
         }
-          
+
+        public static DataTable ObtenerListadoPais()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT P.*" +
+                                  "FROM País P";
+
+
+                cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public static DataTable ObtenerListadoCriptomonedasRestriccionCodigo(string inicio, string final)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
@@ -519,7 +555,7 @@ namespace Criptomonedas.DAO
             }
         }
 
-        public static DataTable ObtenerListadoCiudades2()
+        public static DataTable ObtenerListadoCiudadesPais(int codPais)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -527,11 +563,52 @@ namespace Criptomonedas.DAO
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT *" +
-                                  "FROM Ciudad" +
-                                  "WHERE cod_ciudad = 23";
+                string consulta = "SELECT C.* " +
+                                  "FROM Ciudad C " +
+                                  "JOIN Provincias Prov ON (Prov.cod_provincia = C.cod_provincia) " +
+                                  "WHERE Prov.cod_país = @codPais";
 
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codPais", codPais);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error al cargar consulta");
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+        public static DataTable ObtenerListadoCiudadesProv(int codProv)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * " +
+                                  "FROM Ciudad " +
+                                  "WHERE cod_provincia = @codProv";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codProv", codProv);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -631,6 +708,82 @@ namespace Criptomonedas.DAO
             }
         }
 
+        public static DataTable ObtenerListadoMonederoCripto(int codCripto)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT M.* " +
+                                  "FROM Monedero M " +
+                                  "WHERE M.codigo_cripto = @codCripto";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codCripto", codCripto);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static DataTable ObtenerListadoMonederoCliente(int codCliente)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT M.* " +
+                                  "FROM Monedero M " +
+                                  "JOIN Clientes C ON (C.nro_cliente = M.nro_cliente) " +
+                                  "WHERE M.nro_cliente = @codCliente";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codCliente", codCliente);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 
         public static DataTable ObtenerListadoAreaTelefonicaRestriccionArea(int codArea)
         {
