@@ -15,6 +15,45 @@ namespace Criptomonedas.DAO
 {
     public class CriptoMonedasDataAccess
     {
+        public static DataTable ObtenerCriptomonedasMasVendidas()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT TOP 5 SUM(tm.cantidad_moneda) as CantidadVendida, c.nombre as Nombre " +
+                    "FROM Transacciones_por_monedas tm JOIN Criptomonedas c ON tm.codigo_cripto = c.codigo_cripto " +
+                    "WHERE tm.tipo_operacion=2 " +
+                    "GROUP BY c.nombre " +
+                    "ORDER BY CantidadVendida DESC";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static Cliente BuscarClientePorUsuario(Usuario usuario)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
@@ -151,7 +190,6 @@ namespace Criptomonedas.DAO
                 cn.Close();
             }
         }
-
 
         internal static string getCriptoNameById(int codigoCripto)
         {
@@ -375,10 +413,11 @@ namespace Criptomonedas.DAO
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "SELECT cm.valor, c.nombre " +
-                    "FROM Cotizaciones_por_monedas cm " +
-                    "JOIN Criptomonedas c ON cm.codigo_cripto=c.codigo_cripto " +
-                    "AND cm.fecha = (SELECT MAX(c.fecha) FROM Cotizaciones_por_monedas c WHERE c.codigo_cripto=cm.codigo_cripto)";
+                string consulta = "SELECT c.codigo_cripto, cm.valor, c.nombre " +
+                    "FROM Cotizaciones_por_monedas cm JOIN Criptomonedas c " +
+                    "ON cm.codigo_cripto = c.codigo_cripto " +
+                    "AND cm.fecha = (SELECT MAX(c.fecha) FROM Cotizaciones_por_monedas c WHERE c.codigo_cripto = cm.codigo_cripto) " +
+                    "AND cm.hora = (SELECT MAX(c.hora) FROM Cotizaciones_por_monedas c WHERE c.codigo_cripto = cm.codigo_cripto AND c.fecha = cm.fecha)";
 
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;

@@ -31,14 +31,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.grillaCripto = new System.Windows.Forms.DataGridView();
-            this.cripto_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblModificar = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnComprar = new RJCodeAdvance.RJControls.RJButton();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.lblCantidadEnMonedero = new System.Windows.Forms.Label();
             this.grillaCompras = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_monedero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.btnAgregarCompra = new RJCodeAdvance.RJControls.RJButton();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.comboCriptomonedas = new System.Windows.Forms.ComboBox();
@@ -46,23 +53,17 @@
             this.labelNombreCripto = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_monedero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.btnMinimizarPantalla = new FontAwesome.Sharp.IconButton();
             this.btnCerrarPantalla = new FontAwesome.Sharp.IconButton();
+            this.cripto_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaCripto)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -95,26 +96,13 @@
             this.grillaCripto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaCripto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cripto_nombre,
+            this.codigo_cripto,
             this.valor_cripto});
             this.grillaCripto.Location = new System.Drawing.Point(5, 23);
             this.grillaCripto.Name = "grillaCripto";
             this.grillaCripto.ReadOnly = true;
             this.grillaCripto.Size = new System.Drawing.Size(253, 328);
             this.grillaCripto.TabIndex = 4;
-            // 
-            // cripto_nombre
-            // 
-            this.cripto_nombre.DataPropertyName = "nombre";
-            this.cripto_nombre.HeaderText = "Criptomoneda";
-            this.cripto_nombre.Name = "cripto_nombre";
-            this.cripto_nombre.ReadOnly = true;
-            // 
-            // valor_cripto
-            // 
-            this.valor_cripto.DataPropertyName = "valor";
-            this.valor_cripto.HeaderText = "Precio";
-            this.valor_cripto.Name = "valor_cripto";
-            this.valor_cripto.ReadOnly = true;
             // 
             // panel2
             // 
@@ -176,6 +164,23 @@
             this.btnComprar.UseVisualStyleBackColor = false;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.Lime;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.Lime;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 42;
+            this.iconPictureBox2.ImageLocation = "";
+            this.iconPictureBox2.Location = new System.Drawing.Point(339, 63);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(43, 42);
+            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBox2.TabIndex = 49;
+            this.iconPictureBox2.TabStop = false;
+            // 
             // lblCantidadEnMonedero
             // 
             this.lblCantidadEnMonedero.AutoSize = true;
@@ -203,6 +208,83 @@
             this.grillaCompras.ReadOnly = true;
             this.grillaCompras.Size = new System.Drawing.Size(314, 150);
             this.grillaCompras.TabIndex = 47;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Criptomoneda";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 80;
+            // 
+            // cod_cripto
+            // 
+            this.cod_cripto.HeaderText = "Codigo Criptomoneda";
+            this.cod_cripto.Name = "cod_cripto";
+            this.cod_cripto.ReadOnly = true;
+            this.cod_cripto.Visible = false;
+            // 
+            // cod_monedero
+            // 
+            this.cod_monedero.DataPropertyName = "cod_monedero";
+            this.cod_monedero.HeaderText = "Codigo Monedero";
+            this.cod_monedero.Name = "cod_monedero";
+            this.cod_monedero.ReadOnly = true;
+            this.cod_monedero.Visible = false;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 60;
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "valor";
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            this.valor.Width = 60;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 60;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.Lime;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.Lime;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 31;
+            this.iconPictureBox1.ImageLocation = "";
+            this.iconPictureBox1.Location = new System.Drawing.Point(175, 63);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBox1.TabIndex = 46;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox4.ForeColor = System.Drawing.Color.Lime;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Coins;
+            this.iconPictureBox4.IconColor = System.Drawing.Color.Lime;
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 31;
+            this.iconPictureBox4.Location = new System.Drawing.Point(17, 63);
+            this.iconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(31, 32);
+            this.iconPictureBox4.TabIndex = 45;
+            this.iconPictureBox4.TabStop = false;
             // 
             // btnAgregarCompra
             // 
@@ -287,100 +369,6 @@
             this.label3.TabIndex = 48;
             this.label3.Text = "Cantidad en Monedero";
             // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Criptomoneda";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 80;
-            // 
-            // cod_cripto
-            // 
-            this.cod_cripto.HeaderText = "Codigo Criptomoneda";
-            this.cod_cripto.Name = "cod_cripto";
-            this.cod_cripto.ReadOnly = true;
-            this.cod_cripto.Visible = false;
-            // 
-            // cod_monedero
-            // 
-            this.cod_monedero.DataPropertyName = "cod_monedero";
-            this.cod_monedero.HeaderText = "Codigo Monedero";
-            this.cod_monedero.Name = "cod_monedero";
-            this.cod_monedero.ReadOnly = true;
-            this.cod_monedero.Visible = false;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 60;
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "valor";
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            this.valor.Width = 60;
-            // 
-            // total
-            // 
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Width = 60;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.Lime;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.Lime;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 42;
-            this.iconPictureBox2.ImageLocation = "";
-            this.iconPictureBox2.Location = new System.Drawing.Point(339, 63);
-            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(43, 42);
-            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox2.TabIndex = 49;
-            this.iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.Lime;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.Lime;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 31;
-            this.iconPictureBox1.ImageLocation = "";
-            this.iconPictureBox1.Location = new System.Drawing.Point(175, 63);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(31, 31);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox1.TabIndex = 46;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox4
-            // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox4.ForeColor = System.Drawing.Color.Lime;
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Coins;
-            this.iconPictureBox4.IconColor = System.Drawing.Color.Lime;
-            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox4.IconSize = 31;
-            this.iconPictureBox4.Location = new System.Drawing.Point(17, 63);
-            this.iconPictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(31, 32);
-            this.iconPictureBox4.TabIndex = 45;
-            this.iconPictureBox4.TabStop = false;
-            // 
             // btnMinimizarPantalla
             // 
             this.btnMinimizarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -419,6 +407,28 @@
             this.btnCerrarPantalla.UseVisualStyleBackColor = false;
             this.btnCerrarPantalla.Click += new System.EventHandler(this.btnCerrarPantalla_Click);
             // 
+            // cripto_nombre
+            // 
+            this.cripto_nombre.DataPropertyName = "nombre";
+            this.cripto_nombre.HeaderText = "Criptomoneda";
+            this.cripto_nombre.Name = "cripto_nombre";
+            this.cripto_nombre.ReadOnly = true;
+            // 
+            // codigo_cripto
+            // 
+            this.codigo_cripto.DataPropertyName = "codigo_cripto";
+            this.codigo_cripto.HeaderText = "codigo_cripto";
+            this.codigo_cripto.Name = "codigo_cripto";
+            this.codigo_cripto.ReadOnly = true;
+            this.codigo_cripto.Visible = false;
+            // 
+            // valor_cripto
+            // 
+            this.valor_cripto.DataPropertyName = "valor";
+            this.valor_cripto.HeaderText = "Precio";
+            this.valor_cripto.Name = "valor_cripto";
+            this.valor_cripto.ReadOnly = true;
+            // 
             // ABM_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,8 +451,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.ResumeLayout(false);
@@ -472,8 +482,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label lblCantidadEnMonedero;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cripto_nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor_cripto;
         private RJCodeAdvance.RJControls.RJButton btnComprar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_cripto;
@@ -481,5 +489,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cripto_nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_cripto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor_cripto;
     }
 }
