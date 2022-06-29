@@ -419,12 +419,13 @@ namespace Criptomonedas
             this.btnTipoDocumento,
             this.altaÁreaTelefónicaToolStripMenuItem,
             this.altaTeléfonoToolStripMenuItem,
-            this.modificarClienteToolStripMenuItem});
+            this.modificarClienteToolStripMenuItem,
+            this.agregarCotizacion});
             this.SM_ABM_DatosCliente.MenuItemHeight = 35;
             this.SM_ABM_DatosCliente.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_ABM_DatosCliente.Name = "subMenu1";
             this.SM_ABM_DatosCliente.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_ABM_DatosCliente.Size = new System.Drawing.Size(211, 180);
+            this.SM_ABM_DatosCliente.Size = new System.Drawing.Size(211, 224);
             this.SM_ABM_DatosCliente.Opening += new System.ComponentModel.CancelEventHandler(this.SM_ABM_DatosCliente_Opening);
             // 
             // btnAltaPais
@@ -820,13 +821,12 @@ namespace Criptomonedas
             this.clientesToolStripMenuItem,
             this.monederosToolStripMenuItem,
             this.ejecutivoDeCuentasToolStripMenuItem,
-            this.transaccionesToolStripMenuItem,
-            this.agregarCotizacion});
+            this.transaccionesToolStripMenuItem});
             this.SM_Estadisticas.MenuItemHeight = 25;
             this.SM_Estadisticas.MenuItemTextColor = System.Drawing.Color.Black;
             this.SM_Estadisticas.Name = "rjDropdownMenu1";
             this.SM_Estadisticas.PrimaryColor = System.Drawing.Color.DarkViolet;
-            this.SM_Estadisticas.Size = new System.Drawing.Size(213, 158);
+            this.SM_Estadisticas.Size = new System.Drawing.Size(213, 114);
             // 
             // cotizacionesMasAltasEnElUltimoMesToolStripMenuItem
             // 
@@ -954,10 +954,9 @@ namespace Criptomonedas
             // agregarCotizacion
             // 
             this.agregarCotizacion.Name = "agregarCotizacion";
-            this.agregarCotizacion.Size = new System.Drawing.Size(212, 22);
+            this.agregarCotizacion.Size = new System.Drawing.Size(210, 22);
             this.agregarCotizacion.Text = "AgregarCotizacion";
-            this.agregarCotizacion.Visible = false;
-            this.agregarCotizacion.Click += new System.EventHandler(this.agregarCotizacion_Click);
+            this.agregarCotizacion.Click += new System.EventHandler(this.agregarCotizacionToolStripMenuItem_Click);
             // 
             // Principal
             // 

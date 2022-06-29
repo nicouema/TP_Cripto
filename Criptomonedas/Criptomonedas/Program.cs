@@ -16,7 +16,7 @@ namespace Criptomonedas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Principal(new Entidades.Usuario("nicouema", "nicouema")));
+            Application.Run(new LoginForm());
         }
     }
 }
