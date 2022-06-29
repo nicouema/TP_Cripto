@@ -222,6 +222,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EstadisticaClientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\DataSetCliente.cs">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </Compile>
