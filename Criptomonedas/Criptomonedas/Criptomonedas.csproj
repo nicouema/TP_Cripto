@@ -339,6 +339,23 @@
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.Designer.cs">
       <DependentUpon>ReporteListadoCriptomonedas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\CompraVentaXCripto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\CompraVentaXCripto.Designer.cs">
+      <DependentUpon>CompraVentaXCripto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\DatosEstadisticaCompraYVentaCripto.cs">
+      <DependentUpon>DatosEstadisticaCompraYVentaCripto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\DatosEstadisticaCompraYVentaCripto.Designer.cs">
+      <DependentUpon>DatosEstadisticaCompraYVentaCripto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\DatosEstadisticaCompraYVentaCripto1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticaCompraYVentaCripto.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteMenosVendidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +367,17 @@
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.Designer.cs">
       <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\TransaccionesXMonedero1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransaccionesXMonedero.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\TransaccionPorMonedero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\TransaccionPorMonedero.Designer.cs">
+      <DependentUpon>TransaccionPorMonedero.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\TipoDocumento\TipoDocumento.cs">
       <SubType>Form</SubType>
@@ -401,8 +429,10 @@
     <Compile Include="Transacciones\Ventanas\ABM_Venta.Designer.cs">
       <DependentUpon>ABM_Venta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CantidadTransaccionesPorMonedero.rdlc" />
     <EmbeddedResource Include="CotizacionesXCripto.rdlc" />
     <EmbeddedResource Include="ejecutivoDeCuentas.rdlc" />
+    <EmbeddedResource Include="EstadisticaCompraVentaxCripto.rdlc" />
     <EmbeddedResource Include="EstadisticaClienteMonedero.rdlc" />
     <EmbeddedResource Include="EstadisticaClientes.rdlc" />
     <EmbeddedResource Include="EstadísticaMonederosConMasTransacciones.rdlc" />
@@ -491,11 +521,17 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Reporte Telefono\ListadoTelefonos.resx">
       <DependentUpon>ListadoTelefonos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\CompraVentaXCripto.resx">
+      <DependentUpon>CompraVentaXCripto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteMenosVendidas.resx">
       <DependentUpon>ReporteMenosVendidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.resx">
       <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\TransaccionPorMonedero.resx">
+      <DependentUpon>TransaccionPorMonedero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\TipoDocumento\TipoDocumento.resx">
       <DependentUpon>TipoDocumento.cs</DependentUpon>
@@ -617,6 +653,28 @@
     </None>
     <None Include="Formularios%28Ventanas%29\Listados\Listado Cotizaciones\CotizacionesXCripto.xss">
       <DependentUpon>CotizacionesXCripto.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\DatosEstadisticaCompraYVentaCripto.xsc">
+      <DependentUpon>DatosEstadisticaCompraYVentaCripto.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\DatosEstadisticaCompraYVentaCripto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticaCompraYVentaCripto1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\DatosEstadisticaCompraYVentaCripto.xss">
+      <DependentUpon>DatosEstadisticaCompraYVentaCripto.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\TransaccionesXMonedero.xsc">
+      <DependentUpon>TransaccionesXMonedero.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\TransaccionesXMonedero.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransaccionesXMonedero1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\TransaccionesXMonedero.xss">
+      <DependentUpon>TransaccionesXMonedero.xsd</DependentUpon>
     </None>
     <None Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClientes.xsc">
       <DependentUpon>EstadisticaClientes.xsd</DependentUpon>
