@@ -945,8 +945,8 @@ namespace Criptomonedas
             // noseQueEsEstoToolStripMenuItem
             // 
             this.noseQueEsEstoToolStripMenuItem.Name = "noseQueEsEstoToolStripMenuItem";
-            this.noseQueEsEstoToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.noseQueEsEstoToolStripMenuItem.Text = "nose que es esto";
+            this.noseQueEsEstoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noseQueEsEstoToolStripMenuItem.Text = "Por Monedero";
             this.noseQueEsEstoToolStripMenuItem.Click += new System.EventHandler(this.noseQueEsEstoToolStripMenuItem_Click);
             // 
             // Principal
