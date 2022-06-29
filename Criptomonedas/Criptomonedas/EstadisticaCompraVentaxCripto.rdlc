@@ -17,18 +17,18 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Criptomoneda">
-          <DataField>Criptomoneda</DataField>
+        <Field Name="codigo_cripto">
+          <DataField>codigo_cripto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Transacciones">
-          <DataField>Transacciones</DataField>
+        <Field Name="Cantidad_Transacciones">
+          <DataField>Cantidad_Transacciones</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DatosEstadisticaCompraYVentaCripto</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Agustin\Desktop\TP_Cripto\Criptomonedas\Criptomonedas\Formularios(Ventanas)\Estadisticas\CompraVentaXCripto\DatosEstadisticaCompraYVentaCripto.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Agustin\Desktop\TP_Cripto\Criptomonedas\Criptomonedas\Formularios(Ventanas)\Listados\Rerporte Transaccion\DatosEstadisticaCompraYVentaCripto.xsd</rd:SchemaPath>
         <rd:TableName>TablaEstadisticaCVXCripto</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -99,32 +99,32 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Criptomoneda.Value</GroupExpression>
+                      <GroupExpression>=Fields!codigo_cripto.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Criptomoneda.Value</Value>
+                      <Value>=Fields!codigo_cripto.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Criptomoneda.Value</Label>
+                  <Label>=Fields!codigo_cripto.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Transacciones</Label>
+                  <Label>Cantidad Transacciones</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="venta">
+                <ChartSeries Name="Cantidad_Transacciones">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Transacciones.Value)</Y>
+                        <Y>=Sum(Fields!Cantidad_Transacciones.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
