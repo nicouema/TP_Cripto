@@ -34,7 +34,7 @@
             // reportViewerCotizaciones
             // 
             this.reportViewerCotizaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewerCotizaciones.LocalReport.ReportEmbeddedResource = "Criptomonedas.EstadisticasCotizaciones.rdlc";
+            this.reportViewerCotizaciones.LocalReport.ReportEmbeddedResource = "Criptomonedas.EstadisticaCincoCriptosMenosVendidas.rdlc";
             this.reportViewerCotizaciones.Location = new System.Drawing.Point(0, 0);
             this.reportViewerCotizaciones.Name = "reportViewerCotizaciones";
             this.reportViewerCotizaciones.ServerReport.BearerToken = null;
@@ -50,6 +50,7 @@
             this.Controls.Add(this.reportViewerCotizaciones);
             this.Name = "ReporteMenosCompras";
             this.Text = "ReporteMenosCompras";
+            this.Load += new System.EventHandler(this.ReporteMenosCompras_Load);
             this.ResumeLayout(false);
 
         }
