@@ -249,10 +249,10 @@ namespace Criptomonedas.DAO
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
-                
+
                 cn.Open();
                 cmd.Connection = cn;
-                
+
                 DataTable tabla = new DataTable();
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -268,7 +268,7 @@ namespace Criptomonedas.DAO
             {
                 cn.Close();
             }
-
+        }
 
         public static DataTable obtenerClientesXProvincia()
         {
