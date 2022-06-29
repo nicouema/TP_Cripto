@@ -305,6 +305,12 @@
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.Designer.cs">
       <DependentUpon>ReporteListadoCriptomonedas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteMenosVendidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteMenosVendidas.Designer.cs">
+      <DependentUpon>ReporteMenosVendidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +369,7 @@
     </Compile>
     <EmbeddedResource Include="CotizacionesXCripto.rdlc" />
     <EmbeddedResource Include="ejecutivoDeCuentas.rdlc" />
+    <EmbeddedResource Include="EstadisticaCincoCriptosMenosVendidas.rdlc" />
     <EmbeddedResource Include="EstadisticaCincoCriptosMasVendidas.rdlc" />
     <EmbeddedResource Include="EstadisticaClienteXProvincia.rdlc" />
     <EmbeddedResource Include="EstadisticasCotizaciones.rdlc" />
@@ -437,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Reporte Telefono\ListadoTelefonos.resx">
       <DependentUpon>ListadoTelefonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteMenosVendidas.resx">
+      <DependentUpon>ReporteMenosVendidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.resx">
       <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>

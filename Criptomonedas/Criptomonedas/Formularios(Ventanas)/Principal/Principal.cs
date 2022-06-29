@@ -576,6 +576,13 @@ namespace Criptomonedas
             ventana.ShowDialog();
         }
 
+        private void menosVendidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteMenosVendidas ventana = new ReporteMenosVendidas();
+            ventana.ShowDialog();
+        }
+
+
         private void grillaCripto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;

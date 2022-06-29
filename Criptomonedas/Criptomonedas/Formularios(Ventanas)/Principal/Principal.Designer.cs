@@ -33,21 +33,11 @@ namespace Criptomonedas
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnEstadisticas = new FontAwesome.Sharp.IconButton();
-            this.btnInformes = new FontAwesome.Sharp.IconButton();
-            this.btnEjecutivoCuenta = new FontAwesome.Sharp.IconButton();
-            this.btnCriptomonedas = new FontAwesome.Sharp.IconButton();
-            this.btnDatosCliente = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnLateralMenu = new FontAwesome.Sharp.IconButton();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.txtLabelUsuario = new System.Windows.Forms.Label();
             this.lblDashboard = new System.Windows.Forms.Label();
-            this.btnMinimizarPantalla = new FontAwesome.Sharp.IconButton();
-            this.btnMaximizarPantalla = new FontAwesome.Sharp.IconButton();
-            this.btnCerrarPantalla = new FontAwesome.Sharp.IconButton();
             this.SM_ABM_DatosCliente = new RJCodeAdvance.RJControls.RJDropdownMenu(this.components);
             this.btnAltaPais = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAltaProvincia = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,12 +58,10 @@ namespace Criptomonedas
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelCompraVenta = new System.Windows.Forms.Panel();
             this.reportCotizaciones = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btnVender = new FontAwesome.Sharp.IconButton();
             this.grillaCripto = new System.Windows.Forms.DataGridView();
             this.cripno_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo_cripto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCompra = new FontAwesome.Sharp.IconButton();
             this.SM_Informes = new RJCodeAdvance.RJControls.RJDropdownMenu(this.components);
             this.informeClientesItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informeEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,12 +81,24 @@ namespace Criptomonedas
             this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masAltasEnElUltimoMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menosCompradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.masVendidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porProvinciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.masVendidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menosVendidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVender = new FontAwesome.Sharp.IconButton();
+            this.btnCompra = new FontAwesome.Sharp.IconButton();
+            this.btnMinimizarPantalla = new FontAwesome.Sharp.IconButton();
+            this.btnMaximizarPantalla = new FontAwesome.Sharp.IconButton();
+            this.btnCerrarPantalla = new FontAwesome.Sharp.IconButton();
+            this.btnEstadisticas = new FontAwesome.Sharp.IconButton();
+            this.btnInformes = new FontAwesome.Sharp.IconButton();
+            this.btnEjecutivoCuenta = new FontAwesome.Sharp.IconButton();
+            this.btnCriptomonedas = new FontAwesome.Sharp.IconButton();
+            this.btnDatosCliente = new FontAwesome.Sharp.IconButton();
+            this.btnLateralMenu = new FontAwesome.Sharp.IconButton();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelTitulo.SuspendLayout();
             this.SM_ABM_DatosCliente.SuspendLayout();
             this.SM_ABM_Criptomonedas.SuspendLayout();
@@ -108,6 +108,7 @@ namespace Criptomonedas
             ((System.ComponentModel.ISupportInitialize)(this.grillaCripto)).BeginInit();
             this.SM_Informes.SuspendLayout();
             this.SM_Estadisticas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -124,127 +125,6 @@ namespace Criptomonedas
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(230, 640);
             this.panelMenu.TabIndex = 0;
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstadisticas.FlatAppearance.BorderSize = 0;
-            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.ForeColor = System.Drawing.Color.Black;
-            this.btnEstadisticas.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
-            this.btnEstadisticas.IconColor = System.Drawing.Color.Black;
-            this.btnEstadisticas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEstadisticas.IconSize = 40;
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(0, 340);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnEstadisticas.Size = new System.Drawing.Size(230, 60);
-            this.btnEstadisticas.TabIndex = 4;
-            this.btnEstadisticas.Tag = "Estadisticas";
-            this.btnEstadisticas.Text = "        Estadisticas";
-            this.btnEstadisticas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
-            // 
-            // btnInformes
-            // 
-            this.btnInformes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInformes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInformes.FlatAppearance.BorderSize = 0;
-            this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformes.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformes.ForeColor = System.Drawing.Color.Black;
-            this.btnInformes.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.btnInformes.IconColor = System.Drawing.Color.Black;
-            this.btnInformes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInformes.IconSize = 40;
-            this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformes.Location = new System.Drawing.Point(0, 280);
-            this.btnInformes.Name = "btnInformes";
-            this.btnInformes.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnInformes.Size = new System.Drawing.Size(230, 60);
-            this.btnInformes.TabIndex = 3;
-            this.btnInformes.Tag = "Informes";
-            this.btnInformes.Text = "        Informes";
-            this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInformes.UseVisualStyleBackColor = true;
-            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
-            // 
-            // btnEjecutivoCuenta
-            // 
-            this.btnEjecutivoCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEjecutivoCuenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEjecutivoCuenta.FlatAppearance.BorderSize = 0;
-            this.btnEjecutivoCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEjecutivoCuenta.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEjecutivoCuenta.ForeColor = System.Drawing.Color.Black;
-            this.btnEjecutivoCuenta.IconChar = FontAwesome.Sharp.IconChar.FunnelDollar;
-            this.btnEjecutivoCuenta.IconColor = System.Drawing.Color.Black;
-            this.btnEjecutivoCuenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEjecutivoCuenta.IconSize = 40;
-            this.btnEjecutivoCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEjecutivoCuenta.Location = new System.Drawing.Point(0, 220);
-            this.btnEjecutivoCuenta.Name = "btnEjecutivoCuenta";
-            this.btnEjecutivoCuenta.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnEjecutivoCuenta.Size = new System.Drawing.Size(230, 60);
-            this.btnEjecutivoCuenta.TabIndex = 2;
-            this.btnEjecutivoCuenta.Tag = "ABM Ejecutivo de Cuentas";
-            this.btnEjecutivoCuenta.Text = "ABM Ejecutivos de Cuenta";
-            this.btnEjecutivoCuenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEjecutivoCuenta.UseVisualStyleBackColor = true;
-            this.btnEjecutivoCuenta.Click += new System.EventHandler(this.btnEjecutivoCuenta_Click);
-            // 
-            // btnCriptomonedas
-            // 
-            this.btnCriptomonedas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCriptomonedas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCriptomonedas.FlatAppearance.BorderSize = 0;
-            this.btnCriptomonedas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCriptomonedas.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCriptomonedas.ForeColor = System.Drawing.Color.Black;
-            this.btnCriptomonedas.IconChar = FontAwesome.Sharp.IconChar.MoneyCheck;
-            this.btnCriptomonedas.IconColor = System.Drawing.Color.Black;
-            this.btnCriptomonedas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCriptomonedas.IconSize = 40;
-            this.btnCriptomonedas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCriptomonedas.Location = new System.Drawing.Point(0, 160);
-            this.btnCriptomonedas.Name = "btnCriptomonedas";
-            this.btnCriptomonedas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnCriptomonedas.Size = new System.Drawing.Size(230, 60);
-            this.btnCriptomonedas.TabIndex = 1;
-            this.btnCriptomonedas.Tag = "ABM Criptomonedas";
-            this.btnCriptomonedas.Text = "ABM Criptomonedas";
-            this.btnCriptomonedas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCriptomonedas.UseVisualStyleBackColor = true;
-            this.btnCriptomonedas.Click += new System.EventHandler(this.btnABM2_Click);
-            // 
-            // btnDatosCliente
-            // 
-            this.btnDatosCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDatosCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDatosCliente.FlatAppearance.BorderSize = 0;
-            this.btnDatosCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatosCliente.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatosCliente.ForeColor = System.Drawing.Color.Black;
-            this.btnDatosCliente.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.btnDatosCliente.IconColor = System.Drawing.Color.Black;
-            this.btnDatosCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDatosCliente.IconSize = 40;
-            this.btnDatosCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatosCliente.Location = new System.Drawing.Point(0, 100);
-            this.btnDatosCliente.Name = "btnDatosCliente";
-            this.btnDatosCliente.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnDatosCliente.Size = new System.Drawing.Size(230, 60);
-            this.btnDatosCliente.TabIndex = 0;
-            this.btnDatosCliente.Tag = "ABM Datos de Cliente";
-            this.btnDatosCliente.Text = "ABM Datos de Cliente";
-            this.btnDatosCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDatosCliente.UseVisualStyleBackColor = true;
-            this.btnDatosCliente.Click += new System.EventHandler(this.btnABM1_Click);
             // 
             // panel1
             // 
@@ -263,37 +143,6 @@ namespace Criptomonedas
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1136, 669);
             this.panel2.TabIndex = 3;
-            // 
-            // btnLateralMenu
-            // 
-            this.btnLateralMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLateralMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnLateralMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLateralMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLateralMenu.FlatAppearance.BorderSize = 0;
-            this.btnLateralMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLateralMenu.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnLateralMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.btnLateralMenu.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnLateralMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLateralMenu.IconSize = 30;
-            this.btnLateralMenu.Location = new System.Drawing.Point(182, 3);
-            this.btnLateralMenu.Name = "btnLateralMenu";
-            this.btnLateralMenu.Size = new System.Drawing.Size(45, 49);
-            this.btnLateralMenu.TabIndex = 1;
-            this.btnLateralMenu.UseVisualStyleBackColor = false;
-            this.btnLateralMenu.Click += new System.EventHandler(this.btnLateralMenu_Click);
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Cursor = System.Windows.Forms.Cursors.No;
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(118, 49);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
             // 
             // panelTitulo
             // 
@@ -335,63 +184,6 @@ namespace Criptomonedas
             this.lblDashboard.TabIndex = 4;
             this.lblDashboard.Text = "DASHBOARD";
             this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnMinimizarPantalla
-            // 
-            this.btnMinimizarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimizarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMinimizarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizarPantalla.FlatAppearance.BorderSize = 0;
-            this.btnMinimizarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimizarPantalla.IconColor = System.Drawing.SystemColors.Control;
-            this.btnMinimizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimizarPantalla.IconSize = 20;
-            this.btnMinimizarPantalla.Location = new System.Drawing.Point(711, 0);
-            this.btnMinimizarPantalla.Name = "btnMinimizarPantalla";
-            this.btnMinimizarPantalla.Size = new System.Drawing.Size(34, 20);
-            this.btnMinimizarPantalla.TabIndex = 3;
-            this.btnMinimizarPantalla.UseVisualStyleBackColor = false;
-            this.btnMinimizarPantalla.Click += new System.EventHandler(this.btnMinimizarPantalla_Click);
-            // 
-            // btnMaximizarPantalla
-            // 
-            this.btnMaximizarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnMaximizarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMaximizarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizarPantalla.FlatAppearance.BorderSize = 0;
-            this.btnMaximizarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btnMaximizarPantalla.IconColor = System.Drawing.SystemColors.Control;
-            this.btnMaximizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMaximizarPantalla.IconSize = 20;
-            this.btnMaximizarPantalla.Location = new System.Drawing.Point(744, 0);
-            this.btnMaximizarPantalla.Name = "btnMaximizarPantalla";
-            this.btnMaximizarPantalla.Size = new System.Drawing.Size(34, 20);
-            this.btnMaximizarPantalla.TabIndex = 2;
-            this.btnMaximizarPantalla.UseVisualStyleBackColor = false;
-            this.btnMaximizarPantalla.Click += new System.EventHandler(this.btnMaximizarPantalla_Click);
-            // 
-            // btnCerrarPantalla
-            // 
-            this.btnCerrarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnCerrarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCerrarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarPantalla.FlatAppearance.BorderSize = 0;
-            this.btnCerrarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnCerrarPantalla.IconColor = System.Drawing.SystemColors.Control;
-            this.btnCerrarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrarPantalla.IconSize = 30;
-            this.btnCerrarPantalla.Location = new System.Drawing.Point(775, 0);
-            this.btnCerrarPantalla.Name = "btnCerrarPantalla";
-            this.btnCerrarPantalla.Size = new System.Drawing.Size(34, 20);
-            this.btnCerrarPantalla.TabIndex = 1;
-            this.btnCerrarPantalla.UseVisualStyleBackColor = false;
-            this.btnCerrarPantalla.Click += new System.EventHandler(this.btnCerrarPantalla_Click);
             // 
             // SM_ABM_DatosCliente
             // 
@@ -578,23 +370,6 @@ namespace Criptomonedas
             this.reportCotizaciones.TabIndex = 7;
             this.reportCotizaciones.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // btnVender
-            // 
-            this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVender.BackColor = System.Drawing.Color.Red;
-            this.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVender.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Bold);
-            this.btnVender.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnVender.IconColor = System.Drawing.Color.Black;
-            this.btnVender.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVender.Location = new System.Drawing.Point(141, 3);
-            this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(132, 57);
-            this.btnVender.TabIndex = 5;
-            this.btnVender.Text = "Vender";
-            this.btnVender.UseVisualStyleBackColor = false;
-            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
-            // 
             // grillaCripto
             // 
             this.grillaCripto.AllowUserToAddRows = false;
@@ -639,23 +414,6 @@ namespace Criptomonedas
             this.precio.Name = "precio";
             this.precio.ReadOnly = true;
             this.precio.Width = 125;
-            // 
-            // btnCompra
-            // 
-            this.btnCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCompra.BackColor = System.Drawing.Color.Lime;
-            this.btnCompra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCompra.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Bold);
-            this.btnCompra.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnCompra.IconColor = System.Drawing.Color.Black;
-            this.btnCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCompra.Location = new System.Drawing.Point(3, 3);
-            this.btnCompra.Name = "btnCompra";
-            this.btnCompra.Size = new System.Drawing.Size(132, 57);
-            this.btnCompra.TabIndex = 4;
-            this.btnCompra.Text = "Comprar";
-            this.btnCompra.UseVisualStyleBackColor = false;
-            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
             // 
             // SM_Informes
             // 
@@ -802,7 +560,8 @@ namespace Criptomonedas
             this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.masAltasEnElUltimoMesToolStripMenuItem,
             this.menosCompradasToolStripMenuItem,
-            this.masVendidasToolStripMenuItem});
+            this.masVendidasToolStripMenuItem,
+            this.menosVendidasToolStripMenuItem});
             this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem.Name = "cotizacionesMasAltasEnElUltimoMesToolStripMenuItem";
             this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cotizacionesMasAltasEnElUltimoMesToolStripMenuItem.Text = "Criptomonedas";
@@ -821,6 +580,13 @@ namespace Criptomonedas
             this.menosCompradasToolStripMenuItem.Text = "5 menos compradas";
             this.menosCompradasToolStripMenuItem.Click += new System.EventHandler(this.menosCompradasToolStripMenuItem_Click);
             // 
+            // masVendidasToolStripMenuItem
+            // 
+            this.masVendidasToolStripMenuItem.Name = "masVendidasToolStripMenuItem";
+            this.masVendidasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.masVendidasToolStripMenuItem.Text = "5 mas vendidas";
+            this.masVendidasToolStripMenuItem.Click += new System.EventHandler(this.masVendidasToolStripMenuItem_Click);
+            // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -832,16 +598,259 @@ namespace Criptomonedas
             // porProvinciaToolStripMenuItem
             // 
             this.porProvinciaToolStripMenuItem.Name = "porProvinciaToolStripMenuItem";
-            this.porProvinciaToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.porProvinciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.porProvinciaToolStripMenuItem.Text = "Por Provincia";
             this.porProvinciaToolStripMenuItem.Click += new System.EventHandler(this.porProvinciaToolStripMenuItem_Click);
             // 
-            // masVendidasToolStripMenuItem
+            // menosVendidasToolStripMenuItem
             // 
-            this.masVendidasToolStripMenuItem.Name = "masVendidasToolStripMenuItem";
-            this.masVendidasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.masVendidasToolStripMenuItem.Text = "5 mas vendidas";
-            this.masVendidasToolStripMenuItem.Click += new System.EventHandler(this.masVendidasToolStripMenuItem_Click);
+            this.menosVendidasToolStripMenuItem.Name = "menosVendidasToolStripMenuItem";
+            this.menosVendidasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.menosVendidasToolStripMenuItem.Text = "5 menos vendidas";
+            this.menosVendidasToolStripMenuItem.Click += new System.EventHandler(this.menosVendidasToolStripMenuItem_Click);
+            // 
+            // btnVender
+            // 
+            this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVender.BackColor = System.Drawing.Color.Red;
+            this.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVender.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Bold);
+            this.btnVender.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnVender.IconColor = System.Drawing.Color.Black;
+            this.btnVender.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVender.Location = new System.Drawing.Point(141, 3);
+            this.btnVender.Name = "btnVender";
+            this.btnVender.Size = new System.Drawing.Size(132, 57);
+            this.btnVender.TabIndex = 5;
+            this.btnVender.Text = "Vender";
+            this.btnVender.UseVisualStyleBackColor = false;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
+            // 
+            // btnCompra
+            // 
+            this.btnCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCompra.BackColor = System.Drawing.Color.Lime;
+            this.btnCompra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCompra.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCompra.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCompra.IconColor = System.Drawing.Color.Black;
+            this.btnCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCompra.Location = new System.Drawing.Point(3, 3);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(132, 57);
+            this.btnCompra.TabIndex = 4;
+            this.btnCompra.Text = "Comprar";
+            this.btnCompra.UseVisualStyleBackColor = false;
+            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
+            // 
+            // btnMinimizarPantalla
+            // 
+            this.btnMinimizarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimizarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMinimizarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizarPantalla.FlatAppearance.BorderSize = 0;
+            this.btnMinimizarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimizarPantalla.IconColor = System.Drawing.SystemColors.Control;
+            this.btnMinimizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizarPantalla.IconSize = 20;
+            this.btnMinimizarPantalla.Location = new System.Drawing.Point(711, 0);
+            this.btnMinimizarPantalla.Name = "btnMinimizarPantalla";
+            this.btnMinimizarPantalla.Size = new System.Drawing.Size(34, 20);
+            this.btnMinimizarPantalla.TabIndex = 3;
+            this.btnMinimizarPantalla.UseVisualStyleBackColor = false;
+            this.btnMinimizarPantalla.Click += new System.EventHandler(this.btnMinimizarPantalla_Click);
+            // 
+            // btnMaximizarPantalla
+            // 
+            this.btnMaximizarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMaximizarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMaximizarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizarPantalla.FlatAppearance.BorderSize = 0;
+            this.btnMaximizarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximizarPantalla.IconColor = System.Drawing.SystemColors.Control;
+            this.btnMaximizarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximizarPantalla.IconSize = 20;
+            this.btnMaximizarPantalla.Location = new System.Drawing.Point(744, 0);
+            this.btnMaximizarPantalla.Name = "btnMaximizarPantalla";
+            this.btnMaximizarPantalla.Size = new System.Drawing.Size(34, 20);
+            this.btnMaximizarPantalla.TabIndex = 2;
+            this.btnMaximizarPantalla.UseVisualStyleBackColor = false;
+            this.btnMaximizarPantalla.Click += new System.EventHandler(this.btnMaximizarPantalla_Click);
+            // 
+            // btnCerrarPantalla
+            // 
+            this.btnCerrarPantalla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarPantalla.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCerrarPantalla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCerrarPantalla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarPantalla.FlatAppearance.BorderSize = 0;
+            this.btnCerrarPantalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarPantalla.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnCerrarPantalla.IconColor = System.Drawing.SystemColors.Control;
+            this.btnCerrarPantalla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarPantalla.IconSize = 30;
+            this.btnCerrarPantalla.Location = new System.Drawing.Point(775, 0);
+            this.btnCerrarPantalla.Name = "btnCerrarPantalla";
+            this.btnCerrarPantalla.Size = new System.Drawing.Size(34, 20);
+            this.btnCerrarPantalla.TabIndex = 1;
+            this.btnCerrarPantalla.UseVisualStyleBackColor = false;
+            this.btnCerrarPantalla.Click += new System.EventHandler(this.btnCerrarPantalla_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstadisticas.FlatAppearance.BorderSize = 0;
+            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.ForeColor = System.Drawing.Color.Black;
+            this.btnEstadisticas.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.btnEstadisticas.IconColor = System.Drawing.Color.Black;
+            this.btnEstadisticas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEstadisticas.IconSize = 40;
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(0, 340);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnEstadisticas.Size = new System.Drawing.Size(230, 60);
+            this.btnEstadisticas.TabIndex = 4;
+            this.btnEstadisticas.Tag = "Estadisticas";
+            this.btnEstadisticas.Text = "        Estadisticas";
+            this.btnEstadisticas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
+            // btnInformes
+            // 
+            this.btnInformes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInformes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInformes.FlatAppearance.BorderSize = 0;
+            this.btnInformes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformes.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformes.ForeColor = System.Drawing.Color.Black;
+            this.btnInformes.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.btnInformes.IconColor = System.Drawing.Color.Black;
+            this.btnInformes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInformes.IconSize = 40;
+            this.btnInformes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformes.Location = new System.Drawing.Point(0, 280);
+            this.btnInformes.Name = "btnInformes";
+            this.btnInformes.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnInformes.Size = new System.Drawing.Size(230, 60);
+            this.btnInformes.TabIndex = 3;
+            this.btnInformes.Tag = "Informes";
+            this.btnInformes.Text = "        Informes";
+            this.btnInformes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInformes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInformes.UseVisualStyleBackColor = true;
+            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
+            // 
+            // btnEjecutivoCuenta
+            // 
+            this.btnEjecutivoCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEjecutivoCuenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEjecutivoCuenta.FlatAppearance.BorderSize = 0;
+            this.btnEjecutivoCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEjecutivoCuenta.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEjecutivoCuenta.ForeColor = System.Drawing.Color.Black;
+            this.btnEjecutivoCuenta.IconChar = FontAwesome.Sharp.IconChar.FunnelDollar;
+            this.btnEjecutivoCuenta.IconColor = System.Drawing.Color.Black;
+            this.btnEjecutivoCuenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEjecutivoCuenta.IconSize = 40;
+            this.btnEjecutivoCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEjecutivoCuenta.Location = new System.Drawing.Point(0, 220);
+            this.btnEjecutivoCuenta.Name = "btnEjecutivoCuenta";
+            this.btnEjecutivoCuenta.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnEjecutivoCuenta.Size = new System.Drawing.Size(230, 60);
+            this.btnEjecutivoCuenta.TabIndex = 2;
+            this.btnEjecutivoCuenta.Tag = "ABM Ejecutivo de Cuentas";
+            this.btnEjecutivoCuenta.Text = "ABM Ejecutivos de Cuenta";
+            this.btnEjecutivoCuenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEjecutivoCuenta.UseVisualStyleBackColor = true;
+            this.btnEjecutivoCuenta.Click += new System.EventHandler(this.btnEjecutivoCuenta_Click);
+            // 
+            // btnCriptomonedas
+            // 
+            this.btnCriptomonedas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCriptomonedas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCriptomonedas.FlatAppearance.BorderSize = 0;
+            this.btnCriptomonedas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCriptomonedas.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriptomonedas.ForeColor = System.Drawing.Color.Black;
+            this.btnCriptomonedas.IconChar = FontAwesome.Sharp.IconChar.MoneyCheck;
+            this.btnCriptomonedas.IconColor = System.Drawing.Color.Black;
+            this.btnCriptomonedas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCriptomonedas.IconSize = 40;
+            this.btnCriptomonedas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCriptomonedas.Location = new System.Drawing.Point(0, 160);
+            this.btnCriptomonedas.Name = "btnCriptomonedas";
+            this.btnCriptomonedas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnCriptomonedas.Size = new System.Drawing.Size(230, 60);
+            this.btnCriptomonedas.TabIndex = 1;
+            this.btnCriptomonedas.Tag = "ABM Criptomonedas";
+            this.btnCriptomonedas.Text = "ABM Criptomonedas";
+            this.btnCriptomonedas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCriptomonedas.UseVisualStyleBackColor = true;
+            this.btnCriptomonedas.Click += new System.EventHandler(this.btnABM2_Click);
+            // 
+            // btnDatosCliente
+            // 
+            this.btnDatosCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDatosCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDatosCliente.FlatAppearance.BorderSize = 0;
+            this.btnDatosCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatosCliente.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatosCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnDatosCliente.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btnDatosCliente.IconColor = System.Drawing.Color.Black;
+            this.btnDatosCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDatosCliente.IconSize = 40;
+            this.btnDatosCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDatosCliente.Location = new System.Drawing.Point(0, 100);
+            this.btnDatosCliente.Name = "btnDatosCliente";
+            this.btnDatosCliente.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnDatosCliente.Size = new System.Drawing.Size(230, 60);
+            this.btnDatosCliente.TabIndex = 0;
+            this.btnDatosCliente.Tag = "ABM Datos de Cliente";
+            this.btnDatosCliente.Text = "ABM Datos de Cliente";
+            this.btnDatosCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDatosCliente.UseVisualStyleBackColor = true;
+            this.btnDatosCliente.Click += new System.EventHandler(this.btnABM1_Click);
+            // 
+            // btnLateralMenu
+            // 
+            this.btnLateralMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLateralMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnLateralMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLateralMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLateralMenu.FlatAppearance.BorderSize = 0;
+            this.btnLateralMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLateralMenu.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLateralMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.btnLateralMenu.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLateralMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLateralMenu.IconSize = 30;
+            this.btnLateralMenu.Location = new System.Drawing.Point(182, 3);
+            this.btnLateralMenu.Name = "btnLateralMenu";
+            this.btnLateralMenu.Size = new System.Drawing.Size(45, 49);
+            this.btnLateralMenu.TabIndex = 1;
+            this.btnLateralMenu.UseVisualStyleBackColor = false;
+            this.btnLateralMenu.Click += new System.EventHandler(this.btnLateralMenu_Click);
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Cursor = System.Windows.Forms.Cursors.No;
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(118, 49);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // Principal
             // 
@@ -862,7 +871,6 @@ namespace Criptomonedas
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             this.SM_ABM_DatosCliente.ResumeLayout(false);
@@ -873,6 +881,7 @@ namespace Criptomonedas
             ((System.ComponentModel.ISupportInitialize)(this.grillaCripto)).EndInit();
             this.SM_Informes.ResumeLayout(false);
             this.SM_Estadisticas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -948,6 +957,7 @@ namespace Criptomonedas
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porProvinciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem masVendidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menosVendidasToolStripMenuItem;
     }
 }
 
