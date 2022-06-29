@@ -34,7 +34,7 @@
             // reportViewerCotizaciones
             // 
             this.reportViewerCotizaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewerCotizaciones.LocalReport.ReportEmbeddedResource = "Criptomonedas.EstadisticaCincoCriptosMenosVendidas.rdlc";
+            this.reportViewerCotizaciones.LocalReport.ReportEmbeddedResource = "Criptomonedas.EstadisticasCotizaciones.rdlc";
             this.reportViewerCotizaciones.Location = new System.Drawing.Point(0, 0);
             this.reportViewerCotizaciones.Name = "reportViewerCotizaciones";
             this.reportViewerCotizaciones.ServerReport.BearerToken = null;
