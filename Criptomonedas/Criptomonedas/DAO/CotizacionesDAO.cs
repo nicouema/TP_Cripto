@@ -7,7 +7,7 @@ namespace Criptomonedas.DAO
 {
     internal class CotizacionesDAO
     {
-        internal static DataTable obtenerCotizacionesMes(string order)
+        internal static DataTable obtenerCotizacionesCompras(string order)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -19,6 +19,50 @@ namespace Criptomonedas.DAO
                 string consulta = "SELECT TOP 5 SUM(tm.cantidad_moneda) as Cantidad, c.nombre " +
                     "FROM Transacciones_por_monedas tm JOIN Criptomonedas c ON tm.codigo_cripto = c.codigo_cripto " +
                     "WHERE tm.tipo_operacion=1 " +
+                    "GROUP BY c.nombre " +
+                    "ORDER BY Cantidad " + order;
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+
+                cn.Open();
+                cmd.Connection = cn;
+
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los datos de las cotizaciones! " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        internal static DataTable obtenerCotizacionesVentas(string order)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT TOP 5 SUM(tm.cantidad_moneda) as Cantidad, c.nombre " +
+                    "FROM Transacciones_por_monedas tm JOIN Criptomonedas c ON tm.codigo_cripto = c.codigo_cripto " +
+                    "WHERE tm.tipo_operacion=2 " +
                     "GROUP BY c.nombre " +
                     "ORDER BY Cantidad " + order;
 

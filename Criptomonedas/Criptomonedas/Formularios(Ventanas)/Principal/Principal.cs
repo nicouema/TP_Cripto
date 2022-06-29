@@ -30,8 +30,9 @@ using Criptomonedas.Formularios_Ventanas_.Listado_Cotizaciones;
 using Criptomonedas.Formularios_Ventanas_.Listado_Provincias;
 using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Cotizaciones;
 using Microsoft.Reporting.WinForms;
-using Criptomonedas.Formularios_Ventanas_.Estadisticas.CompraVentaXCripto;
-using Criptomonedas.Formularios_Ventanas_.Listados.Rerporte_Transaccion;
+using Criptomonedas.Formularios_Ventanas_.Listados.ReporteClientes;
+using Criptomonedas.Formularios_Ventanas_.Listados.ReporteCriptomoneda;
+using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Monedero;
 
 namespace Criptomonedas
 {
@@ -43,7 +44,7 @@ namespace Criptomonedas
         private Size formSize;
         private static Usuario usuarioEnSesion;
         private static Cliente clienteEnSesion;
-        private static int codCriptoSelect;
+        private static int codCriptoSelect = 19;
 
         public Principal(Usuario usu)
         {
@@ -564,21 +565,42 @@ namespace Criptomonedas
             reporte.ShowDialog();
         }
 
+        private void porProvinciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaClienteXProvincia ventana = new EstadisticaClienteXProvincia();
+            ventana.ShowDialog();
+        }
+
+        private void masVendidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaCincoMasVendidas ventana = new EstadisticaCincoMasVendidas();
+            ventana.ShowDialog();
+        }
+
+        private void menosVendidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteMenosVendidas ventana = new ReporteMenosVendidas();
+            ventana.ShowDialog();
+        }
+
+        private void cToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadísticaMonederosConMasTrasacciones ventana = new EstadísticaMonederosConMasTrasacciones();
+            ventana.ShowDialog();
+        }
+
         private void grillaCripto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = grillaCripto.Rows[indice];
             codCriptoSelect = (int)filaSeleccionada.Cells["codigo_cripto"].Value;
+            lblCriptoSelect.Text = (string)filaSeleccionada.Cells["nombre"].Value;
             reportViewer1_Load(sender, e);
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
-            if (codCriptoSelect == null)
-            {
-                return;
-            }
             dataTable = CotizacionesDAO.obtenerCotizacionesCripto(codCriptoSelect);
 
             ReportDataSource ds = new ReportDataSource("CotizacionesXCripto", dataTable);
@@ -588,19 +610,17 @@ namespace Criptomonedas
             this.reportCotizaciones.RefreshReport();
         }
 
-        private void cantidadDeTransaccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void porCiudadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CompraVentaXCripto compraVentaXCripto = new CompraVentaXCripto();
-            compraVentaXCripto.ShowDialog();
-        }
-
-        private void cantidadDeTransaccionesPorMonederoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TransaccionPorMonedero ventana = new TransaccionPorMonedero();
+            EstadisticaCliente ventana = new EstadisticaCliente();
             ventana.ShowDialog();
-            
         }
 
+        private void conMasMonederosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaClienteMonedero ventana = new EstadisticaClienteMonedero();
+            ventana.ShowDialog();
+        }
         // Funciones Submenu ABM Criptomonedas
 
 

@@ -22,13 +22,18 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.Listado_Cotizaciones
         private void reportViewerCotizaciones_Load(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
-            dataTable = CotizacionesDAO.obtenerCotizacionesMes("ASC");
+            dataTable = CotizacionesDAO.obtenerCotizacionesCompras("ASC");
 
             ReportDataSource ds = new ReportDataSource("CotizacionesMAX", dataTable);
 
             reportViewerCotizaciones.LocalReport.DataSources.Clear();
             reportViewerCotizaciones.LocalReport.DataSources.Add(ds);
             this.reportViewerCotizaciones.RefreshReport();
+        }
+
+        private void ReporteMenosCompras_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

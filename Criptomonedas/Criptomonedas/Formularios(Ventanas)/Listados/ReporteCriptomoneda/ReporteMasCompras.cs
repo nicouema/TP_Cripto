@@ -22,7 +22,7 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.Listado_Cotizaciones
         private void ReporteCotizacionesMAX_Load(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
-            dataTable = CotizacionesDAO.obtenerCotizacionesMes("DESC");
+            dataTable = CotizacionesDAO.obtenerCotizacionesCompras("DESC");
 
             ReportDataSource ds = new ReportDataSource("CotizacionesMAX", dataTable);
 
