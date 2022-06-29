@@ -245,6 +245,7 @@
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Monedero\EstadísticaMonederosConMasTrasacciones.Designer.cs">
       <DependentUpon>EstadísticaMonederosConMasTrasacciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteMenosCompras.cs">
       <SubType>Form</SubType>
     </Compile>
