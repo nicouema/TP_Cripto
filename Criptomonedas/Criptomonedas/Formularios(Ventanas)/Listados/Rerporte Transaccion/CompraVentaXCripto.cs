@@ -19,15 +19,7 @@ namespace Criptomonedas.Formularios_Ventanas_.Estadisticas.CompraVentaXCripto
             InitializeComponent();
         }
 
-        private void btnMinimizarPantallaReg_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnCerrarPantallaReg_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
         private void CompraVentaXCripto_Load(object sender, EventArgs e)
         {

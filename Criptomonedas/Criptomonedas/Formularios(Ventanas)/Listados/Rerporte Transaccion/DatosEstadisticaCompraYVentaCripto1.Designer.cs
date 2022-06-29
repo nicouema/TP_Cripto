@@ -279,9 +279,9 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.Rerporte_Transaccion {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TablaEstadisticaCVXCriptoDataTable : global::System.Data.TypedTableBase<TablaEstadisticaCVXCriptoRow> {
             
-            private global::System.Data.DataColumn columnCriptomoneda;
+            private global::System.Data.DataColumn columncodigo_cripto;
             
-            private global::System.Data.DataColumn columnTransacciones;
+            private global::System.Data.DataColumn columnCantidad_Transacciones;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -318,17 +318,17 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.Rerporte_Transaccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CriptomonedaColumn {
+            public global::System.Data.DataColumn codigo_criptoColumn {
                 get {
-                    return this.columnCriptomoneda;
+                    return this.columncodigo_cripto;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TransaccionesColumn {
+            public global::System.Data.DataColumn Cantidad_TransaccionesColumn {
                 get {
-                    return this.columnTransacciones;
+                    return this.columnCantidad_Transacciones;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.Rerporte_Transaccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TablaEstadisticaCVXCriptoRow AddTablaEstadisticaCVXCriptoRow(string Criptomoneda, int Transacciones) {
+            public TablaEstadisticaCVXCriptoRow AddTablaEstadisticaCVXCriptoRow(string codigo_cripto, int Cantidad_Transacciones) {
                 TablaEstadisticaCVXCriptoRow rowTablaEstadisticaCVXCriptoRow = ((TablaEstadisticaCVXCriptoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Criptomoneda,
-                        Transacciones};
+                        codigo_cripto,
+                        Cantidad_Transacciones};
                 rowTablaEstadisticaCVXCriptoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTablaEstadisticaCVXCriptoRow);
                 return rowTablaEstadisticaCVXCriptoRow;
@@ -396,17 +396,17 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.Rerporte_Transaccion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnCriptomoneda = base.Columns["Criptomoneda"];
-                this.columnTransacciones = base.Columns["Transacciones"];
+                this.columncodigo_cripto = base.Columns["codigo_cripto"];
+                this.columnCantidad_Transacciones = base.Columns["Cantidad_Transacciones"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnCriptomoneda = new global::System.Data.DataColumn("Criptomoneda", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCriptomoneda);
-                this.columnTransacciones = new global::System.Data.DataColumn("Transacciones", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTransacciones);
+                this.columncodigo_cripto = new global::System.Data.DataColumn("codigo_cripto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_cripto);
+                this.columnCantidad_Transacciones = new global::System.Data.DataColumn("Cantidad_Transacciones", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad_Transacciones);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -549,60 +549,60 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.Rerporte_Transaccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Criptomoneda {
+            public string codigo_cripto {
                 get {
                     try {
-                        return ((string)(this[this.tableTablaEstadisticaCVXCripto.CriptomonedaColumn]));
+                        return ((string)(this[this.tableTablaEstadisticaCVXCripto.codigo_criptoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Criptomoneda\' in table \'TablaEstadisticaCVXCripto\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableTablaEstadisticaCVXCripto.CriptomonedaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Transacciones {
-                get {
-                    try {
-                        return ((int)(this[this.tableTablaEstadisticaCVXCripto.TransaccionesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Transacciones\' in table \'TablaEstadisticaCVXCripto\' is DBNu" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'codigo_cripto\' in table \'TablaEstadisticaCVXCripto\' is DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableTablaEstadisticaCVXCripto.TransaccionesColumn] = value;
+                    this[this.tableTablaEstadisticaCVXCripto.codigo_criptoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCriptomonedaNull() {
-                return this.IsNull(this.tableTablaEstadisticaCVXCripto.CriptomonedaColumn);
+            public int Cantidad_Transacciones {
+                get {
+                    try {
+                        return ((int)(this[this.tableTablaEstadisticaCVXCripto.Cantidad_TransaccionesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Cantidad_Transacciones\' in table \'TablaEstadisticaCVXCripto" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTablaEstadisticaCVXCripto.Cantidad_TransaccionesColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCriptomonedaNull() {
-                this[this.tableTablaEstadisticaCVXCripto.CriptomonedaColumn] = global::System.Convert.DBNull;
+            public bool Iscodigo_criptoNull() {
+                return this.IsNull(this.tableTablaEstadisticaCVXCripto.codigo_criptoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTransaccionesNull() {
-                return this.IsNull(this.tableTablaEstadisticaCVXCripto.TransaccionesColumn);
+            public void Setcodigo_criptoNull() {
+                this[this.tableTablaEstadisticaCVXCripto.codigo_criptoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTransaccionesNull() {
-                this[this.tableTablaEstadisticaCVXCripto.TransaccionesColumn] = global::System.Convert.DBNull;
+            public bool IsCantidad_TransaccionesNull() {
+                return this.IsNull(this.tableTablaEstadisticaCVXCripto.Cantidad_TransaccionesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCantidad_TransaccionesNull() {
+                this[this.tableTablaEstadisticaCVXCripto.Cantidad_TransaccionesColumn] = global::System.Convert.DBNull;
             }
         }
         
