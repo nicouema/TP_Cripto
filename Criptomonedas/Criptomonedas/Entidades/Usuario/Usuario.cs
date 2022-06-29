@@ -16,6 +16,10 @@ namespace Criptomonedas.Entidades
             User = usuario;
             Password = contraseña;
         }
+
+        public Usuario()
+        {
+        }
     }
 }
 

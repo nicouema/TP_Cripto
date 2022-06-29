@@ -33,6 +33,7 @@ using Microsoft.Reporting.WinForms;
 using Criptomonedas.Formularios_Ventanas_.Listados.ReporteClientes;
 using Criptomonedas.Formularios_Ventanas_.Listados.ReporteCriptomoneda;
 using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Monedero;
+using Criptomonedas.Formularios_Ventanas_.Estadisticas.CompraVentaXCripto;
 
 namespace Criptomonedas
 {
@@ -619,6 +620,17 @@ namespace Criptomonedas
         private void conMasMonederosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EstadisticaClienteMonedero ventana = new EstadisticaClienteMonedero();
+            ventana.ShowDialog();
+        }
+
+        private void conMasClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Ejecu
+        }
+
+        private void conMasTransaccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompraVentaXCripto ventana = new CompraVentaXCripto();
             ventana.ShowDialog();
         }
         // Funciones Submenu ABM Criptomonedas
