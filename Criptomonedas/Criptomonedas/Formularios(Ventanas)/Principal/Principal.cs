@@ -30,6 +30,8 @@ using Criptomonedas.Formularios_Ventanas_.Listado_Cotizaciones;
 using Criptomonedas.Formularios_Ventanas_.Listado_Provincias;
 using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Cotizaciones;
 using Microsoft.Reporting.WinForms;
+using Criptomonedas.Formularios_Ventanas_.Listados.ReporteClientes;
+using Criptomonedas.Formularios_Ventanas_.Listados.ReporteCriptomoneda;
 
 namespace Criptomonedas
 {
@@ -560,6 +562,18 @@ namespace Criptomonedas
         {
             ReporteMenosCompras reporte = new ReporteMenosCompras();
             reporte.ShowDialog();
+        }
+
+        private void porProvinciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaClienteXProvincia ventana = new EstadisticaClienteXProvincia();
+            ventana.ShowDialog();
+        }
+
+        private void masVendidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaCincoMasVendidas ventana = new EstadisticaCincoMasVendidas();
+            ventana.ShowDialog();
         }
 
         private void grillaCripto_CellClick(object sender, DataGridViewCellEventArgs e)
