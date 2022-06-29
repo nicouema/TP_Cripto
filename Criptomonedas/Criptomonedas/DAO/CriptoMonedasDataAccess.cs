@@ -66,6 +66,43 @@ namespace Criptomonedas.DAO
             }
         }
 
+        public static DataTable Top5MonederosConMasTransacciones()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT TOP 5 C.nombre as 'Nombre', C.apellido as 'Apellido', TM.cod_monedero as 'CodigoMonedero', COUNT(TM.cod_monedero) as 'CantidadTransacciones' FROM Transacciones_por_monedas TM JOIN Clientes C ON (C.nro_cliente = TM.nro_cliente) GROUP BY C.nombre, C.apellido, TM.cod_monedero ORDER BY 4 DESC";
+
+
+
+                cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static decimal getValorById(int codigoCripto)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
