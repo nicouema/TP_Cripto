@@ -34,6 +34,7 @@ using Criptomonedas.Formularios_Ventanas_.Listados.ReporteClientes;
 using Criptomonedas.Formularios_Ventanas_.Listados.ReporteCriptomoneda;
 using Criptomonedas.Formularios_Ventanas_.Listados.Listado_Monedero;
 using Criptomonedas.Formularios_Ventanas_.Estadisticas.CompraVentaXCripto;
+using Criptomonedas.Formularios_Ventanas_.Listados.Rerporte_Transaccion;
 
 namespace Criptomonedas
 {
@@ -631,6 +632,12 @@ namespace Criptomonedas
         private void conMasTransaccionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CompraVentaXCripto ventana = new CompraVentaXCripto();
+            ventana.ShowDialog();
+        }
+
+        private void noseQueEsEstoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransaccionPorMonedero ventana = new TransaccionPorMonedero();
             ventana.ShowDialog();
         }
         // Funciones Submenu ABM Criptomonedas
