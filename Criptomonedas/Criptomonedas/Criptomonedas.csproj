@@ -78,6 +78,8 @@
     <Compile Include="DAO\BarrioDAO.cs" />
     <Compile Include="DAO\ClientesDAO.cs" />
     <Compile Include="DAO\CriptoMonedasDataAccess.cs" />
+    <Compile Include="DAO\TelefonoDAO.cs" />
+    <Compile Include="DAO\TransaccionDAO.cs" />
     <Compile Include="DataSetProyecto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -242,11 +244,11 @@
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteCriptomoneda\ReporteListadoCriptomonedas.Designer.cs">
       <DependentUpon>ReporteListadoCriptomonedas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.cs">
+    <Compile Include="Formularios%28Ventanas%29\Listados\Reporte Tipo Transaccion\ListadoTransaccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.Designer.cs">
-      <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>
+    <Compile Include="Formularios%28Ventanas%29\Listados\Reporte Tipo Transaccion\ListadoTransaccion.Designer.cs">
+      <DependentUpon>ListadoTransaccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios%28Ventanas%29\Listados\TipoDocumento\TipoDocumento.cs">
       <SubType>Form</SubType>
@@ -353,8 +355,8 @@
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Reporte Telefono\ListadoTelefonos.resx">
       <DependentUpon>ListadoTelefonos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Rerporte Transaccion\ListadoTransaccionSimple.resx">
-      <DependentUpon>ListadoTransaccionSimple.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Reporte Tipo Transaccion\ListadoTransaccion.resx">
+      <DependentUpon>ListadoTransaccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\TipoDocumento\TipoDocumento.resx">
       <DependentUpon>TipoDocumento.cs</DependentUpon>
@@ -392,7 +394,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoRestriccionesCiudades.rdlc" />
     <EmbeddedResource Include="ListadoTelefonos.rdlc" />
-    <EmbeddedResource Include="ListadoTransacciones.rdlc" />
+    <EmbeddedResource Include="ListadoTransaccionPorMoneda.rdlc" />
     <EmbeddedResource Include="Listado_Empresas.rdlc" />
     <EmbeddedResource Include="Listado_Pais.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -467,8 +469,6 @@
   <ItemGroup>
     <None Include="Resources\descargar.png" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -484,5 +484,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

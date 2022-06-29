@@ -25,11 +25,6 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados
             this.reportViewerClientes.RefreshReport();
         }
 
-        private void reportViewerClientes_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnCerrarPantallaABMCliente_Click(object sender, EventArgs e)
         {
             this.Close();

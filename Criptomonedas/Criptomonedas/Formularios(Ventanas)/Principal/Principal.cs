@@ -499,7 +499,7 @@ namespace Criptomonedas
 
         private void informeTipoDeTransaccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListadoTransaccionSimple listado = new ListadoTransaccionSimple();
+            ListadoTransaccion listado = new ListadoTransaccion();
             listado.ShowDialog();
         }
 

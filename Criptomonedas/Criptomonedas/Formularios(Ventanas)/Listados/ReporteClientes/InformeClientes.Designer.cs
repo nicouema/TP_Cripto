@@ -267,7 +267,6 @@
             this.reportViewerClientes.ServerReport.BearerToken = null;
             this.reportViewerClientes.Size = new System.Drawing.Size(800, 415);
             this.reportViewerClientes.TabIndex = 0;
-            this.reportViewerClientes.Load += new System.EventHandler(this.reportViewerClientes_Load);
             // 
             // clientesTableAdapter
             // 
