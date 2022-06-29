@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosEstadisticaCompraYVentaCripto" targetNamespace="http://tempuri.org/DatosEstadisticaCompraYVentaCripto.xsd" xmlns:mstns="http://tempuri.org/DatosEstadisticaCompraYVentaCripto.xsd" xmlns="http://tempuri.org/DatosEstadisticaCompraYVentaCripto.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosEstadisticaCompraYVentaCripto" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DatosEstadisticaCompraYVentaCripto" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosEstadisticaCompraYVentaCripto">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TablaEstadisticaCVXCripto" msprop:Generator_RowClassName="TablaEstadisticaCVXCriptoRow" msprop:Generator_RowEvHandlerName="TablaEstadisticaCVXCriptoRowChangeEventHandler" msprop:Generator_RowDeletedName="TablaEstadisticaCVXCriptoRowDeleted" msprop:Generator_RowDeletingName="TablaEstadisticaCVXCriptoRowDeleting" msprop:Generator_RowEvArgName="TablaEstadisticaCVXCriptoRowChangeEvent" msprop:Generator_TablePropName="TablaEstadisticaCVXCripto" msprop:Generator_RowChangedName="TablaEstadisticaCVXCriptoRowChanged" msprop:Generator_UserTableName="TablaEstadisticaCVXCripto" msprop:Generator_RowChangingName="TablaEstadisticaCVXCriptoRowChanging" msprop:Generator_TableClassName="TablaEstadisticaCVXCriptoDataTable" msprop:Generator_TableVarName="tableTablaEstadisticaCVXCripto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Criptomoneda" msprop:Generator_UserColumnName="Criptomoneda" msprop:Generator_ColumnPropNameInTable="CriptomonedaColumn" msprop:Generator_ColumnPropNameInRow="Criptomoneda" msprop:Generator_ColumnVarNameInTable="columnCriptomoneda" type="xs:string" minOccurs="0" />
+              <xs:element name="Transacciones" msprop:Generator_UserColumnName="Transacciones" msprop:Generator_ColumnPropNameInTable="TransaccionesColumn" msprop:Generator_ColumnPropNameInRow="Transacciones" msprop:Generator_ColumnVarNameInTable="columnTransacciones" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
