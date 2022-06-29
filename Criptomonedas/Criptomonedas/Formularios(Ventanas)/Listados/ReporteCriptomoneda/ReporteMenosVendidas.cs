@@ -19,7 +19,8 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.ReporteCriptomoneda
             InitializeComponent();
         }
 
-        private void ReporteMenosVendidas_Load(object sender, EventArgs e)
+
+        private void reportViewerVentas_Load(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
             dataTable = CotizacionesDAO.obtenerCotizacionesVentas("ASC");
@@ -30,6 +31,5 @@ namespace Criptomonedas.Formularios_Ventanas_.Listados.ReporteCriptomoneda
             reportViewerVentas.LocalReport.DataSources.Add(ds);
             this.reportViewerVentas.RefreshReport();
         }
-
     }
 }

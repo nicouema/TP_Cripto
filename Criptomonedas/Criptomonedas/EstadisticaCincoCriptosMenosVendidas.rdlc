@@ -36,7 +36,7 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetCriptomonedas</rd:DataSetName>
         <rd:SchemaPath>C:\Users\nicou\Google Drive\Programacion De Aplicaciones Visuales I\TP\TP_Cripto\Criptomonedas\Criptomonedas\Formularios(Ventanas)\Listados\ReporteCriptomoneda\DataSetCriptomonedas.xsd</rd:SchemaPath>
-        <rd:TableName>CincoMenosVendidas</rd:TableName>
+        <rd:TableName>CincoMasVendidas</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />

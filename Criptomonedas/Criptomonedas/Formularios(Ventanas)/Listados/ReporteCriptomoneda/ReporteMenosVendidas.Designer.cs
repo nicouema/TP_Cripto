@@ -40,6 +40,7 @@
             this.reportViewerVentas.ServerReport.BearerToken = null;
             this.reportViewerVentas.Size = new System.Drawing.Size(800, 450);
             this.reportViewerVentas.TabIndex = 2;
+            this.reportViewerVentas.Load += new System.EventHandler(this.reportViewerVentas_Load);
             // 
             // ReporteMenosVendidas
             // 
@@ -49,7 +50,6 @@
             this.Controls.Add(this.reportViewerVentas);
             this.Name = "ReporteMenosVendidas";
             this.Text = "ReporteMenosVendidas";
-            this.Load += new System.EventHandler(this.ReporteMenosVendidas_Load);
             this.ResumeLayout(false);
 
         }
