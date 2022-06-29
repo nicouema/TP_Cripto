@@ -52,7 +52,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -203,6 +203,25 @@
     <Compile Include="Formularios%28Ventanas%29\Listados\Listado Barrio\ListadoBarrio.Designer.cs">
       <DependentUpon>ListadoBarrio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaCliente.Designer.cs">
+      <DependentUpon>EstadisticaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClienteMonedero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClienteMonedero.Designer.cs">
+      <DependentUpon>EstadisticaClienteMonedero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClientes.cs">
+      <DependentUpon>EstadisticaClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticaClientes.xsd</DependentUpon>
     <Compile Include="Formularios%28Ventanas%29\Listados\ReporteClientes\DataSetCliente.cs">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </Compile>
@@ -383,6 +402,8 @@
     </Compile>
     <EmbeddedResource Include="CotizacionesXCripto.rdlc" />
     <EmbeddedResource Include="ejecutivoDeCuentas.rdlc" />
+    <EmbeddedResource Include="EstadisticaClienteMonedero.rdlc" />
+    <EmbeddedResource Include="EstadisticaClientes.rdlc" />
     <EmbeddedResource Include="EstadísticaMonederosConMasTransacciones.rdlc" />
     <EmbeddedResource Include="EstadisticaCincoCriptosMenosVendidas.rdlc" />
     <EmbeddedResource Include="EstadisticaCincoCriptosMasVendidas.rdlc" />
@@ -435,6 +456,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\Listado Barrio\ListadoBarrio.resx">
       <DependentUpon>ListadoBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaCliente.resx">
+      <DependentUpon>EstadisticaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClienteMonedero.resx">
+      <DependentUpon>EstadisticaClienteMonedero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClienteXProvincia.resx">
       <DependentUpon>EstadisticaClienteXProvincia.cs</DependentUpon>
@@ -590,6 +617,17 @@
     <None Include="Formularios%28Ventanas%29\Listados\Listado Cotizaciones\CotizacionesXCripto.xss">
       <DependentUpon>CotizacionesXCripto.xsd</DependentUpon>
     </None>
+    <None Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClientes.xsc">
+      <DependentUpon>EstadisticaClientes.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticaClientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios%28Ventanas%29\Listados\ReporteClientes\EstadisticaClientes.xss">
+      <DependentUpon>EstadisticaClientes.xsd</DependentUpon>
+    </None>
     <None Include="Formularios%28Ventanas%29\Listados\ReporteClientes\DataSetCliente.xsc">
       <DependentUpon>DataSetCliente.xsd</DependentUpon>
     </None>
@@ -637,8 +675,6 @@
   <ItemGroup>
     <None Include="Resources\descargar.png" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -654,5 +690,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

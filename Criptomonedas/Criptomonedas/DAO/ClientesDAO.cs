@@ -52,6 +52,7 @@ namespace Criptomonedas.DAO
 
         }
 
+
         public static DataTable CargarTablaClientePorMail(string filtroMail)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
@@ -183,6 +184,92 @@ namespace Criptomonedas.DAO
             }
         }
 
+        public static DataTable ObtenerEstadisticasClientes()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta =   "Select c.nombre_ciudad as Ciudad, COUNT(cli.nro_cliente) as Clientes " +
+                                    "from Clientes cli  " +
+                                    "INNER JOIN Barrio b ON cli.cod_barrio = b.cod_barrio " +
+                                    "INNER JOIN Ciudad c on b.cod_ciudad = c.cod_ciudad " +
+                                    "GROUP BY c.nombre_ciudad";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+
+                cn.Open();
+                cmd.Connection = cn;
+
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+
+        public static DataTable ObtenerEstadisticasClientesMonedero()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "Select cli.nombre as Nombre, cli.apellido As Apellido, cli.nro_cliente as ID, COUNT(cli.nro_cliente) as Cantidad " +
+                                    "from Monedero mo   " +
+                                    "INNER JOIN Clientes cli ON mo.nro_cliente = cli.nro_cliente " +
+                                    "GROUP BY cli.nombre, cli.apellido, cli.nro_cliente";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                
+                cn.Open();
+                cmd.Connection = cn;
+                
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
         public static DataTable obtenerClientesXProvincia()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
@@ -193,14 +280,9 @@ namespace Criptomonedas.DAO
                 string consulta = "SELECT P.nombre_provincia as Provincia, COUNT(C.nro_cliente) as Cantidad " +
                                   "FROM Clientes C JOIN Barrio B ON (C.cod_barrio=B.cod_barrio) JOIN Ciudad Ci ON (B.cod_ciudad = Ci.cod_ciudad) JOIN Provincias P ON (Ci.cod_provincia = P.cod_provincia) " +
                                   "GROUP BY P.nombre_provincia";
-
-                cmd.Parameters.Clear();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
                 cn.Open();
                 cmd.Connection = cn;
-
+                
                 DataTable tabla = new DataTable();
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -218,5 +300,4 @@ namespace Criptomonedas.DAO
             }
         }
     }
-
 }
